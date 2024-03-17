@@ -12,10 +12,10 @@ export default function About() {
       <span className="section__title">about me</span>
       <h2 className="section__subtitle">who am i?</h2>
       <p className="about_description">
-        <strong>Hi I'm Bidur Sapkota</strong>
+        <strong>Hi I&apos;m Bidur Sapkota</strong>
         On her way she met a copy. The copy warned the Little Blind Text, that
         where it came from it would have been rewritten a thousand times and
-        everything that was left from its origin would be the word "and" and the
+        everything that was left from its origin would be the word and the
         Little Blind Text should turn around and return to its own, safe
         country.
       </p>
