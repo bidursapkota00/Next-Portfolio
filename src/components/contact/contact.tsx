@@ -19,7 +19,7 @@ export default function Contact() {
             <div>
               <FaEnvelopeOpenText size={20} color="rgb(44, 152, 240)" />
             </div>
-            <h2>info@example.com</h2>
+            <h2>bidursapkota00@gmail.com</h2>
           </div>
           <div className="contact__information">
             <div>
