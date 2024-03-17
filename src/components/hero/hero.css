@@ -1,14 +1,12 @@
 #hero {
-  background-image: url("/images/img_bg_2.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background: #efe7ec;
   height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   padding: 0 15px;
+  position: relative;
 }
 .hero__name,
 .hero__job {
@@ -18,6 +16,7 @@
   font-weight: 700;
   margin-bottom: 20px;
   max-width: 70%;
+  z-index: 1;
 }
 .hero__name {
   animation: heroName 8s linear infinite;
@@ -27,6 +26,7 @@
 }
 .hero__description {
   width: 100%;
+  z-index: 1;
   animation: heroDescription 8s linear infinite;
 }
 .hero__edu {
@@ -55,6 +55,13 @@
   display: inline-block;
   color: rgba(0, 0, 0, 0.6);
   margin-top: -3px;
+}
+
+@media screen and (min-width: 650px) {
+  #hero > img {
+    height: 100svh;
+    width: unset;
+  }
 }
 
 @keyframes heroName {

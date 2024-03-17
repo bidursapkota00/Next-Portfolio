@@ -2,6 +2,7 @@ import React from "react";
 import { IoIosMail } from "react-icons/io";
 
 import "./hero.css";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -22,6 +23,14 @@ export default function Hero() {
           contact me <IoIosMail size={20} />
         </a>
       </div>
+
+      <Image
+        className="absolute right-0 bottom-0 w-[70%] h-[100svh] z-0 object-cover"
+        src="/images/bg.jpg"
+        alt="Background Image"
+        width={1000}
+        height={1500}
+      />
     </section>
   );
 }
