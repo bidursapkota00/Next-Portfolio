@@ -9,12 +9,12 @@
 .exp__container::after {
   content: "";
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border: 5px solid #f2f3f7;
   border-radius: 50%;
   top: 100%;
-  left: -17px;
+  left: -18px;
 }
 
 .exp__box {
@@ -37,7 +37,7 @@
 
 .exp__box > h2 {
   font-size: 20px;
-  font-family: "Quicksand", sans-serif;
+  font-family: var(--font-quicksand);
   font-weight: 500;
   margin-bottom: 30px;
   color: black;
@@ -50,7 +50,7 @@
 
 .exp__box > p {
   font-size: 16px;
-  font-family: "Quicksand", sans-serif;
+  font-family: var(--font-quicksand);
   font-weight: normal;
   line-height: 1.8;
   color: rgba(0, 0, 0, 0.7);
@@ -59,18 +59,13 @@
 .exp__box > div {
   position: absolute;
   top: 0;
-  left: -67px;
+  left: -68px;
   border: 5px solid #f2f3f7;
   border-radius: 50%;
   background: #2c90f0;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.exp__box i {
-  font-size: 16px;
-  color: white;
 }

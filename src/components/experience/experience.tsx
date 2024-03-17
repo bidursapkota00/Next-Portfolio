@@ -1,4 +1,6 @@
 import React from "react";
+import { FaPenToSquare } from "react-icons/fa6";
+
 import "./experience.css";
 
 export default function Experience() {
@@ -19,7 +21,7 @@ export default function Experience() {
             laboriosam odio.
           </p>
           <div>
-            <i className="fa-regular fa-pen-to-square"></i>
+            <FaPenToSquare size={18} color="#ffffff" />
           </div>
         </div>
         <div className="exp__box">
@@ -32,8 +34,8 @@ export default function Experience() {
             dolorum vero esse odit earum ipsa! Odio hic id obcaecati? Nostrum,
             laboriosam odio.
           </p>
-          <div>
-            <i className="fa-regular fa-pen-to-square"></i>
+          <div style={{ background: "#ec5453" }}>
+            <FaPenToSquare size={18} color="#ffffff" />
           </div>
         </div>
       </div>

@@ -46,8 +46,8 @@
 }
 
 .sidebar__image {
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
   border-radius: 50%;
   margin-top: 50px;

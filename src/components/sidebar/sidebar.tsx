@@ -11,10 +11,10 @@ export default function Sidebar() {
       <div className="sidebar__content">
         <Image
           className="sidebar__image"
-          src="/images/about.jpg"
+          src="/images/about2.jpg"
           alt="Profile Image"
-          width={150}
-          height={150}
+          width={200}
+          height={200}
         />
         <h2 className="sidebar__name">bidur sapkota</h2>
         <h3 className="sidebar__job">
