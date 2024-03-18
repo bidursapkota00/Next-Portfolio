@@ -28,7 +28,7 @@
 
 .sidebar__content {
   width: 300px;
-  height: 100dvh;
+  height: 100lvh;
   background: #f2f3f7;
   overflow-y: scroll;
   z-index: 40;
@@ -61,6 +61,7 @@
   color: #000;
   margin-bottom: 7.5px;
   text-transform: capitalize;
+  text-align: center;
 }
 
 .sidebar__job {
@@ -69,6 +70,7 @@
   color: #2c98f0;
   text-transform: uppercase;
   font-family: var(--font-quicksand);
+  text-align: center;
 }
 
 .sidebar__country {
