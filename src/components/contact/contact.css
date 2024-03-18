@@ -16,6 +16,7 @@
   color: rgb(44, 152, 240);
   font-size: 16px;
   font-family: var(--font-quicksand), sans-serif;
+  word-break: break-word;
 }
 
 .contact__information:nth-child(2) > h2 {

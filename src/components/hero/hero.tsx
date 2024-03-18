@@ -24,13 +24,14 @@ export default function Hero() {
         </a>
       </div>
 
-      <Image
-        className="absolute right-0 bottom-0 w-[70%] h-[100svh] z-0 object-cover"
-        src="/images/bg.jpg"
-        alt="Background Image"
-        width={500}
-        height={750}
-      />
+      <div className="absolute right-0 bottom-0 w-[80%] h-[100svh] z-0 hero__img">
+        <Image
+          className="object-cover"
+          src="/images/bg.jpg"
+          alt="Background Image"
+          fill
+        />
+      </div>
     </section>
   );
 }

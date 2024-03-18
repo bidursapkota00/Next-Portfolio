@@ -131,3 +131,19 @@
 .sidebar__copyright > span {
   color: #2c98f0;
 }
+
+@media screen and (min-width: 768px) {
+  .sidebar__hamburger {
+    display: none;
+  }
+
+  .sidebar__content {
+    margin-left: 300px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .sidebar__content {
+    margin-left: calc(300px + (100% - 1200px) / 2);
+  }
+}
