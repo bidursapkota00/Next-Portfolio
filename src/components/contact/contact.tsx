@@ -1,14 +1,12 @@
-import React from "react";
+import React, { FormEvent, useRef } from "react";
 import { FaEnvelopeOpenText } from "react-icons/fa";
 import { FaRegMap } from "react-icons/fa6";
 import { FaPhone } from "react-icons/fa";
 
 import "./contact.css";
+import ContactForm from "./form";
 
 export default function Contact() {
-  // const submitForm = () => {
-
-  // }
   return (
     <section id="contact" className="section">
       <span className="section__title">get in touch</span>
@@ -35,51 +33,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <form
-          className="contact__form"
-          method="post"
-          //   onsubmit="submitForm(event);"
-        >
-          <input
-            className="contact__input"
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Name"
-            required
-          />
-
-          <input
-            className="contact__input"
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
-            required
-          />
-
-          <input
-            className="contact__input"
-            type="text"
-            id="subject"
-            name="subject"
-            placeholder="Subject"
-            required
-          />
-
-          <textarea
-            id="message"
-            className="contact__textarea"
-            name="message"
-            placeholder="Message"
-            rows={4}
-            required
-          ></textarea>
-
-          <button className="contact__button" type="submit">
-            Send Message
-          </button>
-        </form>
+        <ContactForm />
       </div>
     </section>
   );
