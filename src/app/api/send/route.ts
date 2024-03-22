@@ -15,12 +15,13 @@ async function POST(req: Request) {
       email,
       subject = "Portfolio Contact Me",
       source = "Portfolio",
+      message = "",
     } = await req.json();
     const data = await resend.emails.send({
       from: `${source} <${process.env.FROM_EMAIL}>`,
       to: `${process.env.TO_EMAIL}`,
       subject,
-      react: EmailTemplate({ name, email }),
+      react: EmailTemplate({ name, email, message }),
     });
 
     return NextResponse.json(

@@ -31,13 +31,13 @@ export async function sendEmail(
     };
   }
   try {
-    const { name, email, subject, source } = parsed.data;
+    const { name, email, subject, source, message } = parsed.data;
 
     const data = await resend.emails.send({
       from: `${source} <${process.env.FROM_EMAIL}>`,
       to: `${process.env.TO_EMAIL}`,
       subject,
-      react: EmailTemplate({ name, email }),
+      react: EmailTemplate({ name, email, message }),
     });
 
     return { message: "Email Sent Successfully!" };

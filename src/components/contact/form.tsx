@@ -1,5 +1,10 @@
 "use client";
-import React, { FormEvent, useRef } from "react";
+import React, {
+  FormEvent,
+  startTransition,
+  useRef,
+  useTransition,
+} from "react";
 import { useFormState } from "react-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -10,6 +15,8 @@ import { contactSchema } from "@/schema/contact-schema";
 import ContactInput from "./input";
 
 export default function ContactForm() {
+  const [isPending, startTransition] = useTransition();
+
   const [state, formAction] = useFormState(sendEmail, {
     message: "",
   });
@@ -30,14 +37,16 @@ export default function ContactForm() {
   const submitForm = (e: FormEvent) => {
     e.preventDefault();
     form.handleSubmit(() => {
-      formAction(new FormData(formRef.current!));
+      startTransition(() => {
+        formAction(new FormData(formRef.current!));
+      });
     })(e);
   };
 
   return (
     <form
       className="contact__form"
-      method="post"
+      id="portfolio-contact-form"
       ref={formRef}
       action={formAction}
       onSubmit={submitForm}
@@ -93,6 +102,7 @@ export default function ContactForm() {
           name="message"
           placeholder="Message"
           rows={4}
+          defaultValue={form.formState.defaultValues?.message}
         />
         {form.formState.errors.message && (
           <p className="text-sm text-red-500 absolute top-[calc(100%-36px)] left-0">
@@ -107,11 +117,18 @@ export default function ContactForm() {
         type="text"
         id="source"
         name="source"
+        defaultValue="Portfolio"
       />
 
-      <button className="contact__button" type="submit">
-        Send Message
-      </button>
+      <div className="flex items-center mb-[100px]">
+        <button className="contact__button" type="submit" disabled={isPending}>
+          Send Message
+        </button>
+        <span
+          className="contact__send__loader"
+          style={isPending ? { display: "inline-block" } : {}}
+        ></span>
+      </div>
     </form>
   );
 }

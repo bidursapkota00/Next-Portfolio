@@ -39,6 +39,7 @@ export default function ContactInput({
         id={inputName}
         name={inputName}
         placeholder={inputPlaceholder}
+        defaultValue={form.formState.defaultValues?.[inputName]}
       />
       {form.formState.errors[inputName] && (
         <p className="text-sm text-red-500 absolute top-[calc(100%-30px)] left-0">
