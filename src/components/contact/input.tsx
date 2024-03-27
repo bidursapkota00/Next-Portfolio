@@ -16,11 +16,13 @@ export default function ContactInput({
   inputName,
   inputPlaceholder,
   type,
+  focus,
 }: {
   form: Form;
   inputName: "name" | "email" | "message" | "source" | "subject";
   inputPlaceholder: string;
   type: "text" | "email" | "password";
+  focus?: boolean;
 }) {
   return (
     <div className="relative">
@@ -40,6 +42,7 @@ export default function ContactInput({
         name={inputName}
         placeholder={inputPlaceholder}
         defaultValue={form.formState.defaultValues?.[inputName]}
+        autoFocus={focus || false}
       />
       {form.formState.errors[inputName] && (
         <p className="text-sm text-red-500 absolute top-[calc(100%-30px)] left-0">

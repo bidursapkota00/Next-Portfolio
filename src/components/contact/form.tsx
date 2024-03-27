@@ -13,6 +13,8 @@ import { z } from "zod";
 import { sendEmail } from "@/actions/send-email";
 import { contactSchema } from "@/schema/contact-schema";
 import ContactInput from "./input";
+import { FormMessageError } from "@/components/ui/comps/alert-error";
+import { FormMessageSuccess } from "@/components/ui/comps/alert-success";
 
 export default function ContactForm() {
   const [isPending, startTransition] = useTransition();
@@ -52,18 +54,19 @@ export default function ContactForm() {
       onSubmit={submitForm}
     >
       {state?.message !== "" && !state.issues && (
-        <div className="text-red-500">{state.message}</div>
+        <div className="p-[20px_0]">
+          <FormMessageSuccess success={state.message} />
+        </div>
       )}
+
       {state?.issues && (
-        <div className="text-red-500">
-          <ul>
-            {state.issues.map((issue) => (
-              <li key={issue} className="flex gap-1">
-                {/* <X fill="red" /> */}
-                {issue}
-              </li>
-            ))}
-          </ul>
+        <div className="p-[20px_0]">
+          <FormMessageError
+            error={state.issues?.reduce(
+              (prev, issue) => prev + issue + "<br/>",
+              ""
+            )}
+          />
         </div>
       )}
 
@@ -72,6 +75,7 @@ export default function ContactForm() {
         inputName="name"
         inputPlaceholder="Name"
         type="text"
+        focus={state.message ? true : false}
       />
       <ContactInput
         form={form}
