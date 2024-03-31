@@ -39,7 +39,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
 }
 
 .sidebar__hamburger__translate + .sidebar__content {
@@ -127,6 +126,7 @@
   font-size: 14px;
   line-height: 2;
   font-family: var(--font-quicksand);
+  justify-self: flex-end;
 }
 
 .sidebar__copyright > span {
