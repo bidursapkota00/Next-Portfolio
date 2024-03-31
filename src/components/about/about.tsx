@@ -12,8 +12,8 @@ export default function About() {
       <span className="section__title">about me</span>
       <h2 className="section__subtitle">who am i?</h2>
       <p className="about_description">
-        <strong>Hi there! I'm Bidur Sapkota, </strong>a passionate Next.js web
-        developer based in Kathmandu, Nepal. With years of experience in
+        <strong>Hi there! I&apos;m Bidur Sapkota, </strong>a passionate Next.js
+        web developer based in Kathmandu, Nepal. With years of experience in
         building modern, performant, and user-friendly web applications, I
         specialize in leveraging the power of Next.js to create seamless and
         engaging digital experiences.
