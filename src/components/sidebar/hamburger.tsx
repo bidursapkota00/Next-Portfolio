@@ -1,15 +1,17 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 
 export default function Hamburger() {
-  const [showSideBar, setShowSideBar] = useState(false);
+  const hamburgerClicked = () => {
+    const hamburger = document.getElementById("hamburger");
+    hamburger?.classList.toggle("sidebar__hamburger__translate");
+  };
+
   return (
     <div
-      className={`sidebar__hamburger ${
-        showSideBar ? "sidebar__hamburger__translate" : ""
-      }`}
+      className="sidebar__hamburger"
       id="hamburger"
-      onClick={() => setShowSideBar(!showSideBar)}
+      onClick={hamburgerClicked}
     >
       <div className="sidebar__hamburger__lines">
         <div className="sidebar__hamburger__line"></div>

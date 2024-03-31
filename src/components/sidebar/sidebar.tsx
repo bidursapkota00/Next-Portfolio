@@ -2,6 +2,7 @@ import React from "react";
 import "./sidebar.css";
 import Hamburger from "./hamburger";
 import Image from "next/image";
+import Links from "./links";
 
 export default function Sidebar() {
   return (
@@ -9,35 +10,21 @@ export default function Sidebar() {
       <Hamburger />
 
       <div className="sidebar__content">
-        <Image
-          className="sidebar__image"
-          src="/images/about2.jpg"
-          alt="Profile Image"
-          width={200}
-          height={200}
-        />
-        <h2 className="sidebar__name">bidur sapkota</h2>
-        <h3 className="sidebar__job">
-          developer <span className="sidebar__country">in nepal</span>
-        </h3>
+        <div>
+          <Image
+            className="sidebar__image"
+            src="/images/about2.jpg"
+            alt="Profile Image"
+            width={200}
+            height={200}
+          />
+          <h2 className="sidebar__name">bidur sapkota</h2>
+          <h3 className="sidebar__job">
+            developer <span className="sidebar__country">in nepal</span>
+          </h3>
+        </div>
 
-        <ul className="sidebar__list">
-          <a href="#hero" className="sidebar__list__item">
-            Home
-          </a>
-          <a href="#about" className="sidebar__list__item">
-            About
-          </a>
-          <a href="#skills" className="sidebar__list__item">
-            skills
-          </a>
-          <a href="#experience" className="sidebar__list__item">
-            experience
-          </a>
-          <a href="#contact" className="sidebar__list__item">
-            contact
-          </a>
-        </ul>
+        <Links />
 
         <p className="sidebar__copyright">
           &copy; Copyright &copy; 2024 All rights reserved | This template is
