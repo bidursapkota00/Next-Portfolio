@@ -6,12 +6,7 @@ export default function Skills() {
     <section id="skills" className="section">
       <span className="section__title">my speciality</span>
       <span className="section__subtitle">my skills</span>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas
-        tempora molestias placeat atque, repellat nihil! Iusto sequi earum autem
-        libero ullam! Natus est recusandae corporis maiores, nostrum totam illum
-        at.
-      </p>
+      {/* <p></p> */}
       <div className="skill__box">
         <div className="skill">
           <span>Photoshop</span>
@@ -22,13 +17,13 @@ export default function Skills() {
           </div>
         </div>
         <div className="skill">
-          <span>React Js</span>
+          <span>React and JavaScript</span>
           <div className="skill__percent__box">
             <div
               className="skill__percent"
-              style={{ width: "60%", background: "#ec5453", color: "#ec5453" }}
+              style={{ width: "80%", background: "#ec5453", color: "#ec5453" }}
             >
-              <span>60%</span>
+              <span>80%</span>
             </div>
           </div>
         </div>
@@ -59,9 +54,9 @@ export default function Skills() {
           <div className="skill__percent__box">
             <div
               className="skill__percent"
-              style={{ width: "70%", background: "#2fa499", color: "#2fa499" }}
+              style={{ width: "80%", background: "#2fa499", color: "#2fa499" }}
             >
-              <span>70%</span>
+              <span>80%</span>
             </div>
           </div>
         </div>
@@ -70,9 +65,9 @@ export default function Skills() {
           <div className="skill__percent__box">
             <div
               className="skill__percent"
-              style={{ width: "80%", background: "#4054b2", color: "#4054b2" }}
+              style={{ width: "75%", background: "#4054b2", color: "#4054b2" }}
             >
-              <span>80%</span>
+              <span>75%</span>
             </div>
           </div>
         </div>

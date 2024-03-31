@@ -17,7 +17,7 @@ const quicksand = Quicksand({
 });
 
 export const metadata: Metadata = {
-  title: "Bidur Sapkota - Next.js Web Developer | Nepal",
+  title: "Bidur Sapkota - Next.js Website Developer | Website Designer | Nepal",
   description:
     "I'm Bidur Sapkota, an experienced web developer from Nepal specializing in building modern, responsive websites with NextJS. I create high-performance, SEO-friendly web applications for businesses worldwide. Hire me for your next NextJS project.",
 };
