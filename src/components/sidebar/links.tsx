@@ -5,7 +5,7 @@ export default function Links() {
   const links = ["home", "about", "skills", "experience", "contact"];
   const linkClicked = () => {
     const hamburger = document.getElementById("hamburger");
-    hamburger?.classList.toggle("sidebar__hamburger__translate");
+    hamburger?.classList.remove("sidebar__hamburger__translate");
   };
 
   return (
