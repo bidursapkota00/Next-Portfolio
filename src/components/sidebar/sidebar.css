@@ -140,6 +140,7 @@
 
   .sidebar__content {
     margin-left: 300px;
+    transform: none !important;
   }
 
   .sidebar__list__item {
