@@ -17,10 +17,12 @@
   font-size: 16px;
   font-family: var(--font-quicksand), sans-serif;
   word-break: break-word;
+  cursor: pointer;
 }
 
 .contact__information:nth-child(2) > h2 {
   color: rgba(0, 0, 0, 0.7);
+  cursor: initial;
 }
 
 .contact__input,
