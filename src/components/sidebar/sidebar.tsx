@@ -11,13 +11,15 @@ export default function Sidebar() {
 
       <div className="sidebar__content">
         <div>
-          <Image
-            className="sidebar__image"
-            src="/images/about2.jpg"
-            alt="Profile Image"
-            width={200}
-            height={200}
-          />
+          <div className="sidebar__image__box">
+            <Image
+              className="sidebar__image"
+              src="/images/about3.jpg"
+              alt="Profile Image"
+              width={1000}
+              height={1000}
+            />
+          </div>
           <h2 className="sidebar__name">bidur sapkota</h2>
           <h3 className="sidebar__job">
             developer <span className="sidebar__country">in nepal</span>

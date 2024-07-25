@@ -45,13 +45,24 @@
   transform: translateX(300px);
 }
 
-.sidebar__image {
+.sidebar__image__box {
+  position: relative;
   width: 160px;
   height: 160px;
-  object-fit: cover;
-  border-radius: 50%;
   margin-top: 50px;
   margin-bottom: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.sidebar__image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-52%, -8%) scale(2.3);
 }
 
 .sidebar__name {
