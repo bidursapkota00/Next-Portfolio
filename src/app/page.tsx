@@ -20,9 +20,9 @@ export default function Home() {
       <Education />
       <Skills />
       <Experience />
-      <Training />
       <Project />
       <Accomplishment />
+      <Training />
       <Contact />
     </>
   );
