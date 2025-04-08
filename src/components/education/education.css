@@ -1,4 +1,4 @@
-.exp__container {
+.edu__container {
   margin-top: 50px;
   padding-left: 40px;
   margin-left: 30px;
@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.exp__container::after {
+.edu__container::after {
   content: "";
   position: absolute;
   width: 30px;
@@ -17,14 +17,14 @@
   left: -18px;
 }
 
-.exp__box {
+.edu__box {
   background: #f2f3f7;
   padding: 15px 25px;
   margin-bottom: 10px;
   position: relative;
 }
 
-.exp__box::before {
+.edu__box::before {
   content: "";
   position: absolute;
   width: 16px;
@@ -35,13 +35,13 @@
   transform: rotate(45deg);
 }
 
-.exp__box > h2 {
+.edu__box > h2 {
   font-size: 20px;
   font-family: var(--font-quicksand);
   font-weight: 500;
   color: black;
 }
-.exp__box > h3 {
+.edu__box > h3 {
   font-size: 16px;
   font-family: var(--font-quicksand);
   font-weight: 500;
@@ -50,20 +50,12 @@
   font-style: italic;
 }
 
-.exp__box span {
+.edu__box span {
   opacity: 0.4;
   font-size: 16px;
 }
 
-.exp__box > p {
-  font-size: 16px;
-  font-family: var(--font-quicksand);
-  font-weight: normal;
-  line-height: 1.8;
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.exp__box > div {
+.edu__box > div {
   position: absolute;
   top: 0;
   left: -68px;

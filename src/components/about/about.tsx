@@ -12,11 +12,19 @@ export default function About() {
       <span className="section__title">about me</span>
       <h2 className="section__subtitle">who am i?</h2>
       <p className="about_description">
-        <strong>Hi there! I&apos;m Bidur Sapkota, </strong>a passionate Next.js
-        web developer based in Kathmandu, Nepal. With years of experience in
-        building modern, performant, and user-friendly web applications, I
-        specialize in leveraging the power of Next.js to create seamless and
-        engaging digital experiences.
+        <strong>Hi there! I&apos;m Bidur Sapkota, </strong>Electronics,
+        Communication and Information Engineering graduate with strong expertise
+        in web and app development, embedded systems, and fullstack solutions.
+        Currently working as a Lecturer at Asian College of Higher Studies, with
+        a solid foundation in academic instruction and student mentorship.
+        Previously served as a Web Developer at Dallotech, delivering dynamic,
+        responsive websites using Next.js, GSAP, and API integrations.
+        Demonstrated prociency in building impactful projects such as a Smart
+        Water Meter with payment integration and a Job Application platform.
+        Backed by diverse training in FastAPI, Next.js, MySQL, and Flutter, and
+        recognized for excellence with a rst-place award at the Yatra 4.0
+        Hardware Model Exhibition. Passionate about IoT, ethical hacking, and
+        continuously exploring cutting-edge tech to solve real-world problems
       </p>
       <div className="about__skills">
         <div className="about__box">
@@ -29,17 +37,20 @@ export default function About() {
         </div>
         <div className="about__box">
           <FaDatabase size={30} />
-          <h3>Software</h3>
+          <h3>
+            Data Analysis
+            <br />& Machine Learning
+          </h3>
         </div>
         <div className="about__box">
           <FaMobile size={30} />
-          <h3>application</h3>
+          <h3>mobile application</h3>
         </div>
       </div>
 
       <div className="about__happy">
         <h2>I am happy to know you that 30+ projects done sucessfully!</h2>
-        <button>hire me</button>
+        <a href="#contact">hire me</a>
       </div>
     </section>
   );

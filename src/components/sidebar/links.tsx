@@ -2,7 +2,16 @@
 import React from "react";
 
 export default function Links() {
-  const links = ["home", "about", "skills", "experience", "contact"];
+  const links = [
+    "home",
+    "about",
+    "education",
+    "skills",
+    "experience",
+    "training",
+    "project",
+    "contact",
+  ];
   const linkClicked = () => {
     const hamburger = document.getElementById("hamburger");
     hamburger?.classList.remove("sidebar__hamburger__translate");

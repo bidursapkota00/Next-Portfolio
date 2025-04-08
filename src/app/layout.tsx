@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Quicksand } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "./globals.css";
 
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className={`${playfair.variable} ${quicksand.variable}`}>
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

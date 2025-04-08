@@ -27,7 +27,7 @@ export default function Contact() {
             <div>
               <FaRegMap size={20} color="rgb(44, 152, 240)" />
             </div>
-            <h2>Nakhipot, Lalitpur, Nepal, 44700</h2>
+            <h2>Chunikhel, Lalitpur, Nepal, 44700</h2>
           </div>
           <div className="contact__information">
             <div>

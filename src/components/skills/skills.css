@@ -56,3 +56,11 @@
   line-height: 1.2;
   font-weight: 600;
 }
+
+@media screen and (min-width: 1200px) {
+  .skill__box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+  }
+}

@@ -88,3 +88,13 @@
     transform: rotate(360deg);
   }
 }
+
+@media screen and (min-width: 1200px) {
+  .contact__container {
+    display: flex;
+    gap: 60px;
+  }
+  .contact__container > form {
+    flex-grow: 1;
+  }
+}

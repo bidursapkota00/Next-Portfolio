@@ -14,32 +14,44 @@ export default function Experience() {
           <h2>
             React Developer <span>2021-2022</span>
           </h2>
-          <p>Full stack development with next.js</p>
+          <h3>Dallotech pvt. ltd.</h3>
+          <p>
+            Develop full stack websites with Nextjs
+            <br />
+            Worked on projects like Pdf generation, Webflow, Landing Pages,
+            Online job Application
+            <br />
+            GSAP Animations, FullStack Development
+            <br />
+            Convert figma design to code
+            <br />
+            API Integration
+          </p>
           <div>
             <FaPenToSquare size={18} color="#ffffff" />
           </div>
         </div>
         <div className="exp__box">
           <h2>
-            Lecturer <span>2022-Now</span>
+            Lecturer <span>2023-Now</span>
           </h2>
+          <h3>Asian College of Higher Studies</h3>
           <p>
-            Full time lecturer of Data structure & algorithms, Computer
-            graphics.
+            Preparing and delivering lectures, tutorials, workshops, and
+            seminars.
             <br />
-            Web development trainer.
+            Collaborating with other academics to improve teaching methods and
+            knowledge base.
             <br />
-            Photoshop trainer.
+            Setting and grading assignments, tests, and exams.
+            <br />
+            Supervising students on their projects.
+            <br />
+            Providing support to students and other colleagues.
+            <br />
+            Staying current by reading widely and producing published work in
+            the field.
           </p>
-          <div style={{ background: "#ec5453" }}>
-            <FaPenToSquare size={18} color="#ffffff" />
-          </div>
-        </div>
-        <div className="exp__box">
-          <h2>
-            Freelancer <span>2022-Now</span>
-          </h2>
-          <p>Build dynamic Landing pages with next.js</p>
           <div style={{ background: "#ec5453" }}>
             <FaPenToSquare size={18} color="#ffffff" />
           </div>

@@ -20,25 +20,35 @@
   z-index: 0;
 }
 
-#work__count > span {
+#work__count > div > span,
+#work__count > div > p {
   display: block;
   text-align: center;
   z-index: 1;
   position: relative;
-}
-
-#work__count > :nth-child(odd) {
   font-size: 40px;
   font-weight: 700;
   margin-bottom: 20px;
   color: white;
 }
 
-#work__count > :nth-child(even) {
+#work__count > div > p {
   font-size: 14px;
   letter-spacing: 5px;
   text-transform: uppercase;
   font-weight: normal;
   margin-bottom: 40px;
   color: rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (min-width: 1200px) {
+  #work__count {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 70px 35px;
+  }
+  #work__count > div > p {
+    margin-bottom: 0;
+  }
 }
