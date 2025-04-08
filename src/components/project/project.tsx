@@ -9,7 +9,7 @@ const projects = [
     title: "Codeyalaya",
     expertise: "Online coding institute",
     description: [
-      "Video lessons and start / end code files for each lessons",
+      "Create video lessons and start / end code files for each lessons",
       "Students can buy and watch courses through website or mobile app",
       "Integrated payment system",
     ],
