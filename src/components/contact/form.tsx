@@ -1,10 +1,5 @@
 "use client";
-import React, {
-  FormEvent,
-  startTransition,
-  useRef,
-  useTransition,
-} from "react";
+import React, { FormEvent, useRef, useTransition, useEffect } from "react";
 import { useFormState } from "react-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -44,6 +39,12 @@ export default function ContactForm() {
       });
     })(e);
   };
+
+  useEffect(() => {
+    if (state.message !== "" && !state.issues) {
+      form.reset();
+    }
+  }, [state, form]);
 
   return (
     <form
