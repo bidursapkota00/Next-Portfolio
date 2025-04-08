@@ -6,6 +6,16 @@ import "./project.css";
 
 const projects = [
   {
+    title: "Codeyalaya",
+    expertise: "Online coding institute",
+    description: [
+      "Video lessons and start / end code files for each lessons",
+      "Students can buy and watch courses through website or mobile app",
+      "Integrated payment system",
+    ],
+    link: "https://codeyalaya.bidursapkota.com.np/",
+  },
+  {
     title: "Smart Water Meter",
     expertise: "College Major Project",
     description: [
@@ -62,14 +72,9 @@ export default function Project() {
               <h2>{p.title}</h2>
             )}
             <h3>{p.expertise}</h3>
-            <p>
-              {p.description.map((d, i) => (
-                <>
-                  {d}
-                  <br />
-                </>
-              ))}
-            </p>
+            {p.description.map((d, i) => (
+              <p key={i}>{d}</p>
+            ))}
             <div>
               <FaPenToSquare size={18} color="#ffffff" />
             </div>

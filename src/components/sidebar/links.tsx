@@ -10,6 +10,7 @@ export default function Links() {
     "experience",
     "training",
     "project",
+    "accomplishment",
     "contact",
   ];
   const linkClicked = () => {
