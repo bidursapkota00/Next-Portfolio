@@ -41,7 +41,7 @@
 
 .project__box > a,
 .project__box > h2 {
-  font-size: 20px;
+  font-size: 18px;
   font-family: var(--font-quicksand);
   font-weight: 500;
   color: black;

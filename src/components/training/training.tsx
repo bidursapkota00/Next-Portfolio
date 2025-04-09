@@ -169,7 +169,11 @@ export default function Training() {
             {t.github ? (
               <a href={t.github}>
                 <h2>{t.title}</h2>
-                <HiExternalLink size={22} color="#222" />
+                <HiExternalLink
+                  size={18}
+                  style={{ flexShrink: 0 }}
+                  color="#222"
+                />
               </a>
             ) : (
               <h2>{t.title}</h2>

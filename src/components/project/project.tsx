@@ -66,7 +66,11 @@ export default function Project() {
             {p.link ? (
               <a href={p.link}>
                 <h2>{p.title}</h2>
-                <HiExternalLink size={22} color="#222" />
+                <HiExternalLink
+                  size={18}
+                  style={{ flexShrink: 0 }}
+                  color="#222"
+                />
               </a>
             ) : (
               <h2>{p.title}</h2>
