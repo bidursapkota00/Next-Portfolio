@@ -32,6 +32,11 @@ const trainings = [
     github: "https://github.com/bidursapkota00/next-auth-v5-advanced-guide",
   },
   {
+    title: "System Design for Beginners",
+    organization: "neetcode.io",
+    github: "https://github.com/bidursapkota00/System-Design-for-Beginners",
+  },
+  {
     title: "Build Responsive Real-World Websites with HTML and CSS",
     organization: "Udemy",
     github:
@@ -93,11 +98,7 @@ const trainings = [
     organization: "neetcode.io",
     github: "",
   },
-  {
-    title: "System Design for Beginners",
-    organization: "neetcode.io",
-    github: "",
-  },
+
   // {
   //   title: "Docker & Kubernetes: The Practical Guide",
   //   organization: "Udemy",

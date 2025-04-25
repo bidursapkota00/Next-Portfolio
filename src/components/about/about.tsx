@@ -22,9 +22,9 @@ export default function About() {
         Demonstrated prociency in building impactful projects such as a Smart
         Water Meter with payment integration and a Job Application platform.
         Backed by diverse training in FastAPI, Next.js, MySQL, and Flutter, and
-        recognized for excellence with a rst-place award at the Yatra 4.0
+        recognized for excellence with a first-place award at the Yatra 4.0
         Hardware Model Exhibition. Passionate about IoT, ethical hacking, and
-        continuously exploring cutting-edge tech to solve real-world problems
+        continuously exploring cutting-edge tech to solve real-world problems.
       </p>
       <div className="about__skills">
         <div className="about__box">
