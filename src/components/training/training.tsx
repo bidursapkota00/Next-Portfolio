@@ -4,6 +4,15 @@ import { HiExternalLink } from "react-icons/hi";
 
 import "./training.css";
 
+const colors = [
+  "#2c90f0",
+  "#ec5453",
+  "#f9bf3f",
+  "#a84cb8",
+  "#2fa499",
+  "#4054b2",
+];
+
 const trainings = [
   {
     title: "The Ultimate MySQL Bootcamp: Go from SQL Beginner to Expert",
@@ -35,6 +44,12 @@ const trainings = [
     title: "System Design for Beginners",
     organization: "neetcode.io",
     github: "https://github.com/bidursapkota00/System-Design-for-Beginners",
+  },
+  {
+    title: "Full Stack Development - System Design",
+    organization: "neetcode.io",
+    github:
+      "https://github.com/bidursapkota00/full-stack-development---system-design",
   },
   {
     title: "Build Responsive Real-World Websites with HTML and CSS",
@@ -93,12 +108,6 @@ const trainings = [
   //   organization: "neetcode.io",
   //   github: "",
   // },
-  {
-    title: "Full Stack Development",
-    organization: "neetcode.io",
-    github: "",
-  },
-
   // {
   //   title: "Docker & Kubernetes: The Practical Guide",
   //   organization: "Udemy",
@@ -180,7 +189,7 @@ export default function Training() {
         {trainings.map((t, i) => (
           <div className="train__box" key={i}>
             {t.github ? (
-              <a href={t.github}>
+              <a href={t.github} target="_blank">
                 <h2>{t.title}</h2>
                 <HiExternalLink
                   size={18}
@@ -192,7 +201,7 @@ export default function Training() {
               <h2>{t.title}</h2>
             )}
             <h3>{t.organization}</h3>
-            <div>
+            <div style={{ background: colors[i % 6] }}>
               <FaPenToSquare size={18} color="#ffffff" />
             </div>
           </div>

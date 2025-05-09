@@ -33,7 +33,7 @@ export default function Education() {
             BEI (77.38%) <span>2023</span>
           </h2>
           <h3>National College of Engineering</h3>
-          <div>
+          <div style={{ background: "#f9bf3f" }}>
             <FaPenToSquare size={18} color="#ffffff" />
           </div>
         </div>

@@ -13,7 +13,7 @@ const projects = [
       "Students can buy and watch courses through website or mobile app",
       "Integrated payment system",
     ],
-    link: "https://codeyalaya.bidursapkota.com.np/",
+    link: "https://github.com/bidursapkota00/codeyalaya-web-frontend",
   },
   {
     title: "Smart Water Meter",
@@ -23,7 +23,7 @@ const projects = [
       "Apk Development with integrated khalti payment gateway for clients",
       "Web Development with dashboard for water service providers",
     ],
-    link: "",
+    link: "https://github.com/bidursapkota00/Major-Project",
   },
   {
     title: "Online Job App",
@@ -64,7 +64,7 @@ export default function Project() {
         {projects.map((p, i) => (
           <div className="project__box" key={i}>
             {p.link ? (
-              <a href={p.link}>
+              <a href={p.link} target="_blank">
                 <h2>{p.title}</h2>
                 <HiExternalLink
                   size={18}
