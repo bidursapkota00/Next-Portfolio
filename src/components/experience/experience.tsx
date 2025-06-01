@@ -72,8 +72,8 @@ export default function Experience() {
               </span>
             </h2>
             <h3>{e.organization}</h3>
-            {e.description.map((d) => (
-              <p>{d}</p>
+            {e.description.map((d, i) => (
+              <p key={i}>{d}</p>
             ))}
             <div style={{ background: colors[i % 6] }}>
               <FaPenToSquare size={18} color="#ffffff" />

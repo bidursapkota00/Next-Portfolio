@@ -8,7 +8,7 @@ export default function Links() {
     "education",
     "skills",
     "experience",
-    "project",
+    "work",
     "accomplishment",
     "training",
     "contact",
@@ -23,7 +23,7 @@ export default function Links() {
       {links.map((l) => {
         return (
           <a
-            href={l === "home" ? "#hero" : "#" + l}
+            href={l === "home" ? "/#hero" : "/#" + l}
             className="sidebar__list__item"
             key={l}
             onClick={linkClicked}

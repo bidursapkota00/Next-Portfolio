@@ -1,107 +1,25 @@
 .project__container {
   margin-top: 50px;
-  padding-left: 40px;
-  margin-left: 30px;
-  border-left: 5px solid #f2f3f7;
-  position: relative;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
 }
 
-.project__container::after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  border: 5px solid #f2f3f7;
-  border-radius: 50%;
-  top: 100%;
-  left: -18px;
+.project__card:last-child {
+  display: none;
 }
 
-.project__box {
-  background: #f2f3f7;
-  padding: 15px 25px;
-  margin-bottom: 10px;
-  position: relative;
+@media screen and (min-width: 500px) {
+  .project__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.project__box::before {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  background: #f2f3f7;
-  left: -6px;
-  top: 17px;
-  transform: rotate(45deg);
-}
-
-.project__box:nth-child(2n) > div {
-  background: #ec5453;
-}
-
-.project__box:nth-child(3n) > div {
-  background: #f9bf3f;
-}
-
-.project__box:nth-child(4n) > div {
-  background: #a84cb8;
-}
-
-.project__box:nth-child(5n) > div {
-  background: #2fa499;
-}
-
-.project__box:nth-child(6n) > div {
-  background: #4054b2;
-}
-
-.project__box > a,
-.project__box > h2 {
-  font-size: 18px;
-  font-family: var(--font-quicksand);
-  font-weight: 500;
-  color: black;
-}
-
-.project__box > a {
-  display: flex;
-  flex-direction: row;
-  gap: 6px;
-  align-items: center;
-}
-
-.project__box > h3 {
-  font-size: 16px;
-  font-family: var(--font-quicksand);
-  font-weight: 500;
-  margin-bottom: 10px;
-  color: rgba(0, 0, 0, 0.8);
-  font-style: italic;
-}
-
-.project__box span {
-  opacity: 0.4;
-  font-size: 16px;
-}
-
-.project__box > p {
-  font-size: 16px;
-  font-family: var(--font-quicksand);
-  font-weight: normal;
-  line-height: 1.8;
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.project__box > div {
-  position: absolute;
-  top: 0;
-  left: -68px;
-  border: 5px solid #f2f3f7;
-  border-radius: 50%;
-  background: #2c90f0;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media screen and (min-width: 1200px) {
+  .project__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .project__card:last-child {
+    display: block;
+  }
 }
