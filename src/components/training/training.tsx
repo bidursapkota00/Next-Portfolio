@@ -1,17 +1,9 @@
 import React from "react";
 import { FaPenToSquare } from "react-icons/fa6";
 import { HiExternalLink } from "react-icons/hi";
+import { colors } from "@/utils/colors";
 
 import "./training.css";
-
-const colors = [
-  "#2c90f0",
-  "#ec5453",
-  "#f9bf3f",
-  "#a84cb8",
-  "#2fa499",
-  "#4054b2",
-];
 
 const trainings = [
   {

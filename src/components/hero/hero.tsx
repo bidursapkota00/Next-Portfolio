@@ -24,6 +24,15 @@ export default function Hero() {
         </a>
       </div>
 
+      <div className="hero__description hero__description2">
+        <h2 className="hero__edu">
+          Lecturer | Full Stack Developer | React | Node | TypeScript
+        </h2>
+        <a href="#contact" className="hero__btn">
+          contact me <IoIosMail size={20} />
+        </a>
+      </div>
+
       <div className="absolute right-0 bottom-0 w-[80%] h-[100svh] z-0 hero__img">
         <Image
           className="object-cover"

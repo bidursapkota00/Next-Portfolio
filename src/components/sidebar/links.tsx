@@ -8,9 +8,9 @@ export default function Links() {
     "education",
     "skills",
     "experience",
-    "training",
     "project",
     "accomplishment",
+    "training",
     "contact",
   ];
   const linkClicked = () => {
