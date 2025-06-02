@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import FilterAppBar from "./filter";
 import "./project.css";
 import Card from "../../components/ui/card";
@@ -111,7 +111,6 @@ export default function Project() {
   );
 
   const filteredProjects = useMemo(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
     return projects.filter((project) => {
       const matchesTech =
         !techFilter || project.techCategory.includes(techFilter);
@@ -119,6 +118,10 @@ export default function Project() {
         !serviceFilter || project.serviceCategory.includes(serviceFilter);
       return matchesTech && matchesService;
     });
+  }, [techFilter, serviceFilter]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [techFilter, serviceFilter]);
 
   return (
