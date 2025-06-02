@@ -124,6 +124,8 @@ export default function Project() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [techFilter, serviceFilter]);
 
+  console.log(filteredProjects);
+
   return (
     <div className="relative">
       <FilterAppBar
@@ -139,7 +141,7 @@ export default function Project() {
         <span className="section__title">My Work</span>
         <span className="section__subtitle">Recent Work</span>
 
-        <div className="project__container pb-8">
+        <div className="mt-[50px] pb-8 grid gap-5 grid-cols-1 xs500:grid-cols-2 xl1200:grid-cols-3">
           {filteredProjects.length === 0 ? (
             <div className="text-center py-12">
               <div className="text-gray-400 mb-4">
@@ -153,7 +155,7 @@ export default function Project() {
               </p>
             </div>
           ) : (
-            filteredProjects.map((p, i) => {
+            filteredProjects.map((p) => {
               return (
                 <Card
                   key={p.slug}
