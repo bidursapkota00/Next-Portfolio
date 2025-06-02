@@ -5,10 +5,6 @@
   gap: 20px;
 }
 
-.project__container > div:last-child {
-  display: none;
-}
-
 @media screen and (min-width: 500px) {
   .project__container {
     grid-template-columns: repeat(2, 1fr);
@@ -18,8 +14,5 @@
 @media screen and (min-width: 1200px) {
   .project__container {
     grid-template-columns: repeat(3, 1fr);
-  }
-  .project__container > div:last-child {
-    display: block;
   }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./project.css";
-import Card from "../ui/card";
+import Card from "../../components/ui/card";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 
@@ -40,6 +40,30 @@ const projects = [
     link: "https://github.com/bidursapkota00/codeyalaya-web-frontend",
     image: "/images/dallotech.png",
   },
+  {
+    title: "Smart Water Meter",
+    for: "Website | Android | IoT",
+    expertise: "College Major Project",
+    description: [
+      "Circuit design and implementation for measuring household drinking water consumption",
+      "Apk Development with integrated khalti payment gateway for clients",
+      "Web Development with dashboard for water service providers",
+    ],
+    link: "https://github.com/bidursapkota00/Major-Project",
+    image: "/images/dallotech.png",
+  },
+
+  {
+    title: "UrbanSpace",
+    for: "Website",
+    expertise: "Animations",
+    description: [
+      "Developed a landing page for a Hotel",
+      "Animation with GSAP",
+    ],
+    link: "https://urbanspace.com.np/",
+    image: "/images/dallotech.png",
+  },
 ];
 
 export default function Project() {
@@ -50,7 +74,6 @@ export default function Project() {
 
       <div className="project__container">
         {projects.map((p, i) => {
-          if (i > 2) return;
           return (
             <Card
               key={i}
@@ -64,17 +87,6 @@ export default function Project() {
           );
         })}
       </div>
-
-      <Link
-        href="/works"
-        className="mt-10 w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center gap-3 group"
-      >
-        <span>See All Works</span>
-        <ExternalLink
-          size={20}
-          className="group-hover:translate-x-1 transition-transform duration-200"
-        />
-      </Link>
     </section>
   );
 }
