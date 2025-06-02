@@ -16,8 +16,6 @@ interface Project {
   slug: string;
   techCategory: string[];
   serviceCategory: string[];
-  views: number;
-  likes: number;
 }
 
 const projects = [
@@ -33,8 +31,6 @@ const projects = [
     slug: "dallotech",
     techCategory: ["nextjs"],
     serviceCategory: ["full-stack"],
-    views: 142,
-    likes: 23,
   },
   {
     title: "Online Job App",
@@ -50,8 +46,6 @@ const projects = [
     slug: "online-job-app",
     techCategory: ["nextjs"],
     serviceCategory: ["frontend"],
-    views: 142,
-    likes: 23,
   },
   {
     title: "Codeyalaya",
@@ -67,8 +61,6 @@ const projects = [
     slug: "codeyalaya",
     techCategory: ["nextjs", "nodejs", "system design"],
     serviceCategory: ["full-stack"],
-    views: 142,
-    likes: 23,
   },
   {
     title: "Smart Water Meter",
@@ -84,8 +76,6 @@ const projects = [
     slug: "smart-water-meter",
     techCategory: ["nextjs", "react native"],
     serviceCategory: ["full-stack"],
-    views: 142,
-    likes: 23,
   },
 
   {
@@ -101,8 +91,6 @@ const projects = [
     slug: "urbanspace",
     techCategory: ["nextjs"],
     serviceCategory: ["frontend"],
-    views: 142,
-    likes: 23,
   },
 ];
 
@@ -123,6 +111,7 @@ export default function Project() {
   );
 
   const filteredProjects = useMemo(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     return projects.filter((project) => {
       const matchesTech =
         !techFilter || project.techCategory.includes(techFilter);
@@ -167,10 +156,10 @@ export default function Project() {
                   key={p.slug}
                   title={p.title}
                   category={p.for}
-                  views={p.views}
-                  likes={p.likes}
                   image={p.image}
-                  slug="id1"
+                  slug={p.slug}
+                  techCategory={p.techCategory}
+                  serviceCategory={p.serviceCategory}
                 />
               );
             })

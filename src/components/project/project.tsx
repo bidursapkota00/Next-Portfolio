@@ -15,6 +15,9 @@ const projects = [
     ],
     link: "https://dallotech.com/",
     image: "/images/dallotech.png",
+    slug: "dallotech",
+    techCategory: ["nextjs"],
+    serviceCategory: ["full-stack"],
   },
   {
     title: "Online Job App",
@@ -27,6 +30,9 @@ const projects = [
     ],
     link: "https://www.evereuser.co.uk/",
     image: "/images/everest.png",
+    slug: "online-job-app",
+    techCategory: ["nextjs"],
+    serviceCategory: ["frontend"],
   },
   {
     title: "Codeyalaya",
@@ -39,6 +45,9 @@ const projects = [
     ],
     link: "https://github.com/bidursapkota00/codeyalaya-web-frontend",
     image: "/images/dallotech.png",
+    slug: "codeyalaya",
+    techCategory: ["nextjs", "nodejs", "system design"],
+    serviceCategory: ["full-stack"],
   },
 ];
 
@@ -56,8 +65,6 @@ export default function Project() {
               key={i}
               title={p.title}
               category={p.for}
-              views={Math.ceil(Math.random() * 100 + 60)}
-              likes={Math.ceil(Math.random() * 50)}
               image={p.image}
               slug="id1"
             />
