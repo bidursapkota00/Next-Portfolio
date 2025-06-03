@@ -4,52 +4,7 @@ import "./project.css";
 import Card from "../ui/card";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
-
-const projects = [
-  {
-    title: "Dallotech",
-    for: "Website",
-    expertise: "Company Website",
-    description: [
-      "Fully dynamic fullStack development of a company landing page",
-    ],
-    link: "https://dallotech.com/",
-    image: "/images/dallotech.png",
-    slug: "dallotech",
-    techCategory: ["nextjs"],
-    serviceCategory: ["full-stack"],
-  },
-  {
-    title: "Online Job App",
-    for: "Website",
-    expertise: "Entire Frontend",
-    description: [
-      "Created overall frontend for job application website",
-      "Implemented user friendly Forms for job posting and applying",
-      "API integration with backend",
-    ],
-    link: "https://www.evereuser.co.uk/",
-    image: "/images/everest.png",
-    slug: "online-job-app",
-    techCategory: ["nextjs"],
-    serviceCategory: ["frontend"],
-  },
-  {
-    title: "Codeyalaya",
-    for: "Website",
-    expertise: "Online coding institute",
-    description: [
-      "Create video lessons and start / end code files for each lessons",
-      "Students can buy and watch courses through website or mobile app",
-      "Integrated payment system",
-    ],
-    link: "https://github.com/bidursapkota00/codeyalaya-web-frontend",
-    image: "/images/dallotech.png",
-    slug: "codeyalaya",
-    techCategory: ["nextjs", "nodejs", "system design"],
-    serviceCategory: ["full-stack"],
-  },
-];
+import { threeProjects as projects } from "@/utils/data/projects";
 
 export default function Project() {
   return (
@@ -59,14 +14,13 @@ export default function Project() {
 
       <div className="project__container">
         {projects.map((p, i) => {
-          if (i > 2) return;
           return (
             <Card
               key={i}
               title={p.title}
               category={p.for}
               image={p.image}
-              slug="id1"
+              slug={p.slug}
             />
           );
         })}

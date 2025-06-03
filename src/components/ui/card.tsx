@@ -3,6 +3,7 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function RecentWork({
   image = "/images/cover_bg_1.jpg",
@@ -15,9 +16,9 @@ export default function RecentWork({
   const router = useRouter();
 
   return (
-    <div
+    <Link
       className="bg-white border border-gray-200 rounded-lg shadow-sm cursor-pointer"
-      onClick={() => router.push(`/projects/${slug}`)}
+      href={`/works/${slug}`}
     >
       {/* Title and Category */}
       <div className="p-4 pb-2">
@@ -42,7 +43,7 @@ export default function RecentWork({
           {techCategory.map((tech, index) => (
             <span
               key={`tech-${index}`}
-              className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 border border-blue-200"
+              className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 border border-blue-200 capitalize"
             >
               {tech}
             </span>
@@ -50,13 +51,13 @@ export default function RecentWork({
           {serviceCategory.map((service, index) => (
             <span
               key={`service-${index}`}
-              className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 border border-green-200"
+              className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 border border-green-200 capitalize"
             >
               {service}
             </span>
           ))}
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

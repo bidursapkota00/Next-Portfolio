@@ -5,7 +5,7 @@
   gap: 20px;
 }
 
-.project__container > div:last-child {
+.project__container > a:last-child {
   display: none;
 }
 
@@ -19,7 +19,7 @@
   .project__container {
     grid-template-columns: repeat(3, 1fr);
   }
-  .project__container > div:last-child {
+  .project__container > a:last-child {
     display: block;
   }
 }
