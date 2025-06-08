@@ -24,8 +24,12 @@ export async function generateMetadata({
   }
 
   return {
-    title: project.title,
-    description: project.expertise,
+    title: `${
+      project.title
+    } – Project by Bidur Sapkota | ${project.techCategory.join(", ")}`,
+    description: `${project.expertise} Built using ${project.techCategory.join(
+      ", "
+    )}. Part of Bidur Sapkota's full-stack development portfolio.`,
   };
 }
 

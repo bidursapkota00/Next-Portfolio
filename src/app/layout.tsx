@@ -18,9 +18,26 @@ const quicksand = Quicksand({
 });
 
 export const metadata: Metadata = {
-  title: "Bidur Sapkota - Next.js Website Developer | Website Designer | Nepal",
+  title:
+    "Bidur Sapkota – Full-Stack Developer & Lecturer | React, Node, Next.js | Nepal",
   description:
-    "I'm Bidur Sapkota, an experienced web developer from Nepal specializing in building modern, responsive websites with NextJS. I create high-performance, SEO-friendly web applications for businesses worldwide. Hire me for your next NextJS project.",
+    "I'm Bidur Sapkota, a full-stack web developer from Nepal. I build fast, SEO-friendly MERN Stack websites and apps. Available for freelance projects.",
+  keywords: [
+    "Full Stack Developer",
+    "React.js",
+    "React Native",
+    "Node.js",
+    "JavaScript",
+    "TypeScript",
+    "Next.js",
+    "Website Developer",
+    "Web Developer",
+    "Frontend Developer",
+    "Backend Developer",
+    "Electron.js",
+    "Mobile App Developer",
+    "Desktop App Developer",
+  ],
 };
 
 export default function RootLayout({
