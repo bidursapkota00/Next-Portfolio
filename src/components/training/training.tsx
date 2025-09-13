@@ -11,11 +11,11 @@ const trainings = [
     organization: "Udemy",
     github: "https://github.com/bidursapkota00/sql",
   },
-  {
-    title: "FastAPI - The Complete Course 2025 (Beginner + Advanced)",
-    organization: "Udemy",
-    github: "https://github.com/bidursapkota00/fastapi",
-  },
+  // {
+  //   title: "FastAPI - The Complete Course 2025 (Beginner + Advanced)",
+  //   organization: "Udemy",
+  //   github: "https://github.com/bidursapkota00/fastapi",
+  // },
   {
     title: "Build a Backend REST API with Python & Django - Advanced",
     organization: "Udemy",
@@ -27,11 +27,11 @@ const trainings = [
     organization: "codewithmosh.com",
     github: "https://github.com/bidursapkota00/java-mastery",
   },
-  {
-    title: "Next Auth V5 - Advanced Guide",
-    organization: "Youtube",
-    github: "https://github.com/bidursapkota00/next-auth-v5-advanced-guide",
-  },
+  // {
+  //   title: "Next Auth V5 - Advanced Guide",
+  //   organization: "Youtube",
+  //   github: "https://github.com/bidursapkota00/next-auth-v5-advanced-guide",
+  // },
   {
     title: "System Design for Beginners",
     organization: "neetcode.io",
@@ -43,38 +43,38 @@ const trainings = [
     github:
       "https://github.com/bidursapkota00/full-stack-development---system-design",
   },
-  {
-    title: "Build Responsive Real-World Websites with HTML and CSS",
-    organization: "Udemy",
-    github:
-      "https://github.com/bidursapkota00/Build-Responsive-Real-World-Websites-with-HTML-and-CSS",
-  },
+  // {
+  //   title: "Build Responsive Real-World Websites with HTML and CSS",
+  //   organization: "Udemy",
+  //   github:
+  //     "https://github.com/bidursapkota00/Build-Responsive-Real-World-Websites-with-HTML-and-CSS",
+  // },
   {
     title: "Learn HTML and CSS in 7 Days | Web Developer Bootcamp",
     organization: "Udemy",
     github:
       "https://github.com/bidursapkota00/Learn-HTML-and-CSS-in-7-Days---Web-Developer-Bootcamp",
   },
-  {
-    title: "NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)",
-    organization: "Udemy",
-    github: "",
-  },
-  {
-    title: "Next JS: The Complete Developer's Guide",
-    organization: "Udemy",
-    github: "",
-  },
-  {
-    title: "Flutter & Dart - The Complete Guide",
-    organization: "Udemy",
-    github: "",
-  },
-  {
-    title: "Basic Python",
-    organization: "Tech Axis",
-    github: "",
-  },
+  // {
+  //   title: "NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)",
+  //   organization: "Udemy",
+  //   github: "",
+  // },
+  // {
+  //   title: "Next JS: The Complete Developer's Guide",
+  //   organization: "Udemy",
+  //   github: "",
+  // },
+  // {
+  //   title: "Flutter & Dart - The Complete Guide",
+  //   organization: "Udemy",
+  //   github: "",
+  // },
+  // {
+  //   title: "Basic Python",
+  //   organization: "Tech Axis",
+  //   github: "",
+  // },
   // {
   //   title: "Machine Learning A-Z: AI, Python & R + ChatGPT Prize",
   //   organization: "Udemy",
