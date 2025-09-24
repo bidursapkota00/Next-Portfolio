@@ -54,7 +54,7 @@ export default async function Blog({ params }: BlogDetailPageProps) {
       <>
         <Sidebar />
         <ReadmeReader baseUrl={blog.baseUrl} markdown={markdown} />
-        <OtherBlogs slug={slug} />
+        {/* <OtherBlogs slug={slug} /> */}
       </>
     );
   } catch (err) {

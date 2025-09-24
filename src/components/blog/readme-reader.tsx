@@ -1,41 +1,9 @@
-"use client";
-
-import React, { useRef, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { coldarkCold } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import mermaid from "mermaid";
 import "./readme.css";
-
-const MermaidDiagram = ({ chart, id }: { chart: string; id: number }) => {
-  const elementRef = useRef<HTMLDivElement>(null);
-  const [diagramId] = useState(`mermaid-${Date.now()}-${id}`);
-
-  useEffect(() => {
-    if (!chart) return;
-    if (elementRef.current) {
-      try {
-        mermaid
-          .render(diagramId, chart)
-          .then(({ svg }) => {
-            if (elementRef.current) {
-              elementRef.current.innerHTML = svg;
-            }
-          })
-          .catch((error) => {
-            console.error("Mermaid render error:", error, chart);
-            elementRef.current!.innerHTML = `<pre class="text-red-600">${error}</pre>`;
-          });
-      } catch (error) {
-        console.error("Mermaid error:", error, chart);
-        elementRef.current!.innerHTML = `<pre class="text-red-600">${error}</pre>`;
-      }
-    }
-  }, [chart, diagramId]);
-
-  return <div ref={elementRef} className="my-4 flex justify-center" />;
-};
+import LoadMermaid from "./load-mermaid";
 
 interface ReadmeReaderProps {
   baseUrl: string;
@@ -43,25 +11,6 @@ interface ReadmeReaderProps {
 }
 
 const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
-  const mermaidRef = useRef<number>(0);
-
-  useEffect(() => {
-    // Initialize mermaid
-    mermaid.initialize({
-      theme: "default",
-      startOnLoad: false,
-      securityLevel: "loose",
-      fontFamily: "inherit",
-      fontSize: 16,
-      themeCSS: `
-                foreignObject {
-                  overflow: visible;
-                }
-              `,
-    });
-    mermaid.run();
-  }, []);
-
   // Helper function to generate ID from heading text
   const generateId = (children: any): string => {
     return children
@@ -94,7 +43,9 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       // Handle mermaid diagrams
       if (language === "mermaid") {
         return (
-          <MermaidDiagram chart={codeString.trim()} id={++mermaidRef.current} />
+          <pre suppressHydrationWarning className="mermaid">
+            {codeString.trim()}
+          </pre>
         );
       }
 
@@ -213,6 +164,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       <ReactMarkdown components={customRenderers} remarkPlugins={[remarkGfm]}>
         {markdown}
       </ReactMarkdown>
+      <LoadMermaid />
     </div>
   );
 };
