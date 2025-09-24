@@ -36,3 +36,5 @@ export const blogs: IBlogs[] = [
     category: ["Node", "Javascript", "Nest"],
   },
 ];
+
+export const threeBlogs = blogs.slice(0, 3);

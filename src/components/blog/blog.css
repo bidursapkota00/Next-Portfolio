@@ -1,0 +1,25 @@
+.blog__container {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+.blog__container > a:last-child {
+  display: none;
+}
+
+@media screen and (min-width: 500px) {
+  .blog__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .blog__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .blog__container > a:last-child {
+    display: block;
+  }
+}

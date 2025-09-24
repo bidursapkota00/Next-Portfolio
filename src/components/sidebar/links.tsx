@@ -10,6 +10,7 @@ export default function Links() {
     "experience",
     "work",
     "accomplishment",
+    "blog",
     "training",
     "contact",
   ];
