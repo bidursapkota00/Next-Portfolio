@@ -1,0 +1,12 @@
+.md-ol p,
+.md-ul p {
+  display: inline-block;
+}
+
+.md-ol ol,
+.md-ol ul,
+.md-ul ol,
+.md-ul ul {
+  margin-left: 20px;
+  list-style-type: circle;
+}
