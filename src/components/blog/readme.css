@@ -1,6 +1,6 @@
 .md-ol p,
 .md-ul p {
-  display: inline-block;
+  display: inline;
 }
 
 .md-ol ol,
