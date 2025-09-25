@@ -75,7 +75,7 @@ const FilterAppBar = ({
       )}
       {/* Results Count */}
       <div className="text-sm text-gray-500 py-2 px-8 text-end">
-        {length} project
+        {length} blog
         {length !== 1 ? "s" : ""} found
       </div>
     </>

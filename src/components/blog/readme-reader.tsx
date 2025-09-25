@@ -72,7 +72,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h2: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h2 id={id} className="text-4xl font-semibold mb-3 mt-6">
+        <h2 id={id} className="text-4xl font-bold mb-3 mt-6">
           {children}
         </h2>
       );
@@ -80,7 +80,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h3: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h3 id={id} className="text-3xl font-medium mb-2 mt-4">
+        <h3 id={id} className="text-3xl font-bold mb-2 mt-4">
           {children}
         </h3>
       );
@@ -88,7 +88,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h4: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h4 id={id} className="text-2xl font-medium mb-2 mt-4">
+        <h4 id={id} className="text-2xl font-bold mb-2 mt-4">
           {children}
         </h4>
       );
@@ -96,7 +96,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h5: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h5 id={id} className="text-xl font-medium mb-2 mt-4">
+        <h5 id={id} className="text-xl font-bold mb-2 mt-4">
           {children}
         </h5>
       );
@@ -104,7 +104,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h6: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h6 id={id} className="text-lg font-medium mb-2 mt-4">
+        <h6 id={id} className="text-lg font-bold mb-2 mt-4">
           {children}
         </h6>
       );
@@ -134,7 +134,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       <img
         src={`${baseUrl}/${src}`}
         alt={alt}
-        className="max-w-full h-auto shadow-sm my-4"
+        className="max-w-full h-auto bg-white shadow-sm my-4"
       />
     ),
     table: ({ children }: any) => (
