@@ -40,7 +40,7 @@ export const blogs: IBlogs[] = [
       "https://raw.githubusercontent.com/bidursapkota00/Mastering-TypeScript/refs/heads/main",
     url: "README.md",
     title: "TypeScript Complete Guide",
-    shortTitle: "Javascript",
+    shortTitle: "TypeScript",
     slug: "typescript-complete-guide",
     github: "https://github.com/bidursapkota00/Mastering-TypeScript",
     description: "",
