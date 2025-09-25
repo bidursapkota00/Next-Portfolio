@@ -21,7 +21,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/Design-Patterns",
     description: "",
     image: "/images/design-patterns.png",
-    category: ["OOP", "Java", "Design"],
+    category: ["OOP", "Java", "Design Patterns"],
   },
   {
     baseUrl:
@@ -130,6 +130,18 @@ export const blogs: IBlogs[] = [
     description: "",
     image: "/images/html-css.png",
     category: ["HTML", "CSS"],
+  },
+  {
+    baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/System-Design-for-Beginners/refs/heads/main",
+    url: "README.md",
+    title: "System Design Complete Guide",
+    shortTitle: "System Design",
+    slug: "system-design-complete-guide",
+    github: "https://github.com/bidursapkota00/System-Design-for-Beginners",
+    description: "",
+    image: "/images/system-design.webp",
+    category: ["System Design"],
   },
 ];
 

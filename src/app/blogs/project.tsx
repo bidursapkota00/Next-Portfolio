@@ -16,8 +16,6 @@ export default function Project() {
     []
   );
 
-  console.log(allCategories);
-
   const filteredBlogs = useMemo(() => {
     return blogs.filter((blog) => {
       return !categoryFilter || blog.category.includes(categoryFilter);

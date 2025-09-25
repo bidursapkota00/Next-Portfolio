@@ -134,7 +134,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       <img
         src={`${baseUrl}/${src}`}
         alt={alt}
-        className="max-w-full h-auto bg-white shadow-sm my-4"
+        className="max-w-full h-auto shadow-sm my-4"
       />
     ),
     table: ({ children }: any) => (
