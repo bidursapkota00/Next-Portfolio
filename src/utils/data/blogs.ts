@@ -143,6 +143,18 @@ export const blogs: IBlogs[] = [
     image: "/images/system-design.webp",
     category: ["System Design"],
   },
+  {
+    baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/sl/refs/heads/main",
+    url: "JS.md",
+    title: "JavaScript of Scripting Language, BCA",
+    shortTitle: "JavaScript: BCA",
+    slug: "javaScript-of-scripting-language-bca",
+    github: "https://github.com/bidursapkota00/sl/blob/main/JS.md",
+    description: "",
+    image: "/images/js.jpg",
+    category: ["JavaScript", "HTML", "CSS"],
+  },
 ];
 
 export const threeBlogs = blogs.slice(0, 3);
