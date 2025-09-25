@@ -1,9 +1,8 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { coldarkCold } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import "./readme.css";
 import LoadMermaid from "./load-mermaid";
+import CodeBlock from "./code-block";
 
 interface ReadmeReaderProps {
   baseUrl: string;
@@ -50,14 +49,12 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
 
       // Handle code blocks
       return (
-        <SyntaxHighlighter
-          style={coldarkCold}
+        <CodeBlock
           language={language}
           PreTag="div"
+          value={codeString}
           {...props}
-        >
-          {codeString}
-        </SyntaxHighlighter>
+        />
       );
     },
     h1: ({ children }: any) => {
