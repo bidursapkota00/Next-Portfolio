@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import ReadmeReader from "@/components/blog/readme-reader";
 import Sidebar from "@/components/sidebar/sidebar";
 import { blogs } from "@/utils/data/blogs";
+import ToggleFullScreen from "./toggle-full-screen";
 
 export async function generateStaticParams() {
   return blogs.map((blog) => ({
@@ -52,6 +53,7 @@ export default async function Blog({ params }: BlogDetailPageProps) {
 
     return (
       <>
+        <ToggleFullScreen />
         <Sidebar />
         <ReadmeReader baseUrl={blog.baseUrl} markdown={markdown} />
         {/* <OtherBlogs slug={slug} /> */}
