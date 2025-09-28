@@ -15,8 +15,8 @@ export default function Sidebar() {
             className="sidebar__image"
             src="/images/profile3.png"
             alt="Profile Image"
-            width={500}
-            height={500}
+            width={160}
+            height={160}
           />
           <h2 className="sidebar__name">bidur sapkota</h2>
           <h3 className="sidebar__job">

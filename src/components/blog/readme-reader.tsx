@@ -30,7 +30,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       if (inline) {
         return (
           <code
-            className="bg-gray-100 px-1 py-0.5 rounded font-mono"
+            className="bg-gray-100 px-1 py-0.5 rounded font-mono break-words"
             {...props}
           >
             {children}
@@ -60,7 +60,10 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h1: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h1 id={id} className="text-5xl font-bold mb-4 border-b pb-2">
+        <h1
+          id={id}
+          className="text-5xl font-bold mb-4 border-b pb-2 break-words"
+        >
           {children}
         </h1>
       );
@@ -68,7 +71,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h2: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h2 id={id} className="text-4xl font-bold mb-3 mt-6">
+        <h2 id={id} className="text-4xl font-bold mb-3 mt-6 break-words">
           {children}
         </h2>
       );
@@ -76,7 +79,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h3: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h3 id={id} className="text-3xl font-bold mb-2 mt-4">
+        <h3 id={id} className="text-3xl font-bold mb-2 mt-4 break-words">
           {children}
         </h3>
       );
@@ -84,7 +87,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h4: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h4 id={id} className="text-2xl font-bold mb-2 mt-4">
+        <h4 id={id} className="text-2xl font-bold mb-2 mt-4 break-words">
           {children}
         </h4>
       );
@@ -92,7 +95,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h5: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h5 id={id} className="text-xl font-bold mb-2 mt-4">
+        <h5 id={id} className="text-xl font-bold mb-2 mt-4 break-words">
           {children}
         </h5>
       );
@@ -100,7 +103,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h6: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h6 id={id} className="text-lg font-bold mb-2 mt-4">
+        <h6 id={id} className="text-lg font-bold mb-2 mt-4 break-words">
           {children}
         </h6>
       );
