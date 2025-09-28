@@ -6,9 +6,9 @@ import { Metadata } from "next";
 export function generateMetadata(): Metadata {
   return {
     title:
-      "Blogs by Bidur Sapkota – Full-Stack Developer & Lecturer | React, Node, Next.js | Nepal",
+      "Programming & Tech Blogs by Bidur Sapkota | Learn React, Next.js, NestJS, TypeScript, JavaScript, Git, TailwindCSS, Design Patterns, System Design & More",
     description:
-      "Discover Teachings by Bidur Sapkota, featuring React, Node.js, Next.js, and other modern technologies.",
+      "Explore complete programming guides and tutorials by Bidur Sapkota on modern full-stack development. Learn React, Next.js, NestJS, TypeScript, JavaScript, Git, TailwindCSS, HTML, CSS, Markdown, Design Patterns, System Design, DSA and more with step-by-step practical examples.",
   };
 }
 
