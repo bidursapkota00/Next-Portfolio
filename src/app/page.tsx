@@ -24,7 +24,7 @@ export default function Home() {
       <Project />
       <Accomplishment />
       <Blog />
-      <Training />
+      {/* <Training /> */}
       <Contact />
     </>
   );
