@@ -10,3 +10,7 @@
   margin-left: 20px;
   list-style-type: circle;
 }
+
+pre {
+  white-space: pre-wrap;
+}

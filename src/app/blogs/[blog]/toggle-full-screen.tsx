@@ -74,7 +74,7 @@ export default function ToggleFullScreen() {
       )}
 
       {showInfo && (
-        <div className="my-6 bg-yellow-100 border border-yellow-300 text-yellow-800 pl-12 py-3 rounded-lg shadow-md flex items-start justify-center gap-3">
+        <div className="m-5 bg-yellow-100 border border-yellow-300 text-yellow-800 pl-12 py-3 rounded-lg shadow-md flex items-start justify-center gap-3">
           <Info size={18} className="shrink-0 mt-0.5 text-yellow-600" />
           <div className="text-sm">
             <b>Double click to toggle Read Mode</b>.

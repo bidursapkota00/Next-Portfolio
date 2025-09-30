@@ -4,6 +4,7 @@ import ReadmeReader from "@/components/blog/readme-reader";
 import Sidebar from "@/components/sidebar/sidebar";
 import { blogs } from "@/utils/data/blogs";
 import ToggleFullScreen from "./toggle-full-screen";
+import { Link as LinkIcon } from "lucide-react";
 
 export async function generateStaticParams() {
   return blogs.map((blog) => ({
@@ -50,18 +51,50 @@ export default async function Blog({ params }: BlogDetailPageProps) {
       notFound();
     }
     const markdown = await response.text();
+    const [heading, rest] = splitHeadingAndRest(markdown);
 
     return (
       <>
         <ToggleFullScreen />
         <Sidebar />
-        <ReadmeReader baseUrl={blog.baseUrl} markdown={markdown} />
+        <h1 className="m-5 text-5xl font-bold mb-4 border-b pb-2 break-words">
+          {heading}
+        </h1>
+        <a
+          href={blog.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex mr-5 items-center justify-end gap-2 text-blue-600 hover:text-blue-800 underline"
+        >
+          <LinkIcon className="w-4 h-4" />
+          Github Link
+        </a>
+        <ReadmeReader baseUrl={blog.baseUrl} markdown={rest || ""} />
         {/* <OtherBlogs slug={slug} /> */}
       </>
     );
   } catch (err) {
     notFound();
   }
+}
+
+function splitHeadingAndRest(str: string) {
+  const firstNewlineIndex = str.indexOf("\n"); // find the first newline
+  let firstLine, rest;
+
+  if (firstNewlineIndex === -1) {
+    // no newline at all
+    firstLine = str;
+    rest = "";
+  } else {
+    firstLine = str.slice(0, firstNewlineIndex);
+    rest = str.slice(firstNewlineIndex + 1);
+  }
+
+  if (firstLine.startsWith("# ")) {
+    return [firstLine.split("# ")[1].trim(), rest.trim()];
+  }
+  return [null, str.trim()];
 }
 
 function OtherBlogs({ slug }: { slug: string }) {
