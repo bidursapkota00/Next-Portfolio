@@ -6,7 +6,7 @@ import { Filter } from "lucide-react";
 import { blogs } from "@/utils/data/blogs";
 import RecentBlog from "./card";
 
-export default function Project() {
+export default function BlogList() {
   const [categoryFilter, setCategoryFilter] = useState<string>("");
 
   const { allCategories } = useMemo(

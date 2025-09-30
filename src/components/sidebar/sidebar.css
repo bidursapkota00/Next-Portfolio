@@ -123,21 +123,6 @@
   width: 100%;
 }
 
-.sidebar__copyright {
-  padding: 0 20px;
-  margin-bottom: 30px;
-  color: rgba(0, 0, 0, 0.5);
-  text-align: center;
-  font-size: 14px;
-  line-height: 2;
-  font-family: var(--font-quicksand);
-  justify-self: flex-end;
-}
-
-.sidebar__copyright > span {
-  color: #2c98f0;
-}
-
 @media screen and (min-width: 768px) {
   .sidebar__hamburger {
     display: none;

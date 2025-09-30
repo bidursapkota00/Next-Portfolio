@@ -1,7 +1,7 @@
 import Sidebar from "@/components/sidebar/sidebar";
 import React from "react";
-import Project from "./project";
 import { Metadata } from "next";
+import BlogList from "./blog-list";
 
 export function generateMetadata(): Metadata {
   return {
@@ -16,7 +16,7 @@ export default function Blogs() {
   return (
     <>
       <Sidebar />
-      <Project />
+      <BlogList />
     </>
   );
 }

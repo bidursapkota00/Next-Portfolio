@@ -25,11 +25,6 @@ export default function Sidebar() {
         </div>
 
         <Links />
-
-        <p className="sidebar__copyright">
-          &copy; Copyright &copy; 2024 All rights reserved | This template is
-          made with &#x2764; by <span>Bidur</span>
-        </p>
       </div>
     </nav>
   );

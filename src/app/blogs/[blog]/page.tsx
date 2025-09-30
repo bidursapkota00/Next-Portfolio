@@ -55,6 +55,13 @@ export default async function Blog({ params }: BlogDetailPageProps) {
 
     return (
       <>
+        <style>
+          {`
+        footer {
+          margin-top: 50px;
+        }
+      `}
+        </style>
         <ToggleFullScreen />
         <Sidebar />
         <h1 className="m-5 text-5xl font-bold mb-4 border-b pb-2 break-words">
