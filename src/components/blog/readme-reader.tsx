@@ -16,7 +16,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       .toString()
       .toLowerCase()
       .replace(/[^\w\s-]/g, "") // Remove special characters
-      .replace(/\s+/g, "-") // Replace spaces with hyphens
+      .replace(/\s+?/g, "-") // Replace spaces with hyphens
       .trim();
   };
 

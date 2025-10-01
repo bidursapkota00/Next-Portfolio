@@ -67,15 +67,17 @@ export default async function Blog({ params }: BlogDetailPageProps) {
         <h1 className="m-5 text-5xl font-bold mb-4 border-b pb-2 break-words">
           {heading}
         </h1>
-        <a
-          href={blog.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex mr-5 items-center justify-end gap-2 text-blue-600 hover:text-blue-800 underline"
-        >
-          <LinkIcon className="w-4 h-4" />
-          Github Link
-        </a>
+        <div className="flex justify-end mx-5">
+          <a
+            href={blog.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 underline"
+          >
+            <LinkIcon className="w-4 h-4" />
+            Github Link
+          </a>
+        </div>
         <ReadmeReader baseUrl={blog.baseUrl} markdown={rest || ""} />
         {/* <OtherBlogs slug={slug} /> */}
       </>
