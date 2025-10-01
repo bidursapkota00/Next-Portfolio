@@ -8,7 +8,16 @@
 .md-ul ol,
 .md-ul ul {
   margin-left: 20px;
+}
+
+.md-ol ul,
+.md-ul ul {
   list-style-type: circle;
+}
+
+.md-ol ol,
+.md-ul ol {
+  list-style-type: lower-alpha;
 }
 
 pre {
