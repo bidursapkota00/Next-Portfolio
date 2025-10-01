@@ -156,6 +156,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     td: ({ children }: any) => (
       <td className="border border-gray-300 px-4 py-2">{children}</td>
     ),
+    hr: () => <hr className="my-10 border-t-4" />,
   };
 
   return (
