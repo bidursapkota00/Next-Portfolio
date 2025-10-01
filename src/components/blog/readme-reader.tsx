@@ -1,5 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 import "./readme.css";
 import LoadMermaid from "./load-mermaid";
 import CodeBlock from "./code-block";
@@ -129,13 +130,25 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
         {children}
       </a>
     ),
-    img: ({ src, alt }: any) => (
-      <img
-        src={`${baseUrl}/${src}`}
-        alt={alt}
-        className="max-w-full h-auto shadow-sm my-4"
-      />
-    ),
+    img: ({ src, alt }: any) => {
+      if (String(src).startsWith("http")) {
+        return (
+          <img
+            src={src}
+            alt={alt}
+            className="max-w-full h-auto shadow-sm my-4"
+          />
+        );
+      }
+
+      return (
+        <img
+          src={`${baseUrl}/${src}`}
+          alt={alt}
+          className="max-w-full h-auto shadow-sm my-4"
+        />
+      );
+    },
     table: ({ children }: any) => (
       <div className="overflow-x-auto mb-4">
         <table className="min-w-full border-collapse border border-gray-300">
@@ -148,20 +161,29 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     ),
     tbody: ({ children }: any) => <tbody>{children}</tbody>,
     tr: ({ children }: any) => <tr className="hover:bg-gray-50">{children}</tr>,
-    th: ({ children }: any) => (
-      <th className="border border-gray-300 bg-gray-50 px-4 py-2 text-left font-semibold">
+    th: ({ children, style }: any) => (
+      <th
+        className="border border-gray-300 bg-gray-50 px-4 py-2 font-semibold"
+        style={style}
+      >
         {children}
       </th>
     ),
-    td: ({ children }: any) => (
-      <td className="border border-gray-300 px-4 py-2">{children}</td>
+    td: ({ children, style }: any) => (
+      <td className="border border-gray-300 px-4 py-2" style={style}>
+        {children}
+      </td>
     ),
     hr: () => <hr className="my-10 border-t-4" />,
   };
 
   return (
     <div className="m-5">
-      <ReactMarkdown components={customRenderers} remarkPlugins={[remarkGfm]}>
+      <ReactMarkdown
+        components={customRenderers}
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeRaw]}
+      >
         {markdown}
       </ReactMarkdown>
       <LoadMermaid />
