@@ -5,8 +5,10 @@ export interface IBlogs {
   shortTitle: string;
   slug: string;
   github: string;
+  youtube?: string;
   description: string;
   category: string[];
+  whatsNext?: string[];
   image: string;
 }
 

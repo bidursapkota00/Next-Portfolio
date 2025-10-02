@@ -59,7 +59,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
 
 function OtherProjects({ slug }: { slug: string }) {
   return (
-    <div className="mb-8 mt-[80px] pt-12 border-t border-gray-400">
+    <div className="mb-8 mt-[80px] pt-12 border-t border-gray-400 hidden xs500:block">
       <h2 className="text-4xl font-semibold text-gray-900 mb-6">
         Other Projects
       </h2>

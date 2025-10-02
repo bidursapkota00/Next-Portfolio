@@ -17,7 +17,7 @@ export default function RecentWork({
 
   return (
     <Link
-      className="bg-white border border-gray-200 rounded-lg shadow-sm cursor-pointer"
+      className="bg-white border border-gray-200 rounded-lg shadow-sm cursor-pointer last:hidden xl1200:last:block"
       href={`/works/${slug}`}
     >
       {/* Title and Category */}
