@@ -113,12 +113,10 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       <p className="mb-4 leading-relaxed">{children}</p>
     ),
     ul: ({ children }: any) => (
-      <ul className="list-disc list-inside mb-4 space-y-1 md-ul">{children}</ul>
+      <ul className="list-disc mb-4 ml-8 space-y-1 md-ul">{children}</ul>
     ),
     ol: ({ children }: any) => (
-      <ol className="list-decimal list-inside mb-4 space-y-1 md-ol">
-        {children}
-      </ol>
+      <ol className="list-decimal mb-4 ml-8 space-y-1 md-ol">{children}</ol>
     ),
     blockquote: ({ children }: any) => (
       <blockquote className="border-l-4 border-gray-300 pl-4 italic my-4 bg-gray-50 py-2">
