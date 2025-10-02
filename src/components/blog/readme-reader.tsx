@@ -137,8 +137,21 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       </a>
     ),
     img: ({ src, alt }: any) => {
-      const imgSrc = String(src).startsWith("http") ? src : `${baseUrl}/${src}`;
+      if (alt === "Bidur Sapkota") {
+        return (
+          <span className="relative inline-block">
+            <Image
+              src="/images/profile3.png"
+              alt={alt}
+              width={64}
+              height={64}
+              className="w-[48px] shadow-sm"
+            />
+          </span>
+        );
+      }
 
+      const imgSrc = String(src).startsWith("http") ? src : `${baseUrl}/${src}`;
       return (
         <span
           className="relative block w-full my-4"
