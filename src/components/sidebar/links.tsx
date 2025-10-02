@@ -1,36 +1,49 @@
 "use client";
-import React from "react";
+
+import Link from "next/link";
 
 export default function Links() {
   const links = [
-    "home",
-    "about",
-    "education",
-    "skills",
-    "experience",
-    "work",
-    "accomplishment",
-    "blog",
-    "training",
-    "contact",
+    ["home", "/#hero"],
+    ["about", "/#about"],
+    ["education", "/#education"],
+    ["skills", "/#skills"],
+    ["experience", "/#experience"],
+    ["work", "/works"],
+    ["accomplishment", "/#accomplishment"],
+    ["blog", "/blogs"],
+    ["contact", "/#contact"],
   ];
   const linkClicked = () => {
     const hamburger = document.getElementById("hamburger");
     hamburger?.classList.remove("sidebar__hamburger__translate");
+
+    const overlay = document.getElementById("sidebar__overlay");
+    overlay?.classList.remove("sidebar__overlay__block");
   };
 
   return (
     <ul className="sidebar__list">
       {links.map((l) => {
-        return (
+        const isHashLink = l[1].startsWith("/#");
+        return isHashLink ? (
           <a
-            href={l === "home" ? "/#hero" : "/#" + l}
+            href={l[1]}
             className="sidebar__list__item"
-            key={l}
+            key={l[1]}
             onClick={linkClicked}
           >
-            {l}
+            {l[0]}
           </a>
+        ) : (
+          <Link
+            href={l[1]}
+            className="sidebar__list__item"
+            onClick={linkClicked}
+            key={l[1]}
+          >
+            {l[0]}
+          </Link>
         );
       })}
     </ul>

@@ -7,7 +7,6 @@ import Hero from "@/components/hero/hero";
 import Project from "@/components/project/project";
 import Sidebar from "@/components/sidebar/sidebar";
 import Skills from "@/components/skills/skills";
-import Training from "@/components/training/training";
 import WorkCount from "@/components/work-count/work-count";
 import Blog from "@/components/blog/blog";
 
@@ -24,7 +23,6 @@ export default function Home() {
       <Project />
       <Accomplishment />
       <Blog />
-      {/* <Training /> */}
       <Contact />
     </>
   );

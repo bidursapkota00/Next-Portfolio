@@ -5,6 +5,9 @@ export default function Hamburger() {
   const hamburgerClicked = () => {
     const hamburger = document.getElementById("hamburger");
     hamburger?.classList.toggle("sidebar__hamburger__translate");
+
+    const overlay = document.getElementById("sidebar__overlay");
+    overlay?.classList.toggle("sidebar__overlay__block");
   };
 
   return (
