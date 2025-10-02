@@ -72,7 +72,7 @@ export default async function Blog({ params }: BlogDetailPageProps) {
             href={blog.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 underline"
+            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 underline text-lg"
           >
             <LinkIcon className="w-4 h-4" />
             Github Link

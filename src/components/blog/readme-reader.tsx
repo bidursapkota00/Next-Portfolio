@@ -4,6 +4,7 @@ import rehypeRaw from "rehype-raw";
 import "./readme.css";
 import LoadMermaid from "./load-mermaid";
 import CodeBlock from "./code-block";
+import Image from "next/image";
 
 interface ReadmeReaderProps {
   baseUrl: string;
@@ -63,7 +64,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       return (
         <h1
           id={id}
-          className="text-5xl font-bold mb-4 border-b pb-2 break-words"
+          className="text-5xl font-bold mb-4 mt-8 border-b pb-2 break-words"
         >
           {children}
         </h1>
@@ -110,65 +111,72 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       );
     },
     p: ({ children }: any) => (
-      <p className="mb-4 leading-relaxed">{children}</p>
+      <p className="mb-4 leading-relaxed text-lg">{children}</p>
     ),
     ul: ({ children }: any) => (
-      <ul className="list-disc mb-4 ml-8 space-y-1 md-ul">{children}</ul>
+      <ul className="list-disc mb-4 ml-8 space-y-1 md-ul text-lg">
+        {children}
+      </ul>
     ),
     ol: ({ children }: any) => (
-      <ol className="list-decimal mb-4 ml-8 space-y-1 md-ol">{children}</ol>
+      <ol className="list-decimal mb-4 ml-8 space-y-1 md-ol text-lg">
+        {children}
+      </ol>
     ),
     blockquote: ({ children }: any) => (
-      <blockquote className="border-l-4 border-gray-300 pl-4 italic my-4 bg-gray-50 py-2">
+      <blockquote className="border-l-4 border-gray-300 pl-4 italic my-4 bg-gray-50 py-2 text-lg">
         {children}
       </blockquote>
     ),
     a: ({ href, children }: any) => (
-      <a href={href} className="text-blue-600 hover:text-blue-800 underline">
+      <a
+        href={href}
+        className="text-blue-600 hover:text-blue-800 underline text-lg"
+      >
         {children}
       </a>
     ),
     img: ({ src, alt }: any) => {
-      if (String(src).startsWith("http")) {
-        return (
-          <img
-            src={src}
-            alt={alt}
-            className="max-w-full h-auto shadow-sm my-4"
-          />
-        );
-      }
+      const imgSrc = String(src).startsWith("http") ? src : `${baseUrl}/${src}`;
 
       return (
-        <img
-          src={`${baseUrl}/${src}`}
-          alt={alt}
-          className="max-w-full h-auto shadow-sm my-4"
-        />
+        <span
+          className="relative block w-full my-4"
+          style={{ aspectRatio: "16/9" }}
+        >
+          <Image
+            src={imgSrc}
+            alt={alt}
+            fill
+            className="object-contain shadow-sm"
+          />
+        </span>
       );
     },
     table: ({ children }: any) => (
-      <div className="overflow-x-auto mb-4">
-        <table className="min-w-full border-collapse border border-gray-300">
+      <div className="overflow-x-auto mb-4 text-lg">
+        <table className="min-w-full border-collapse border border-gray-300 text-lg">
           {children}
         </table>
       </div>
     ),
     thead: ({ children }: any) => (
-      <thead className="bg-gray-50">{children}</thead>
+      <thead className="bg-gray-50 text-lg">{children}</thead>
     ),
-    tbody: ({ children }: any) => <tbody>{children}</tbody>,
-    tr: ({ children }: any) => <tr className="hover:bg-gray-50">{children}</tr>,
+    tbody: ({ children }: any) => <tbody className="text-lg">{children}</tbody>,
+    tr: ({ children }: any) => (
+      <tr className="hover:bg-gray-50 text-lg">{children}</tr>
+    ),
     th: ({ children, style }: any) => (
       <th
-        className="border border-gray-300 bg-gray-50 px-4 py-2 font-semibold"
+        className="border border-gray-300 bg-gray-50 px-4 py-2 font-semibold text-lg"
         style={style}
       >
         {children}
       </th>
     ),
     td: ({ children, style }: any) => (
-      <td className="border border-gray-300 px-4 py-2" style={style}>
+      <td className="border border-gray-300 px-4 py-2 text-lg" style={style}>
         {children}
       </td>
     ),
