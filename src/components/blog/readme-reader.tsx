@@ -136,13 +136,14 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
         {children}
       </a>
     ),
-    img: ({ src, alt }: any) => {
+    img: ({ src, alt, title }: any) => {
       if (alt === "Bidur Sapkota") {
         return (
           <span className="relative inline-block">
             <Image
               src="/images/profile3.png"
               alt={alt}
+              title={title}
               width={64}
               height={64}
               className="w-[48px] shadow-sm"
@@ -160,6 +161,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
           <Image
             src={imgSrc}
             alt={alt}
+            title={title}
             fill
             className="object-contain shadow-sm"
           />

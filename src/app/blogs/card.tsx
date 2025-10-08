@@ -8,6 +8,7 @@ import Link from "next/link";
 export default function RecentBlog({
   image = "/images/cover_bg_1.jpg",
   title = "WORK 01",
+  pageTitle = "",
   category = "Website",
   categories = ["nextjs"],
   slug = "slug1",
@@ -29,6 +30,7 @@ export default function RecentBlog({
         <Image
           src={image}
           alt={`${title} Image`}
+          title={`${pageTitle} – Blog by Bidur Sapkota`}
           width={683}
           height={384}
           className="w-full object-fit rounded-[12px]"

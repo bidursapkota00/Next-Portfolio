@@ -17,7 +17,8 @@ export default function Sidebar() {
             <Image
               className="sidebar__image"
               src="/images/profile3.png"
-              alt="Profile Image"
+              alt="Bidur Sapkota - Profile Image"
+              title="Bidur Sapkota - Developer"
               width={160}
               height={160}
             />

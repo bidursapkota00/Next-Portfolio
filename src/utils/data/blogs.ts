@@ -70,12 +70,12 @@ export const blogs: IBlogs[] = [
       "https://raw.githubusercontent.com/bidursapkota00/MEN-Stack-API-Development/refs/heads/main",
     url: "README.md",
     title: "MongoDB, Express and Node Complete Guide",
-    shortTitle: "Express with Node",
+    shortTitle: "Express and Node",
     slug: "mongodb-express-node-complete-guide",
     github: "https://github.com/bidursapkota00/MEN-Stack-API-Development",
     description:
       "Learn backend development using the MEN stack—MongoDB, Express, Node.js, jest for testing, documentation with swagger—to build robust RESTful APIs.",
-    image: "/images/men.jpg",
+    image: "/images/2-node-post.jpg",
     category: ["Express", "Node", "MongoDB"],
   },
   {
@@ -127,7 +127,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/Readme",
     description:
       "Master Markdown for documentation, GitHub READMEs, blogging, and note-taking with syntax examples and formatting tricks.",
-    image: "/images/md.png",
+    image: "/images/1-markdown-post.jpg",
     category: ["Markdown"],
   },
   {

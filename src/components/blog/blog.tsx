@@ -18,6 +18,7 @@ export default function Blog() {
             <RecentBlog
               key={i}
               title={b.shortTitle}
+              pageTitle={b.title}
               image={b.image}
               slug={b.slug}
               categories={b.category}

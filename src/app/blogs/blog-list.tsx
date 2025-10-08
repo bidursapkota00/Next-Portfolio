@@ -57,6 +57,7 @@ export default function BlogList() {
                 <RecentBlog
                   key={b.slug}
                   title={b.shortTitle}
+                  pageTitle={b.title}
                   image={b.image}
                   slug={b.slug}
                   categories={b.category}

@@ -37,7 +37,8 @@ export default function Hero() {
         <Image
           className="object-cover"
           src="/images/bg.jpg"
-          alt="Background Image"
+          alt="Bidur Sapkota Cover Photo"
+          title="Bidur Sapkota - Developer"
           fill
         />
       </div>
