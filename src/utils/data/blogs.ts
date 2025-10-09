@@ -162,7 +162,7 @@ export const blogs: IBlogs[] = [
     url: "JS.md",
     title: "JavaScript of Scripting Language, BCA",
     shortTitle: "JavaScript: BCA",
-    slug: "javaScript-of-scripting-language-bca",
+    slug: "javascript-of-scripting-language-bca",
     github: "https://github.com/bidursapkota00/sl/blob/main/JS.md",
     description:
       "A JavaScript guide tailored for BCA students, aligned with the Scripting Language syllabus, including examples and exercises.",

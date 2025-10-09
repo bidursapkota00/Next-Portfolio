@@ -1,12 +1,6 @@
 import React from "react";
-import {
-  FaLinkedin,
-  FaGithub,
-  FaInstagram,
-  FaYoutube,
-  FaFacebook,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaInstagram, FaFacebook } from "react-icons/fa";
+import Copyright from "./copyright";
 
 export default function Footer() {
   return (
@@ -68,9 +62,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <p className="text-sm text-gray-500 mt-6">
-          © {new Date().getFullYear()} Bidur Sapkota. All rights reserved.
-        </p>
+        <Copyright />
       </div>
     </footer>
   );
