@@ -64,7 +64,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       return (
         <h1
           id={id}
-          className="text-5xl font-bold mb-4 mt-8 border-b pb-2 break-words"
+          className="text-[2.5rem] leading-[2.75rem] py-4 font-bold mb-4 mt-8 border-b pb-2 break-words"
         >
           {children}
         </h1>

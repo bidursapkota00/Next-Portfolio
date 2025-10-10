@@ -64,7 +64,7 @@ export default async function Blog({ params }: BlogDetailPageProps) {
         </style>
         <ToggleFullScreen />
         <Sidebar />
-        <h1 className="m-5 text-5xl font-bold mb-4 border-b pb-2 break-words">
+        <h1 className="m-5 text-[2.5rem] leading-[2.75rem] py-4 font-bold mb-4 border-b pb-2 break-words">
           {heading}
         </h1>
         <div className="flex justify-end mx-5">
