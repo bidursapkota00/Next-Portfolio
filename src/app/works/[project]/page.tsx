@@ -76,6 +76,7 @@ function OtherProjects({ slug }: { slug: string }) {
               techCategory={relatedProject.techCategory}
               serviceCategory={relatedProject.serviceCategory}
               slug={relatedProject.slug}
+              className="last:hidden xl1200:last:block"
             />
           ))}
       </div>

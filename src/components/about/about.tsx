@@ -50,7 +50,9 @@ export default function About() {
 
       <div className="about__happy">
         <h2>I am happy to know you that 30+ projects done sucessfully!</h2>
-        <a href="#contact">hire me</a>
+        <a href="#contact" className="about__hire_me">
+          hire me
+        </a>
       </div>
     </section>
   );

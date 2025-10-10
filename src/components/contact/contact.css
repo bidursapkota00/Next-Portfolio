@@ -59,6 +59,10 @@
   border: none;
 }
 
+.contact__button__vibrate {
+  animation: vibrate 0.3s linear infinite both;
+}
+
 .contact__send__loader {
   display: none;
   position: relative;

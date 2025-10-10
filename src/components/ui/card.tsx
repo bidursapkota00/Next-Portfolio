@@ -12,12 +12,13 @@ export default function RecentWork({
   techCategory = ["nextjs"],
   serviceCategory = ["full-stack"],
   slug = "slug1",
+  className = "",
 }) {
   const router = useRouter();
 
   return (
     <Link
-      className="bg-white border border-gray-200 rounded-lg shadow-sm cursor-pointer last:hidden xl1200:last:block"
+      className={`bg-white border border-gray-200 rounded-lg shadow-sm cursor-pointer ${className}`}
       href={`/works/${slug}`}
     >
       {/* Title and Category */}

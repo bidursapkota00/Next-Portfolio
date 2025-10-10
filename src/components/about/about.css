@@ -80,6 +80,11 @@
   background: transparent;
 }
 
+.about__hire_me {
+  display: inline-block;
+  animation: vibrate 0.3s linear infinite both;
+}
+
 .about__skills {
   display: none;
 }

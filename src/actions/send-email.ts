@@ -42,6 +42,12 @@ export async function sendEmail(
 
     return { message: "Email Sent Successfully!" };
   } catch (error) {
-    return { message: "Failed to send Email!", fields: parsed.data };
+    return {
+      message: "",
+      fields: parsed.data,
+      issues: [
+        "Failed to send email. Please check your internet connection and try again.",
+      ],
+    };
   }
 }

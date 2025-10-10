@@ -13,6 +13,7 @@ import { FormMessageSuccess } from "@/components/ui/comps/alert-success";
 
 export default function ContactForm() {
   const [isPending, startTransition] = useTransition();
+  const [clientError, setClientError] = React.useState<string | null>(null);
 
   const [state, formAction] = useFormState(sendEmail, {
     message: "",
@@ -33,9 +34,18 @@ export default function ContactForm() {
 
   const submitForm = (e: FormEvent) => {
     e.preventDefault();
+    setClientError(null); // Clear any previous client errors
+
     form.handleSubmit(() => {
-      startTransition(() => {
-        formAction(new FormData(formRef.current!));
+      startTransition(async () => {
+        try {
+          formAction(new FormData(formRef.current!));
+        } catch (error) {
+          console.error("Form submission error:", error);
+          setClientError(
+            "Unable to send message. Please check your internet connection and try again."
+          );
+        }
       });
     })(e);
   };
@@ -43,6 +53,7 @@ export default function ContactForm() {
   useEffect(() => {
     if (state.message !== "" && !state.issues) {
       form.reset();
+      setClientError(null);
     }
   }, [state, form]);
 
@@ -60,13 +71,13 @@ export default function ContactForm() {
         </div>
       )}
 
-      {state?.issues && (
+      {(state?.issues || clientError) && (
         <div className="p-[20px_0]">
           <FormMessageError
-            error={state.issues?.reduce(
-              (prev, issue) => prev + issue + "<br/>",
-              ""
-            )}
+            error={
+              clientError ||
+              state.issues?.reduce((prev, issue) => prev + issue + "<br/>", "")
+            }
           />
         </div>
       )}
@@ -126,7 +137,13 @@ export default function ContactForm() {
       />
 
       <div className="flex items-center mb-[100px]">
-        <button className="contact__button" type="submit" disabled={isPending}>
+        <button
+          className={`contact__button${
+            isPending ? "" : " contact__button__vibrate"
+          }`}
+          type="submit"
+          disabled={isPending}
+        >
           Send Message
         </button>
         <span

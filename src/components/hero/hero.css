@@ -19,18 +19,18 @@
   z-index: 1;
 }
 .hero__name {
-  animation: heroName 8s linear infinite;
+  animation: heroName 12s linear infinite;
 }
 .hero__job {
-  animation: heroJob 8s linear infinite;
+  animation: heroJob 12s linear infinite;
 }
 .hero__description {
   width: 100%;
   z-index: 1;
-  animation: heroDescription 8s linear infinite;
+  animation: heroDescription 12s linear infinite;
 }
 .hero__description2 {
-  animation: heroDescription2 8s linear infinite;
+  animation: heroDescription2 12s linear infinite;
 }
 .hero__edu {
   font-family: var(--font-quicksand);
@@ -52,6 +52,8 @@
   border-radius: 2px;
   border: 1px solid black;
   cursor: pointer;
+  display: inline-block;
+  animation: vibrate 0.3s linear infinite both;
 }
 
 .hero__btn > svg {
@@ -96,19 +98,14 @@
     opacity: 0;
     transform: translateY(100px);
   }
-  10% {
-    display: block;
-    opacity: 1;
-    transform: translateY(0px);
-  }
-  48% {
+  7% {
     display: block;
     opacity: 1;
     transform: translateY(0px);
   }
   49% {
     display: block;
-    opacity: 0;
+    opacity: 1;
     transform: translateY(0px);
   }
   50% {
@@ -138,7 +135,7 @@
     opacity: 0;
     transform: translateY(100px);
   }
-  61% {
+  58% {
     display: block;
     opacity: 1;
     transform: translateY(0px);
@@ -155,20 +152,15 @@
     transform: translateY(100px);
     opacity: 0;
   }
-  10% {
-    display: block;
-    transform: translateY(0px);
-    opacity: 1;
-  }
-  48% {
+  7% {
     display: block;
     transform: translateY(0px);
     opacity: 1;
   }
   49% {
     display: block;
-    opacity: 0;
     transform: translateY(0px);
+    opacity: 1;
   }
   50% {
     display: none;
@@ -197,7 +189,7 @@
     opacity: 0;
     transform: translateY(100px);
   }
-  61% {
+  58% {
     display: block;
     opacity: 1;
     transform: translateY(0px);
