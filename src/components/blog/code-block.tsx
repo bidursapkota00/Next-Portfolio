@@ -22,7 +22,7 @@ const CodeBlock = ({
   };
 
   return (
-    <div className="relative group mb-10 mt-5">
+    <div className="relative group mb-10 mt-3">
       <button
         onClick={handleCopy}
         className="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition"

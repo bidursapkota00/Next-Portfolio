@@ -166,7 +166,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/sl/blob/main/JS.md",
     description:
       "A JavaScript guide tailored for BCA students, aligned with the Scripting Language syllabus, including examples and exercises.",
-    image: "/images/js.jpg",
+    image: "/images/3-js-post.jpg",
     category: ["JavaScript", "HTML", "CSS"],
   },
 ];
