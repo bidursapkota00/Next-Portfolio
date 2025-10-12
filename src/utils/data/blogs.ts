@@ -169,6 +169,19 @@ export const blogs: IBlogs[] = [
     image: "/images/3-js-post.jpg",
     category: ["JavaScript", "HTML", "CSS"],
   },
+  {
+    baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/React/refs/heads/main",
+    url: "README.md",
+    title: "React.js Complete Guide",
+    shortTitle: "React",
+    slug: "react-complete-guide",
+    github: "https://github.com/bidursapkota00/React",
+    description:
+      "Master React step-by-step with this complete TypeScript-based guide. Learn everything from JSX fundamentals, components, and state management to advanced hooks, custom logic, and React Router. Perfect for beginners and developers looking to build modern, scalable, and type-safe React applications.",
+    image: "/images/4-react-post.jpg",
+    category: ["React", "TypeScript"],
+  },
 ];
 
 export const threeBlogs = blogs.slice(0, 3);

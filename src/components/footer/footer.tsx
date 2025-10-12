@@ -1,5 +1,11 @@
 import React from "react";
-import { FaLinkedin, FaGithub, FaInstagram, FaFacebook } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaGithub,
+  FaYoutube,
+  FaFacebook,
+  FaInstagram,
+} from "react-icons/fa";
 import Copyright from "./copyright";
 
 export default function Footer() {
@@ -28,21 +34,13 @@ export default function Footer() {
             <FaGithub />
           </a>
           <a
-            href="https://www.instagram.com/bidursapkota00"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-pink-500 transition-colors"
-          >
-            <FaInstagram />
-          </a>
-          {/* <a
-            href="https://youtube.com/your-youtube"
+            href="https://www.youtube.com/@codeyalaya"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-red-600 transition-colors"
           >
             <FaYoutube />
-          </a> */}
+          </a>
           <a
             href="https://www.facebook.com/bdur.sapkota"
             target="_blank"
@@ -50,6 +48,14 @@ export default function Footer() {
             className="hover:text-blue-500 transition-colors"
           >
             <FaFacebook />
+          </a>
+          <a
+            href="https://www.instagram.com/bidursapkota00"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-pink-500 transition-colors"
+          >
+            <FaInstagram />
           </a>
           {/* <a
             href="https://twitter.com/your-twitter"

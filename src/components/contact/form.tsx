@@ -1,24 +1,27 @@
 "use client";
-import React, { FormEvent, useRef, useTransition, useEffect } from "react";
-import { useFormState } from "react-dom";
+import React, { FormEvent, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { sendEmail } from "@/actions/send-email";
 import { contactSchema } from "@/schema/contact-schema";
 import ContactInput from "./input";
 import { FormMessageError } from "@/components/ui/comps/alert-error";
 import { FormMessageSuccess } from "@/components/ui/comps/alert-success";
 
-export default function ContactForm() {
-  const [isPending, startTransition] = useTransition();
-  const [clientError, setClientError] = React.useState<string | null>(null);
+type ContactFormData = z.infer<typeof contactSchema>;
 
-  const [state, formAction] = useFormState(sendEmail, {
-    message: "",
-  });
-  const form = useForm<z.output<typeof contactSchema>>({
+interface ApiResponse {
+  success: boolean;
+  message: string;
+  issues?: string[];
+}
+
+export default function ContactForm() {
+  const [isPending, setIsPending] = useState(false);
+  const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
+
+  const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
       name: "",
@@ -26,58 +29,90 @@ export default function ContactForm() {
       subject: "",
       message: "",
       source: "Portfolio",
-      ...(state?.fields ?? {}),
     },
   });
 
-  const formRef = useRef<HTMLFormElement>(null);
+  const onSubmit = async (data: ContactFormData) => {
+    setIsPending(true);
+    setApiResponse(null);
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      // Check if response is ok (status 200-299)
+      if (!response.ok) {
+        // Try to parse error response
+        try {
+          const errorResult: ApiResponse = await response.json();
+          setApiResponse(errorResult);
+        } catch (parseError) {
+          // If JSON parsing fails, show generic error based on status
+          setApiResponse({
+            success: false,
+            message: "Server error",
+            issues: [
+              response.status === 500
+                ? "Server error occurred. Please try again later."
+                : response.status === 400
+                ? "Invalid form data. Please check your inputs."
+                : `Error: ${response.status}. Please try again.`,
+            ],
+          });
+        }
+        return;
+      }
+
+      const result: ApiResponse = await response.json();
+
+      setApiResponse(result);
+
+      if (result.success) {
+        form.reset();
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setApiResponse({
+        success: false,
+        message: "Network error",
+        issues: [
+          "Unable to send message. Please check your internet connection and try again.",
+        ],
+      });
+    } finally {
+      setIsPending(false);
+    }
+  };
 
   const submitForm = (e: FormEvent) => {
     e.preventDefault();
-    setClientError(null); // Clear any previous client errors
-
-    form.handleSubmit(() => {
-      startTransition(async () => {
-        try {
-          formAction(new FormData(formRef.current!));
-        } catch (error) {
-          console.error("Form submission error:", error);
-          setClientError(
-            "Unable to send message. Please check your internet connection and try again."
-          );
-        }
-      });
-    })(e);
+    form.handleSubmit(onSubmit)(e);
   };
-
-  useEffect(() => {
-    if (state.message !== "" && !state.issues) {
-      form.reset();
-      setClientError(null);
-    }
-  }, [state, form]);
 
   return (
     <form
       className="contact__form"
       id="portfolio-contact-form"
-      ref={formRef}
-      action={formAction}
       onSubmit={submitForm}
     >
-      {state?.message !== "" && !state.issues && (
+      {apiResponse?.success && (
         <div className="p-[20px_0]">
-          <FormMessageSuccess success={state.message} />
+          <FormMessageSuccess success={apiResponse.message} />
         </div>
       )}
 
-      {(state?.issues || clientError) && (
+      {apiResponse?.issues && (
         <div className="p-[20px_0]">
           <FormMessageError
-            error={
-              clientError ||
-              state.issues?.reduce((prev, issue) => prev + issue + "<br/>", "")
-            }
+            error={apiResponse.issues.reduce(
+              (prev, issue) => prev + issue + "<br/>",
+              ""
+            )}
           />
         </div>
       )}
@@ -87,7 +122,7 @@ export default function ContactForm() {
         inputName="name"
         inputPlaceholder="Name"
         type="text"
-        focus={state.message ? true : false}
+        focus={apiResponse?.success || false}
       />
       <ContactInput
         form={form}
@@ -118,7 +153,6 @@ export default function ContactForm() {
           name="message"
           placeholder="Message"
           rows={4}
-          defaultValue={form.formState.defaultValues?.message}
         />
         {form.formState.errors.message && (
           <p className="text-sm text-red-500 absolute top-[calc(100%-36px)] left-0">
