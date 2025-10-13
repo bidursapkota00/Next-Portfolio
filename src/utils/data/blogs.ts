@@ -49,7 +49,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/Mastering-TypeScript",
     description:
       "Master TypeScript fundamentals, advanced types, generics, and how to integrate it seamlessly in modern JavaScript projects.",
-    image: "/images/ts.png",
+    image: "/images/5-ts-post.jpg",
     category: ["TypeScript", "JavaScript"],
   },
   {
