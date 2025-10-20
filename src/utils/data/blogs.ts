@@ -147,13 +147,13 @@ export const blogs: IBlogs[] = [
     baseUrl:
       "https://raw.githubusercontent.com/bidursapkota00/System-Design-for-Beginners/refs/heads/main",
     url: "README.md",
-    title: "System Design Complete Guide",
+    title: "System Design Concepts for Beginners",
     shortTitle: "System Design",
-    slug: "system-design-complete-guide",
+    slug: "system-design-concepts-for-beginners",
     github: "https://github.com/bidursapkota00/System-Design-for-Beginners",
     description:
       "Learn system design concepts—scalability, caching, load balancing, databases, and distributed systems for interviews and real-world apps.",
-    image: "/images/system-design.webp",
+    image: "/images/6-system-design-post.jpg",
     category: ["System Design"],
   },
   {
