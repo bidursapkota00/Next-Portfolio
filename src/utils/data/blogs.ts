@@ -134,12 +134,12 @@ export const blogs: IBlogs[] = [
     baseUrl:
       "https://raw.githubusercontent.com/bidursapkota00/HTML-and-CSS/refs/heads/main",
     url: "README.md",
-    title: "HTML and CSS Complete Guide",
+    title: "HTML and CSS Complete Guide with Portfolio Project",
     shortTitle: "HTML CSS",
-    slug: "html-css-complete-guide",
+    slug: "html-css-complete-guide-with-portfolio-project",
     github: "https://github.com/bidursapkota00/HTML-and-CSS",
     description:
-      "A complete guide to building websites with HTML and CSS. Learn layouts, flexbox, grid, responsive design, and best practices.",
+      "A complete guide to building websites with HTML and CSS. Learn layouts, flexbox, grid, responsive design, and best practices. Also learn to build a professional responsive mobile first portfolio website from scratch using HTML and CSS.",
     image: "/images/7-html-css-guide.jpg",
     category: ["HTML", "CSS"],
   },
