@@ -140,7 +140,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/HTML-and-CSS",
     description:
       "A complete guide to building websites with HTML and CSS. Learn layouts, flexbox, grid, responsive design, and best practices.",
-    image: "/images/html-css.png",
+    image: "/images/7-html-css-guide.jpg",
     category: ["HTML", "CSS"],
   },
   {
