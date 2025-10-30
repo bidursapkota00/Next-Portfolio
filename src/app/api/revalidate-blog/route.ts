@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { blogs } from "@/utils/data/blogs";
 
 export async function POST(req: NextRequest) {
@@ -26,10 +26,12 @@ export async function POST(req: NextRequest) {
     }
 
     revalidatePath(`/blogs/${slug}`);
+    revalidateTag(slug); // <-- ADD THIS LINE
 
     return NextResponse.json({
       revalidated: true,
       path: `/blogs/${slug}`,
+      tag: slug,
     });
   } catch (error) {
     console.error(error);

@@ -114,7 +114,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/tailwind",
     description:
       "Learn TailwindCSS from scratch. Create responsive, modern, and fast websites with utility-first CSS and best practices.",
-    image: "/images/tailwind.webp",
+    image: "images/8-tailwind-css-guide.jpg",
     category: ["TailwindCSS", "CSS"],
   },
   {
@@ -160,7 +160,8 @@ export const blogs: IBlogs[] = [
     baseUrl:
       "https://raw.githubusercontent.com/bidursapkota00/sl/refs/heads/main",
     url: "JS.md",
-    title: "JavaScript of Scripting Language, BCA",
+    title:
+      "JavaScript Complete Guide: From Basics to Advanced, Scripting Language, BCA",
     shortTitle: "JavaScript: BCA",
     slug: "javascript-of-scripting-language-bca",
     github: "https://github.com/bidursapkota00/sl/blob/main/JS.md",
@@ -168,6 +169,20 @@ export const blogs: IBlogs[] = [
       "A JavaScript guide tailored for BCA students, aligned with the Scripting Language syllabus, including examples and exercises.",
     image: "/images/3-js-post.jpg",
     category: ["JavaScript", "HTML", "CSS"],
+  },
+  {
+    baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/sl/refs/heads/main",
+    url: "PHP.md",
+    title:
+      "PHP PHP Complete Guide: From Basics to Advanced, Scripting Language, BCA",
+    shortTitle: "PHP: BCA",
+    slug: "php-of-scripting-language-bca",
+    github: "https://github.com/bidursapkota00/sl/blob/main/PHP.md",
+    description:
+      "A concise, step-by-step guide to mastering PHP — covering everything from syntax, forms, and file handling to OOP, databases, and AJAX for dynamic web development.",
+    image: "/images/9-php-guide.jpg",
+    category: ["PHP", "HTML", "CSS", "JavaScript"],
   },
   {
     baseUrl:

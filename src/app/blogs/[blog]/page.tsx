@@ -46,7 +46,11 @@ export default async function Blog({ params }: BlogDetailPageProps) {
   }
 
   try {
-    const response = await fetch(`${blog.baseUrl}/${blog.url}`);
+    const response = await fetch(`${blog.baseUrl}/${blog.url}`, {
+      next: {
+        tags: ["blog", slug],
+      },
+    });
     if (!response.ok) {
       notFound();
     }
