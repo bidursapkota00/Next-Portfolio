@@ -5,7 +5,8 @@ import {
   FaYoutube,
   FaFacebook,
   FaInstagram,
-} from "react-icons/fa";
+  FaXTwitter,
+} from "react-icons/fa6";
 import Copyright from "./copyright";
 
 export default function Footer() {
@@ -57,14 +58,14 @@ export default function Footer() {
           >
             <FaInstagram />
           </a>
-          {/* <a
-            href="https://twitter.com/your-twitter"
+          <a
+            href="https://x.com/b2r_sp"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-sky-500 transition-colors"
+            className="hover:text-gray-900 transition-colors"
           >
-            <FaTwitter />
-          </a> */}
+            <FaXTwitter />
+          </a>
         </div>
 
         {/* Copyright */}

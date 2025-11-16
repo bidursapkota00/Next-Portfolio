@@ -114,7 +114,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/tailwind",
     description:
       "Learn TailwindCSS from scratch. Create responsive, modern, and fast websites with utility-first CSS and best practices.",
-    image: "images/8-tailwind-css-guide.jpg",
+    image: "/images/8-tailwind-css-guide.jpg",
     category: ["TailwindCSS", "CSS"],
   },
   {

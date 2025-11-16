@@ -37,6 +37,16 @@ export default function Education() {
             <FaPenToSquare size={18} color="#ffffff" />
           </div>
         </div>
+
+        <div className="edu__box">
+          <h2>
+            ME Computer <span>Running</span>
+          </h2>
+          <h3>Nepal College of Information Technology</h3>
+          <div style={{ background: "#a84cb8" }}>
+            <FaPenToSquare size={18} color="#ffffff" />
+          </div>
+        </div>
       </div>
     </section>
   );

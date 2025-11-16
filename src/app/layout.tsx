@@ -51,7 +51,7 @@ export default function RootLayout({
       <body className={`${playfair.variable} ${quicksand.variable}`}>
         {children}
         <Analytics />
-        <SpeedInsights />
+        <SpeedInsights sampleRate={0.5} />
         <Footer />
       </body>
     </html>
