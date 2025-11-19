@@ -197,6 +197,18 @@ export const blogs: IBlogs[] = [
     image: "/images/4-react-post.jpg",
     category: ["React", "TypeScript"],
   },
+  {
+    baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/wordpress/refs/heads/main",
+    url: "README.md",
+    title: "WordPress Guide",
+    shortTitle: "WordPress",
+    slug: "wordpress-guide",
+    github: "https://github.com/bidursapkota00/wordpress",
+    description: "Learn Basics of WordPress by creating simple blog website.",
+    image: "/images/10-wordpress-guide.jpg",
+    category: ["WordPress"],
+  },
 ];
 
 export const threeBlogs = blogs.slice(0, 3);
