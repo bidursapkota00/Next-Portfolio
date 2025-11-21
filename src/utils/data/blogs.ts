@@ -15,6 +15,28 @@ export interface IBlogs {
 export const blogs: IBlogs[] = [
   {
     baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/web-application-programming-bct/refs/heads/main",
+    url: "README.md",
+    title: "Web Application Programming Complete Guide - BCT - IOE",
+    shortTitle: "Web Application Programming",
+    slug: "web-application-programming-complete-guide",
+    github: "https://github.com/bidursapkota00/web-application-programming-bct",
+    description:
+      "Learn basics of web application programming with html, css, javascript, react, django, rest apis, security measures, deployment, and more.",
+    image: "/images/11-web-application-programming.jpg",
+    category: [
+      "BCT",
+      "Web Application Programming",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Django",
+      "Security",
+    ],
+  },
+  {
+    baseUrl:
       "https://raw.githubusercontent.com/bidursapkota00/Design-Patterns/refs/heads/main",
     url: "README.md",
     title: "Design Patterns Complete Guide",
