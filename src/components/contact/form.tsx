@@ -96,27 +96,10 @@ export default function ContactForm() {
 
   return (
     <form
-      className="contact__form"
+      className="contact__form relative"
       id="portfolio-contact-form"
       onSubmit={submitForm}
     >
-      {apiResponse?.success && (
-        <div className="p-[20px_0]">
-          <FormMessageSuccess success={apiResponse.message} />
-        </div>
-      )}
-
-      {apiResponse?.issues && (
-        <div className="p-[20px_0]">
-          <FormMessageError
-            error={apiResponse.issues.reduce(
-              (prev, issue) => prev + issue + "<br/>",
-              ""
-            )}
-          />
-        </div>
-      )}
-
       <ContactInput
         form={form}
         inputName="name"
@@ -170,7 +153,7 @@ export default function ContactForm() {
         defaultValue="Portfolio"
       />
 
-      <div className="flex items-center mb-[100px]">
+      <div className="flex items-center">
         <button
           className={`contact__button${
             isPending ? "" : " contact__button__vibrate"
@@ -185,6 +168,23 @@ export default function ContactForm() {
           style={isPending ? { display: "inline-block" } : {}}
         ></span>
       </div>
+
+      {apiResponse?.success && (
+        <div className="p-[20px_0] absolute left-0 bottom-0 translate-y-full w-full">
+          <FormMessageSuccess success={apiResponse.message} />
+        </div>
+      )}
+
+      {apiResponse?.issues && (
+        <div className="p-[20px_0] absolute left-0 bottom-0 translate-y-full w-full">
+          <FormMessageError
+            error={apiResponse.issues.reduce(
+              (prev, issue) => prev + issue + "<br/>",
+              ""
+            )}
+          />
+        </div>
+      )}
     </form>
   );
 }

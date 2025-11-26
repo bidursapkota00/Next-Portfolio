@@ -24,16 +24,7 @@ export const blogs: IBlogs[] = [
     description:
       "Learn basics of web application programming with html, css, javascript, react, django, rest apis, security measures, deployment, and more.",
     image: "/images/11-web-application-programming.jpg",
-    category: [
-      "BCT",
-      "Web Application Programming",
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Django",
-      "Security",
-    ],
+    category: ["HTML", "CSS", "JavaScript", "React", "Django"],
   },
   {
     baseUrl:

@@ -11,7 +11,7 @@ export default function Contact() {
     <section id="contact" className="section">
       <span className="section__title">get in touch</span>
       <h2 className="section__subtitle">contact</h2>
-      <div className="contact__container">
+      <div className="contact__container mb-[100px]">
         <div className="contact__informations">
           <div className="contact__information">
             <div>

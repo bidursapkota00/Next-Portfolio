@@ -7,6 +7,20 @@ import "./experience.css";
 export default function Experience() {
   const experiences = [
     {
+      jobTitle: "Lecturer",
+      organization: "National College of Engineering",
+      description: [
+        "Preparing and delivering lectures, tutorials, workshops, and seminars.",
+        "Collaborating with other academics to improve teaching methods and knowledge base.",
+        "Setting and grading assignments, tests, and exams.",
+        "Supervising students on their projects.",
+        "Providing support to students and other colleagues.",
+        "Staying current by reading widely and producing published work in the field.",
+      ],
+      startDate: "Nov 2025",
+      endDate: "Now",
+    },
+    {
       jobTitle: "Web Developer",
       organization: "Dallotech pvt. ltd.",
       description: [
@@ -31,7 +45,7 @@ export default function Experience() {
         "Staying current by reading widely and producing published work in the field.",
       ],
       startDate: "May 2023",
-      endDate: "Now",
+      endDate: "Nov 2025",
     },
     {
       jobTitle: "Web Development Trainer",
@@ -53,7 +67,7 @@ export default function Experience() {
         "Providing support to students and other colleagues.",
       ],
       startDate: "May 2025",
-      endDate: "Now",
+      endDate: "Nov 2025",
     },
   ];
   return (
