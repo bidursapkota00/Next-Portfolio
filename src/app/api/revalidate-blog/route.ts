@@ -4,20 +4,35 @@ import { blogs } from "@/utils/data/blogs";
 
 export async function POST(req: NextRequest) {
   try {
+    let validSlugs: string[] = [];
+
+    blogs.forEach((b) => {
+      if (b.divisionSlug) {
+        validSlugs.push(`${b.slug}/${b.divisionSlug}`);
+      }
+      validSlugs.push(`${b.slug}`);
+    });
+
+    validSlugs = Array.from(new Map(validSlugs.map((p) => [p, p])).values());
+
+    console.log(validSlugs);
+
     const { slug } = await req.json();
 
     if (!slug) {
-      return NextResponse.json({ error: "Slug is required" }, { status: 400 });
-    }
-
-    if (typeof slug !== "string") {
       return NextResponse.json(
-        { error: "Slug must be string" },
+        { error: "Slug is required", validSlugs },
         { status: 400 }
       );
     }
 
-    const validSlugs = blogs.map((b) => b.slug);
+    if (typeof slug !== "string") {
+      return NextResponse.json(
+        { error: "Slug must be string", validSlugs },
+        { status: 400 }
+      );
+    }
+
     if (!validSlugs.includes(slug)) {
       return NextResponse.json(
         { error: "Invalid slug", validSlugs },
