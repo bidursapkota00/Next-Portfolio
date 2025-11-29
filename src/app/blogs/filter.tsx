@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from "react";
 
 interface FilterAppBarProps {
   categoryFilter: string;
-  setCategoryFilter: Dispatch<SetStateAction<string>>;
+  setCategoryFilter: (category: string) => void;
   categories: string[];
   length: number;
 }
