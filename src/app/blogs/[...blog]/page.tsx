@@ -5,19 +5,38 @@ import Sidebar from "@/components/sidebar/sidebar";
 import { blogs } from "@/utils/data/blogs";
 import ToggleFullScreen from "./toggle-full-screen";
 import { Link as LinkIcon } from "lucide-react";
+import Card from "../card";
 
 export async function generateStaticParams() {
-  return blogs.map((blog) => ({
-    blog: blog.slug,
-  }));
+  const params: { blog: string[] }[] = [];
+
+  blogs.forEach((b) => {
+    if (b.divisionSlug) {
+      params.push({ blog: [b.slug, b.divisionSlug] });
+    }
+    params.push({ blog: [b.slug] });
+  });
+
+  return Array.from(new Map(params.map((p) => [p.blog.join("/"), p])).values());
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: { blog: string };
+  params: { blog: string[] };
 }) {
-  const blog = blogs.find((b) => b.slug === params.blog);
+  const segments = params.blog;
+  const [slug, divisionSlug] = segments;
+
+  let blog;
+
+  if (divisionSlug) {
+    blog = blogs.find(
+      (b) => b.slug === slug && b.divisionSlug === divisionSlug
+    );
+  } else {
+    blog = blogs.find((b) => b.slug === slug);
+  }
 
   if (!blog) {
     return {
@@ -25,24 +44,63 @@ export async function generateMetadata({
     };
   }
 
+  if (divisionSlug) {
+    return {
+      title: `${blog.categoryTitle} – Blogs by Bidur Sapkota`,
+      description: blog.categoryDescription,
+    };
+  }
+
   return {
     title: `${blog.title} – Blog by Bidur Sapkota`,
-    description: `${blog.description}`,
+    description: blog.description,
   };
 }
 
 interface BlogDetailPageProps {
   params: {
-    blog: string;
+    blog: string[];
   };
 }
 
 export default async function Blog({ params }: BlogDetailPageProps) {
-  const slug = params.blog;
-  const blog = blogs.find((b) => b.slug === slug);
+  const [slug, divisionSlug] = params.blog;
 
-  if (!blog) {
+  let blogOrBlogs;
+
+  blogOrBlogs = blogs.filter((b) => b.slug === slug);
+
+  if (!blogOrBlogs.length) {
     notFound();
+  }
+
+  const blog = blogOrBlogs[0];
+
+  if (!divisionSlug && blog.divisionSlug) {
+    return (
+      <>
+        <Sidebar />
+        <div className="relative">
+          <section id="work" className="section" style={{ marginTop: "20px" }}>
+            <span className="section__title">My Blog</span>
+            <span className="section__subtitle">{blog.categorySubTitle}</span>
+
+            <div className="mt-[50px] pb-8 grid gap-5 grid-cols-1 xs500:grid-cols-2 xl1200:grid-cols-3">
+              {blogOrBlogs.map((b) => (
+                <Card
+                  key={`${b.slug}-${b.divisionSlug}`}
+                  title={b.shortTitle}
+                  pageTitle={b.title}
+                  image={b.image}
+                  slug={`${b.slug}/${b.divisionSlug}`}
+                  categories={b.divisionCategory}
+                />
+              ))}
+            </div>
+          </section>
+        </div>
+      </>
+    );
   }
 
   try {
@@ -51,9 +109,11 @@ export default async function Blog({ params }: BlogDetailPageProps) {
         tags: ["blog", slug],
       },
     });
+
     if (!response.ok) {
       notFound();
     }
+
     const markdown = await response.text();
     const [heading, rest] = splitHeadingAndRest(markdown);
 
@@ -61,16 +121,19 @@ export default async function Blog({ params }: BlogDetailPageProps) {
       <>
         <style>
           {`
-        footer {
-          margin-top: 50px;
-        }
-      `}
+            footer {
+              margin-top: 50px;
+            }
+          `}
         </style>
+
         <ToggleFullScreen />
         <Sidebar />
+
         <h1 className="m-5 text-[2.5rem] leading-[2.75rem] py-4 font-bold mb-4 border-b pb-2 break-words">
           {heading}
         </h1>
+
         <div className="flex justify-end mx-5">
           <a
             href={blog.github}
@@ -82,8 +145,8 @@ export default async function Blog({ params }: BlogDetailPageProps) {
             Github Link
           </a>
         </div>
+
         <ReadmeReader baseUrl={blog.baseUrl} markdown={rest || ""} />
-        {/* <OtherBlogs slug={slug} /> */}
       </>
     );
   } catch (err) {
@@ -92,11 +155,10 @@ export default async function Blog({ params }: BlogDetailPageProps) {
 }
 
 function splitHeadingAndRest(str: string) {
-  const firstNewlineIndex = str.indexOf("\n"); // find the first newline
+  const firstNewlineIndex = str.indexOf("\n");
   let firstLine, rest;
 
   if (firstNewlineIndex === -1) {
-    // no newline at all
     firstLine = str;
     rest = "";
   } else {
@@ -107,21 +169,6 @@ function splitHeadingAndRest(str: string) {
   if (firstLine.startsWith("# ")) {
     return [firstLine.split("# ")[1].trim(), rest.trim()];
   }
-  return [null, str.trim()];
-}
 
-function OtherBlogs({ slug }: { slug: string }) {
-  return (
-    <div className="mb-8 mt-[80px] pt-12 border-t border-gray-400">
-      <h2 className="text-4xl font-semibold text-gray-900 mb-6">Other Blogs</h2>
-      <div className="mt-[50px] pb-8 grid gap-5 grid-cols-1 xs500:grid-cols-2 xl1200:grid-cols-3">
-        {blogs
-          .filter((b) => b.slug !== slug)
-          .slice(0, 3)
-          .map((relatedBlog, index) => (
-            <h1 key={relatedBlog.slug}>{relatedBlog.title}</h1>
-          ))}
-      </div>
-    </div>
-  );
+  return [null, str.trim()];
 }

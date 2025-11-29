@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function RecentBlog({
+export default function Card({
   image = "/images/cover_bg_1.jpg",
   title = "WORK 01",
   pageTitle = "",

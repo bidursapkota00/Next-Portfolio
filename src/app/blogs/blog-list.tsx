@@ -3,8 +3,7 @@
 import { useMemo, useEffect, Suspense, useCallback } from "react";
 import FilterAppBar from "./filter";
 import { Filter } from "lucide-react";
-import { blogs } from "@/utils/data/blogs";
-import RecentBlog from "./card";
+import { blogs as allBlogs } from "@/utils/data/blogs";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import {
   Pagination,
@@ -14,8 +13,10 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import Card from "./card";
 
 const ITEMS_PER_PAGE = 6;
+const blogs = Array.from(new Map(allBlogs.map((b) => [b.slug, b])).values());
 
 function BlogListContent() {
   const router = useRouter();
@@ -112,11 +113,11 @@ function BlogListContent() {
             </div>
           ) : (
             paginatedBlogs.map((b) => (
-              <RecentBlog
+              <Card
                 key={b.slug}
                 title={b.shortTitle}
                 pageTitle={b.title}
-                image={b.image}
+                image={b.divisionSlug ? b.categoryImage : b.image}
                 slug={b.slug}
                 categories={b.category}
               />
