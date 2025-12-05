@@ -15,8 +15,6 @@ export async function POST(req: NextRequest) {
 
     validSlugs = Array.from(new Map(validSlugs.map((p) => [p, p])).values());
 
-    console.log(validSlugs);
-
     const { slug } = await req.json();
 
     if (!slug) {

@@ -115,7 +115,7 @@ export default async function Blog({ params }: BlogDetailPageProps) {
   try {
     const response = await fetch(`${blog.baseUrl}/${blog.url}`, {
       next: {
-        tags: ["blog", `${blog.slug}-${divisionSlug || ""}`],
+        tags: ["blog", `${blog.slug}/${divisionSlug || ""}`],
       },
     });
 
