@@ -46,14 +46,14 @@ export async function generateMetadata({
 
   if (divisionSlug) {
     return {
-      title: `${blog.categoryTitle} – Blogs by Bidur Sapkota`,
-      description: blog.categoryDescription,
+      title: `${blog.title} – Blogs by Bidur Sapkota`,
+      description: blog.description,
     };
   }
 
   return {
-    title: `${blog.title} – Blog by Bidur Sapkota`,
-    description: blog.description,
+    title: `${blog.categoryTitle} – Blog by Bidur Sapkota`,
+    description: blog.categoryDescription,
   };
 }
 
@@ -74,7 +74,7 @@ export default async function Blog({ params }: BlogDetailPageProps) {
     notFound();
   }
 
-  const blog = blogOrBlogs[0];
+  let blog = blogOrBlogs[0];
 
   if (!divisionSlug && blog.divisionSlug) {
     return (
@@ -103,10 +103,19 @@ export default async function Blog({ params }: BlogDetailPageProps) {
     );
   }
 
+  if (divisionSlug && blog.divisionSlug) {
+    blog = blogOrBlogs.find(
+      (b) => b.divisionSlug === divisionSlug
+    ) as typeof blog;
+    if (!blog) {
+      notFound();
+    }
+  }
+
   try {
     const response = await fetch(`${blog.baseUrl}/${blog.url}`, {
       next: {
-        tags: ["blog", slug],
+        tags: ["blog", `${blog.slug}-${divisionSlug || ""}`],
       },
     });
 
