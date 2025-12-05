@@ -13,6 +13,7 @@ export interface IBlogs {
   divisionSlug?: string;
   divisionCategory?: string[];
   whatsNext?: string[];
+  categoryDisplayTitle?: string;
   categoryImage?: string;
   categorySubTitle?: string;
   image: string;
@@ -22,7 +23,7 @@ export const blogs: IBlogs[] = [
   {
     baseUrl:
       "https://raw.githubusercontent.com/bidursapkota00/web-application-programming-bct/refs/heads/main",
-    url: "README.md",
+    url: "PROTOCOLS_HTML_CSS.md",
     categoryTitle: "Web Application Programming Complete Guide - BCT - IOE",
     title:
       "Web Application Programming: A Complete Guide to HTML, CSS, and Architecture",
@@ -33,9 +34,10 @@ export const blogs: IBlogs[] = [
       "Learn basics of web application programming with html, css, javascript, react, django, rest apis, security measures, deployment, and more.",
     description:
       "Master the fundamentals of web application programming with this comprehensive guide. Designed for students and aspiring developers, it covers the evolution of the web, client-server architecture, and HTTP protocols, while providing in-depth tutorials on HTML5, CSS3, Flexbox, Grid, and Bootstrap to help you build responsive, multi-page websites.",
+    categoryDisplayTitle: "Web App Programming",
     categoryImage: "/images/11-web-application-programming.jpg",
     categorySubTitle: "Web Application Programming",
-    image: "/images/11-web-application-programming.jpg",
+    image: "/images/11-web-application-programming-1.jpg",
     category: ["HTML", "CSS", "JavaScript", "React", "Django"],
     divisionCategory: ["html", "css"],
     divisionSlug: "html-css",
@@ -43,7 +45,7 @@ export const blogs: IBlogs[] = [
   {
     baseUrl:
       "https://raw.githubusercontent.com/bidursapkota00/web-application-programming-bct/refs/heads/main",
-    url: "README.md",
+    url: "JS_REACT.md",
     categoryTitle: "Web Application Programming Complete Guide - BCT - IOE",
     title:
       "Web Application Programming: A Complete Guide to JavaScript, and React.js",
@@ -54,9 +56,10 @@ export const blogs: IBlogs[] = [
       "Learn basics of web application programming with html, css, javascript, react, django, rest apis, security measures, deployment, and more.",
     description:
       "Master the fundamentals of web application programming with this comprehensive guide. Designed for students and aspiring developers, it covers in-depth tutorials on JavaScript and React.js to help you build responsive, multi-page websites.",
+    categoryDisplayTitle: "Web App Programming",
     categoryImage: "/images/11-web-application-programming.jpg",
     categorySubTitle: "Web Application Programming",
-    image: "/images/11-web-application-programming.jpg",
+    image: "/images/11-web-application-programming-2.jpg",
     category: ["HTML", "CSS", "JavaScript", "React", "Django"],
     divisionCategory: ["javascript", "react"],
     divisionSlug: "javascript-react",

@@ -115,7 +115,7 @@ function BlogListContent() {
             paginatedBlogs.map((b) => (
               <Card
                 key={b.slug}
-                title={b.shortTitle}
+                title={b.categoryDisplayTitle || b.shortTitle}
                 pageTitle={b.title}
                 image={b.divisionSlug ? b.categoryImage : b.image}
                 slug={b.slug}
