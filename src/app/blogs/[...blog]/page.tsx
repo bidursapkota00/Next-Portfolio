@@ -44,16 +44,16 @@ export async function generateMetadata({
     };
   }
 
-  if (divisionSlug) {
+  if (!divisionSlug && blog.divisionSlug) {
     return {
-      title: `${blog.title} – Blogs by Bidur Sapkota`,
-      description: blog.description,
+      title: `${blog.categoryTitle} – Blog by Bidur Sapkota`,
+      description: blog.categoryDescription,
     };
   }
 
   return {
-    title: `${blog.categoryTitle} – Blog by Bidur Sapkota`,
-    description: blog.categoryDescription,
+    title: `${blog.title} – Blogs by Bidur Sapkota`,
+    description: blog.description,
   };
 }
 
