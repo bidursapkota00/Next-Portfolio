@@ -262,4 +262,44 @@ export const blogs: IBlogs[] = [
   },
 ];
 
-export const threeBlogs = blogs.slice(0, 3);
+export const threeBlogs: IBlogs[] = [
+  {
+    baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/MEN-Stack-API-Development/refs/heads/main",
+    url: "README.md",
+    title: "MongoDB, Express and Node Complete Guide",
+    shortTitle: "Express and Node",
+    slug: "mongodb-express-node-complete-guide",
+    github: "https://github.com/bidursapkota00/MEN-Stack-API-Development",
+    description:
+      "Learn backend development using the MEN stack—MongoDB, Express, Node.js, jest for testing, documentation with swagger—to build robust RESTful APIs.",
+    image: "/images/2-node-post.jpg",
+    category: ["Express", "Node", "MongoDB"],
+  },
+  {
+    baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/Design-Patterns/refs/heads/main",
+    url: "README.md",
+    title: "Design Patterns Complete Guide",
+    shortTitle: "Design Patterns",
+    slug: "design-patterns-complete-guide",
+    github: "https://github.com/bidursapkota00/Design-Patterns",
+    description:
+      "Learn all major design patterns in Java with practical examples. Improve code reusability, scalability, and maintainability for real-world projects.",
+    image: "/images/design-patterns.png",
+    category: ["OOP", "Java", "Design Patterns"],
+  },
+  {
+    baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/Mastering-TypeScript/refs/heads/main",
+    url: "README.md",
+    title: "TypeScript Complete Guide",
+    shortTitle: "TypeScript",
+    slug: "typescript-complete-guide",
+    github: "https://github.com/bidursapkota00/Mastering-TypeScript",
+    description:
+      "Master TypeScript fundamentals, advanced types, generics, and how to integrate it seamlessly in modern JavaScript projects.",
+    image: "/images/5-ts-post.jpg",
+    category: ["TypeScript", "JavaScript"],
+  },
+];
