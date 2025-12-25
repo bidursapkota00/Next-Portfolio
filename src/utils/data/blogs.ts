@@ -45,24 +45,44 @@ export const blogs: IBlogs[] = [
   {
     baseUrl:
       "https://raw.githubusercontent.com/bidursapkota00/web-application-programming-bct/refs/heads/main",
-    url: "JS_REACT.md",
+    url: "JS.md",
     categoryTitle: "Web Application Programming Complete Guide - BCT - IOE",
-    title:
-      "Web Application Programming: A Complete Guide to JavaScript, and React.js",
+    title: "Web Application Programming: A Complete Guide to JavaScript",
     shortTitle: "Unit 2: JavaScript",
     slug: "web-application-programming-complete-guide",
     github: "https://github.com/bidursapkota00/web-application-programming-bct",
     categoryDescription:
       "Learn basics of web application programming with html, css, javascript, react, django, rest apis, security measures, deployment, and more.",
     description:
-      "Master the fundamentals of web application programming with this comprehensive guide. Designed for students and aspiring developers, it covers in-depth tutorials on JavaScript and React.js to help you build responsive, multi-page websites.",
+      "Master the fundamentals of web application programming with this comprehensive guide. Designed for students and aspiring developers, it covers in-depth tutorials on JavaScript to help you build responsive, multi-page websites.",
     categoryDisplayTitle: "Web App Programming",
     categoryImage: "/images/11-web-application-programming.jpg",
     categorySubTitle: "Web Application Programming",
     image: "/images/11-web-application-programming-2.jpg",
     category: ["HTML", "CSS", "JavaScript", "React", "Django"],
-    divisionCategory: ["javascript", "react"],
-    divisionSlug: "javascript-react",
+    divisionCategory: ["javascript", "jQuery"],
+    divisionSlug: "javascript",
+  },
+  {
+    baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/web-application-programming-bct/refs/heads/main",
+    url: "React.md",
+    categoryTitle: "Web Application Programming Complete Guide - BCT - IOE",
+    title: "Web Application Programming: A Complete Guide to React.js",
+    shortTitle: "Unit 2: React.js",
+    slug: "web-application-programming-complete-guide",
+    github: "https://github.com/bidursapkota00/web-application-programming-bct",
+    categoryDescription:
+      "Learn basics of web application programming with html, css, javascript, react, django, rest apis, security measures, deployment, and more.",
+    description:
+      "Master the fundamentals of web application programming with this comprehensive guide. Designed for students and aspiring developers, it covers in-depth tutorials on React.js to help you build responsive, multi-page websites.",
+    categoryDisplayTitle: "Web App Programming",
+    categoryImage: "/images/11-web-application-programming.jpg",
+    categorySubTitle: "Web Application Programming",
+    image: "/images/11-web-application-programming-3.jpg",
+    category: ["HTML", "CSS", "JavaScript", "React", "Django"],
+    divisionCategory: ["react", "javascript"],
+    divisionSlug: "react",
   },
   {
     baseUrl:
