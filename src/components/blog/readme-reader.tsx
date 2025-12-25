@@ -146,6 +146,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
               title={title}
               width={64}
               height={64}
+              sizes="64px"
               className="w-[48px] shadow-sm"
             />
           </span>
@@ -163,6 +164,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
             alt={alt}
             title={title}
             fill
+            sizes="1200px"
             className="object-contain shadow-sm"
           />
         </span>

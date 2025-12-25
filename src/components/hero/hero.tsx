@@ -40,6 +40,7 @@ export default function Hero() {
           alt="Bidur Sapkota Cover Photo"
           title="Bidur Sapkota - Developer"
           fill
+          sizes="1200px"
         />
       </div>
     </section>

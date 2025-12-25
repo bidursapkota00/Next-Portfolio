@@ -21,6 +21,7 @@ export default function Sidebar() {
               title="Bidur Sapkota - Developer"
               width={160}
               height={160}
+              sizes="384px"
             />
             <h2 className="sidebar__name">bidur sapkota</h2>
             <h3 className="sidebar__job">

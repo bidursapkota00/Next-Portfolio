@@ -34,6 +34,7 @@ export default function Card({
           width={683}
           height={384}
           className="w-full object-fit rounded-[12px]"
+          sizes="683px"
         />
       </div>
 

@@ -34,6 +34,7 @@ export default function RecentWork({
           alt={`${title} Image`}
           width={683}
           height={384}
+          sizes="683px"
           className="w-full object-fit rounded-[12px]"
         />
       </div>
