@@ -35,9 +35,9 @@ export const blogs: IBlogs[] = [
     description:
       "Master the fundamentals of web application programming with this comprehensive guide. Designed for students and aspiring developers, it covers the evolution of the web, client-server architecture, and HTTP protocols, while providing in-depth tutorials on HTML5, CSS3, Flexbox, Grid, and Bootstrap to help you build responsive, multi-page websites.",
     categoryDisplayTitle: "Web App Programming",
-    categoryImage: "/images/11-web-application-programming.jpg",
+    categoryImage: "/images/11-web-application-programming.webp",
     categorySubTitle: "Web Application Programming",
-    image: "/images/11-web-application-programming-1.jpg",
+    image: "/images/11-web-application-programming-1.webp",
     category: ["HTML", "CSS", "JavaScript", "React", "Django"],
     divisionCategory: ["html", "css"],
     divisionSlug: "html-css",
@@ -56,9 +56,9 @@ export const blogs: IBlogs[] = [
     description:
       "Master the fundamentals of web application programming with this comprehensive guide. Designed for students and aspiring developers, it covers in-depth tutorials on JavaScript to help you build responsive, multi-page websites.",
     categoryDisplayTitle: "Web App Programming",
-    categoryImage: "/images/11-web-application-programming.jpg",
+    categoryImage: "/images/11-web-application-programming.webp",
     categorySubTitle: "Web Application Programming",
-    image: "/images/11-web-application-programming-2.jpg",
+    image: "/images/11-web-application-programming-2.webp",
     category: ["HTML", "CSS", "JavaScript", "React", "Django"],
     divisionCategory: ["javascript", "jQuery"],
     divisionSlug: "javascript",
@@ -77,9 +77,9 @@ export const blogs: IBlogs[] = [
     description:
       "Master the fundamentals of web application programming with this comprehensive guide. Designed for students and aspiring developers, it covers in-depth tutorials on React.js to help you build responsive, multi-page websites.",
     categoryDisplayTitle: "Web App Programming",
-    categoryImage: "/images/11-web-application-programming.jpg",
+    categoryImage: "/images/11-web-application-programming.webp",
     categorySubTitle: "Web Application Programming",
-    image: "/images/11-web-application-programming-3.jpg",
+    image: "/images/11-web-application-programming-3.webp",
     category: ["HTML", "CSS", "JavaScript", "React", "Django"],
     divisionCategory: ["react", "javascript"],
     divisionSlug: "react",
@@ -94,7 +94,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/Design-Patterns",
     description:
       "Learn all major design patterns in Java with practical examples. Improve code reusability, scalability, and maintainability for real-world projects.",
-    image: "/images/design-patterns.png",
+    image: "/images/design-patterns.webp",
     category: ["OOP", "Java", "Design Patterns"],
   },
   {
@@ -107,7 +107,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/NestJS",
     description:
       "Master NestJS with TypeScript to build scalable, modular, and production-ready backends. Learn REST APIs, testing, and deployment.",
-    image: "/images/nestjs.png",
+    image: "/images/nestjs.webp",
     category: ["Node", "JavaScript", "Nest"],
   },
   {
@@ -120,7 +120,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/Mastering-TypeScript",
     description:
       "Master TypeScript fundamentals, advanced types, generics, and how to integrate it seamlessly in modern JavaScript projects.",
-    image: "/images/5-ts-post.jpg",
+    image: "/images/5-ts-post.webp",
     category: ["TypeScript", "JavaScript"],
   },
   {
@@ -133,7 +133,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/react-next",
     description:
       "Build powerful React apps with Next.js. Learn SSR, SSG, routes, authentication, and performance optimization step by step.",
-    image: "/images/react-next.jpg",
+    image: "/images/react-next.webp",
     category: ["React", "Next", "TypeScript"],
   },
   {
@@ -146,7 +146,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/MEN-Stack-API-Development",
     description:
       "Learn backend development using the MEN stack—MongoDB, Express, Node.js, jest for testing, documentation with swagger—to build robust RESTful APIs.",
-    image: "/images/2-node-post.jpg",
+    image: "/images/2-node-post.webp",
     category: ["Express", "Node", "MongoDB"],
   },
   {
@@ -172,7 +172,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/Complete-JavaScript-Course",
     description:
       "Learn modern JavaScript from basics to advanced—DOM, ES6+, async, promises, OOP, and practical projects for real-world skills.",
-    image: "/images/js.jpg",
+    image: "/images/js.webp",
     category: ["JavaScript", "HTML", "CSS"],
   },
   {
@@ -185,7 +185,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/tailwind",
     description:
       "Learn TailwindCSS from scratch. Create responsive, modern, and fast websites with utility-first CSS and best practices.",
-    image: "/images/8-tailwind-css-guide.jpg",
+    image: "/images/8-tailwind-css-guide.webp",
     category: ["TailwindCSS", "CSS"],
   },
   {
@@ -198,7 +198,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/Readme",
     description:
       "Master Markdown for documentation, GitHub READMEs, blogging, and note-taking with syntax examples and formatting tricks.",
-    image: "/images/1-markdown-post.jpg",
+    image: "/images/1-markdown-post.webp",
     category: ["Markdown"],
   },
   {
@@ -211,7 +211,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/HTML-and-CSS",
     description:
       "A complete guide to building websites with HTML and CSS. Learn layouts, flexbox, grid, responsive design, and best practices. Also learn to build a professional responsive mobile first portfolio website from scratch using HTML and CSS.",
-    image: "/images/7-html-css-guide.jpg",
+    image: "/images/7-html-css-guide.webp",
     category: ["HTML", "CSS"],
   },
   {
@@ -224,7 +224,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/System-Design-for-Beginners",
     description:
       "Learn system design concepts—scalability, caching, load balancing, databases, and distributed systems for interviews and real-world apps.",
-    image: "/images/6-system-design-post.jpg",
+    image: "/images/6-system-design-post.webp",
     category: ["System Design"],
   },
   {
@@ -238,7 +238,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/sl/blob/main/JS.md",
     description:
       "A JavaScript guide tailored for BCA students, aligned with the Scripting Language syllabus, including examples and exercises.",
-    image: "/images/3-js-post.jpg",
+    image: "/images/3-js-post.webp",
     category: ["JavaScript", "HTML", "CSS"],
   },
   {
@@ -252,7 +252,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/sl/blob/main/PHP.md",
     description:
       "A concise, step-by-step guide to mastering PHP — covering everything from syntax, forms, and file handling to OOP, databases, and AJAX for dynamic web development.",
-    image: "/images/9-php-guide.jpg",
+    image: "/images/9-php-guide.webp",
     category: ["PHP", "HTML", "CSS", "JavaScript"],
   },
   {
@@ -265,7 +265,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/React",
     description:
       "Master React step-by-step with this complete TypeScript-based guide. Learn everything from JSX fundamentals, components, and state management to advanced hooks, custom logic, and React Router. Perfect for beginners and developers looking to build modern, scalable, and type-safe React applications.",
-    image: "/images/4-react-post.jpg",
+    image: "/images/4-react-post.webp",
     category: ["React", "TypeScript"],
   },
   {
@@ -277,7 +277,7 @@ export const blogs: IBlogs[] = [
     slug: "wordpress-guide",
     github: "https://github.com/bidursapkota00/wordpress",
     description: "Learn Basics of WordPress by creating simple blog website.",
-    image: "/images/10-wordpress-guide.jpg",
+    image: "/images/10-wordpress-guide.webp",
     category: ["WordPress"],
   },
 ];
@@ -293,7 +293,7 @@ export const threeBlogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/MEN-Stack-API-Development",
     description:
       "Learn backend development using the MEN stack—MongoDB, Express, Node.js, jest for testing, documentation with swagger—to build robust RESTful APIs.",
-    image: "/images/2-node-post.jpg",
+    image: "/images/2-node-post.webp",
     category: ["Express", "Node", "MongoDB"],
   },
   {
@@ -306,7 +306,7 @@ export const threeBlogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/Design-Patterns",
     description:
       "Learn all major design patterns in Java with practical examples. Improve code reusability, scalability, and maintainability for real-world projects.",
-    image: "/images/design-patterns.png",
+    image: "/images/design-patterns.webp",
     category: ["OOP", "Java", "Design Patterns"],
   },
   {
@@ -319,7 +319,7 @@ export const threeBlogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/Mastering-TypeScript",
     description:
       "Master TypeScript fundamentals, advanced types, generics, and how to integrate it seamlessly in modern JavaScript projects.",
-    image: "/images/5-ts-post.jpg",
+    image: "/images/5-ts-post.webp",
     category: ["TypeScript", "JavaScript"],
   },
 ];

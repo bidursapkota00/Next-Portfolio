@@ -141,7 +141,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
         return (
           <span className="relative inline-block">
             <Image
-              src="/images/profile3.png"
+              src="/images/gravatar.webp"
               alt={alt}
               title={title}
               width={64}

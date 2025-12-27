@@ -16,7 +16,7 @@ export default function Sidebar() {
           <div>
             <Image
               className="sidebar__image"
-              src="/images/profile3.png"
+              src="/images/profile3.webp"
               alt="Bidur Sapkota - Profile Image"
               title="Bidur Sapkota - Developer"
               width={160}
