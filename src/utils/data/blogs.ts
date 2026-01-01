@@ -280,6 +280,18 @@ export const blogs: IBlogs[] = [
     image: "/images/10-wordpress-guide.webp",
     category: ["WordPress"],
   },
+  {
+    baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/python/refs/heads/main",
+    url: "README.md",
+    title: "Python Complete Guide",
+    shortTitle: "Python",
+    slug: "python",
+    github: "https://github.com/bidursapkota00/python",
+    description: "Learn basics to advanced of Python Programming",
+    image: "/images/python.webp",
+    category: ["Python"],
+  },
 ];
 
 export const threeBlogs: IBlogs[] = [
