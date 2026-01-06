@@ -284,12 +284,13 @@ export const blogs: IBlogs[] = [
     baseUrl:
       "https://raw.githubusercontent.com/bidursapkota00/python/refs/heads/main",
     url: "README.md",
-    title: "Python Complete Guide",
+    title: "Python Complete Handbook: From Fundamentals to Advanced Concepts",
     shortTitle: "Python",
     slug: "python",
     github: "https://github.com/bidursapkota00/python",
-    description: "Learn basics to advanced of Python Programming",
-    image: "/images/python.webp",
+    description:
+      "Master Python programming step by step — starting from the basics and progressing to advanced topics like OOP, modules, and real-world applications.",
+    image: "/images/12-python-post-700.webp",
     category: ["Python"],
   },
 ];
