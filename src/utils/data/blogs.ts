@@ -293,6 +293,19 @@ export const blogs: IBlogs[] = [
     image: "/images/12-python-post-700.webp",
     category: ["Python"],
   },
+  {
+    baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/drf/refs/heads/main",
+    url: "README.md",
+    title: "Django REST Framework Advanced Guide",
+    shortTitle: "DRF Advanced",
+    slug: "django-advanced",
+    github: "https://github.com/bidursapkota00/drf",
+    description:
+      "A complete advanced Django REST Framework guide covering Swagger/OpenAPI documentation, Dockerized APIs, CI/CD pipelines, authentication, permissions, automated testing, and production-ready best practices.",
+    image: "/images/12-django-rest-framework-advanced-700.webp",
+    category: ["Django", "Python"],
+  },
 ];
 
 export const threeBlogs: IBlogs[] = [
