@@ -38,7 +38,7 @@ export const blogs: IBlogs[] = [
     categoryImage: "/images/11-web-application-programming.webp",
     categorySubTitle: "Web Application Programming",
     image: "/images/11-web-application-programming-1.webp",
-    category: ["HTML", "CSS", "JavaScript", "React", "Django"],
+    category: ["HTML", "CSS", "JavaScript", "React", "Python", "Django"],
     divisionCategory: ["html", "css"],
     divisionSlug: "html-css",
   },
@@ -59,7 +59,7 @@ export const blogs: IBlogs[] = [
     categoryImage: "/images/11-web-application-programming.webp",
     categorySubTitle: "Web Application Programming",
     image: "/images/11-web-application-programming-2.webp",
-    category: ["HTML", "CSS", "JavaScript", "React", "Django"],
+    category: ["HTML", "CSS", "JavaScript", "React", "Python", "Django"],
     divisionCategory: ["javascript", "jQuery"],
     divisionSlug: "javascript",
   },
@@ -80,9 +80,30 @@ export const blogs: IBlogs[] = [
     categoryImage: "/images/11-web-application-programming.webp",
     categorySubTitle: "Web Application Programming",
     image: "/images/11-web-application-programming-3.webp",
-    category: ["HTML", "CSS", "JavaScript", "React", "Django"],
+    category: ["HTML", "CSS", "JavaScript", "React", "Python", "Django"],
     divisionCategory: ["react", "javascript"],
     divisionSlug: "react",
+  },
+  {
+    baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/web-application-programming-bct/refs/heads/main",
+    url: "dj.md",
+    categoryTitle: "Web Application Programming Complete Guide - BCT - IOE",
+    title: "Web Application Programming: A Complete Guide to Django",
+    shortTitle: "Unit 3: Django",
+    slug: "web-application-programming-complete-guide",
+    github: "https://github.com/bidursapkota00/web-application-programming-bct",
+    categoryDescription:
+      "Learn basics of web application programming with html, css, javascript, react, django, rest apis, security measures, deployment, and more.",
+    description:
+      "Complete Django guide covering URLs, views, templates, models, authentication, file uploads, class-based views, deployment, testing, and security. Learn Django from scratch to production.",
+    categoryDisplayTitle: "Web App Programming",
+    categoryImage: "/images/11-web-application-programming.webp",
+    categorySubTitle: "Web Application Programming",
+    image: "/images/13-django-post-700.webp",
+    category: ["HTML", "CSS", "JavaScript", "React", "Python", "Django"],
+    divisionCategory: ["Python", "Django"],
+    divisionSlug: "django",
   },
   {
     baseUrl:
@@ -298,7 +319,7 @@ export const blogs: IBlogs[] = [
       "https://raw.githubusercontent.com/bidursapkota00/drf/refs/heads/main",
     url: "README.md",
     title: "Django REST Framework Advanced Guide",
-    shortTitle: "DRF Advanced",
+    shortTitle: "Django Advanced",
     slug: "django-advanced",
     github: "https://github.com/bidursapkota00/drf",
     description:
