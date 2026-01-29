@@ -107,6 +107,28 @@ export const blogs: IBlogs[] = [
   },
   {
     baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/web-application-programming-bct/refs/heads/main",
+    url: "drf.md",
+    categoryTitle: "Web Application Programming Complete Guide - BCT - IOE",
+    title:
+      "Web Application Programming: A Complete Guide to Django REST Framework",
+    shortTitle: "Unit 4: Django REST Framework",
+    slug: "web-application-programming-complete-guide",
+    github: "https://github.com/bidursapkota00/web-application-programming-bct",
+    categoryDescription:
+      "Learn basics of web application programming with html, css, javascript, react, django, rest apis, security measures, deployment, and more.",
+    description:
+      "Comprehensive Django REST Framework guide covering API basics, REST design, serializers & validation, building/testing RESTful APIs, and full DRF examples for developers.",
+    categoryDisplayTitle: "Web App Programming",
+    categoryImage: "/images/11-web-application-programming.webp",
+    categorySubTitle: "Web Application Programming",
+    image: "/images/14-drf-post-700.webp",
+    category: ["HTML", "CSS", "JavaScript", "React", "Python", "Django"],
+    divisionCategory: ["Python", "Django"],
+    divisionSlug: "django-rest-framework",
+  },
+  {
+    baseUrl:
       "https://raw.githubusercontent.com/bidursapkota00/Design-Patterns/refs/heads/main",
     url: "README.md",
     title: "Design Patterns Complete Guide",
