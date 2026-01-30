@@ -111,8 +111,8 @@ export const blogs: IBlogs[] = [
     url: "drf.md",
     categoryTitle: "Web Application Programming Complete Guide - BCT - IOE",
     title:
-      "Web Application Programming: A Complete Guide to Django REST Framework",
-    shortTitle: "Unit 4: Django REST Framework",
+      "Web Application Programming: Web Services & APIs with Django REST Framework",
+    shortTitle: "Unit 4: Web APIs",
     slug: "web-application-programming-complete-guide",
     github: "https://github.com/bidursapkota00/web-application-programming-bct",
     categoryDescription:
@@ -125,7 +125,7 @@ export const blogs: IBlogs[] = [
     image: "/images/14-drf-post-700.webp",
     category: ["HTML", "CSS", "JavaScript", "React", "Python", "Django"],
     divisionCategory: ["Python", "Django"],
-    divisionSlug: "django-rest-framework",
+    divisionSlug: "web-apis-with-drf",
   },
   {
     baseUrl:
