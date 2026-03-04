@@ -148,28 +148,28 @@ export const blogs: IBlogs[] = [
     divisionCategory: ["Security", "Django"],
     divisionSlug: "security",
   },
-  // {
-  //   baseUrl:
-  //     "https://raw.githubusercontent.com/bidursapkota00/web-application-programming-bct/refs/heads/main",
-  //   url: "testing-deployment.md",
-  //   categoryTitle: "Web Application Programming Complete Guide - BCT - IOE",
-  //   title:
-  //     "Web Application Programming: Web Application Testing, Deployment, DevOps and Modern Trends with Django",
-  //   shortTitle: "Unit 6: Deployment",
-  //   slug: "web-application-programming-complete-guide",
-  //   github: "https://github.com/bidursapkota00/web-application-programming-bct",
-  //   categoryDescription:
-  //     "Learn basics of web application programming with html, css, javascript, react, django, rest apis, security measures, deployment, and more.",
-  //   description:
-  //     "Practical guide covering unit/integration/E2E testing, TDD, test automation, CI/CD (GitHub Actions), Docker, deployment strategies and PWAs for reliable Django web apps",
-  //   categoryDisplayTitle: "Web App Programming",
-  //   categoryImage: "/images/11-web-application-programming.webp",
-  //   categorySubTitle: "Web Application Programming",
-  //   image: "/images/15-testing-deployment-700.webp",
-  //   category: ["HTML", "CSS", "JavaScript", "React", "Python", "Django"],
-  //   divisionCategory: ["Django", "Docker"],
-  //   divisionSlug: "testing-deployment",
-  // },
+  {
+    baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/web-application-programming-bct/refs/heads/main",
+    url: "testing-deployment.md",
+    categoryTitle: "Web Application Programming Complete Guide - BCT - IOE",
+    title:
+      "Web Application Programming: Web Application Testing, Deployment, DevOps and Modern Trends with Django",
+    shortTitle: "Unit 6: Deployment",
+    slug: "web-application-programming-complete-guide",
+    github: "https://github.com/bidursapkota00/web-application-programming-bct",
+    categoryDescription:
+      "Learn basics of web application programming with html, css, javascript, react, django, rest apis, security measures, deployment, and more.",
+    description:
+      "Practical guide covering unit/integration/E2E testing, TDD, test automation, CI/CD (GitHub Actions), Docker, deployment strategies and PWAs for reliable Django web apps",
+    categoryDisplayTitle: "Web App Programming",
+    categoryImage: "/images/11-web-application-programming.webp",
+    categorySubTitle: "Web Application Programming",
+    image: "/images/15-testing-deployment-700.webp",
+    category: ["HTML", "CSS", "JavaScript", "React", "Python", "Django"],
+    divisionCategory: ["Django", "Docker"],
+    divisionSlug: "testing-deployment",
+  },
   {
     baseUrl:
       "https://raw.githubusercontent.com/bidursapkota00/Design-Patterns/refs/heads/main",
@@ -389,7 +389,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/drf",
     description:
       "A complete advanced Django REST Framework guide covering Swagger/OpenAPI documentation, Dockerized APIs, CI/CD pipelines, authentication, permissions, automated testing, and production-ready best practices.",
-    image: "/images/12-django-rest-framework-advanced-700.webp",
+    image: "/images/13-django-advanced-700.webp",
     category: ["Django", "Python"],
   },
 ];
