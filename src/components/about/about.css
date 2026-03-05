@@ -94,8 +94,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: 30px;
   }
   .about__box {
-    width: 200px;
+    flex: 200px 1 1;
   }
 }

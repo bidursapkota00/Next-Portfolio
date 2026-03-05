@@ -33,17 +33,15 @@ export default function Hero() {
         </a>
       </div>
 
-      <div className="absolute right-0 bottom-0 w-[80%] h-[100svh] z-0 hero__img">
-        <Image
-          className="object-cover"
-          src="/images/bg.webp"
-          alt="Bidur Sapkota Cover Photo"
-          title="Bidur Sapkota - Developer"
-          fill
-          sizes="1200px"
-          priority={true}
-        />
-      </div>
+      <Image
+        className="object-contain absolute right-0 bottom-0 z-0 hero__img"
+        src="/images/bg.webp"
+        alt="Bidur Sapkota Cover Photo"
+        title="Bidur Sapkota - Developer"
+        width={1200}
+        height={1800}
+        priority={true}
+      />
     </section>
   );
 }
