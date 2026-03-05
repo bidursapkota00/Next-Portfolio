@@ -157,9 +157,3 @@
     font-size: 22px;
   }
 }
-
-@media screen and (min-width: 1200px) {
-  .sidebar__content {
-    margin-left: calc(300px + (100% - 1200px) / 2);
-  }
-}
