@@ -389,7 +389,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/drf",
     description:
       "A complete advanced Django REST Framework guide covering Swagger/OpenAPI documentation, Dockerized APIs, CI/CD pipelines, authentication, permissions, automated testing, and production-ready best practices.",
-    image: "/images/13-django-advanced-700.webp",
+    image: "/images/13-django-advanced-post-700.webp",
     category: ["Django", "Python"],
   },
 ];
