@@ -211,16 +211,16 @@ export const blogs: IBlogs[] = [
   },
   {
     baseUrl:
-      "https://raw.githubusercontent.com/bidursapkota00/react-next/refs/heads/main",
+      "https://raw.githubusercontent.com/bidursapkota00/django/refs/heads/main",
     url: "README.md",
-    title: "React.js with Next.js Complete Guide",
-    shortTitle: "React with Next",
-    slug: "react-next-complete-guide",
-    github: "https://github.com/bidursapkota00/react-next",
+    title: "Django Complete Guide",
+    shortTitle: "Django",
+    slug: "django-complete-guide",
+    github: "https://github.com/bidursapkota00/django",
     description:
-      "Build powerful React apps with Next.js. Learn SSR, SSG, routes, authentication, and performance optimization step by step.",
-    image: "/images/react-next.webp",
-    category: ["React", "Next", "TypeScript"],
+      "A comprehensive guide to Django — covering project setup, models, views, templates, URL routing, authentication, and deployment. Perfect for Python developers looking to build robust web applications with Django.",
+    image: "/images/13-django-post-2-700.webp",
+    category: ["Django", "Python"],
   },
   {
     baseUrl:
@@ -391,6 +391,19 @@ export const blogs: IBlogs[] = [
       "A complete advanced Django REST Framework guide covering Swagger/OpenAPI documentation, Dockerized APIs, CI/CD pipelines, authentication, permissions, automated testing, and production-ready best practices.",
     image: "/images/13-django-advanced-post-700.webp",
     category: ["Django", "Python"],
+  },
+  {
+    baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/react-next/refs/heads/main",
+    url: "README.md",
+    title: "React.js with Next.js Complete Guide",
+    shortTitle: "React with Next",
+    slug: "react-next-complete-guide",
+    github: "https://github.com/bidursapkota00/react-next",
+    description:
+      "Build powerful React apps with Next.js. Learn SSR, SSG, routes, authentication, and performance optimization step by step.",
+    image: "/images/react-next.webp",
+    category: ["React", "Next", "TypeScript"],
   },
 ];
 
