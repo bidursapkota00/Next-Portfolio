@@ -26,28 +26,43 @@ export default function ToggleFullScreen() {
   }, [readMode]);
 
   useEffect(() => {
-    let lastTap = 0;
+    let tapTimes: number[] = [];
 
     const handleTouchEnd = (e: TouchEvent) => {
-      const currentTime = new Date().getTime();
-      const tapLength = currentTime - lastTap;
-      if (tapLength < 300 && tapLength > 0) {
+      const currentTime = Date.now();
+
+      // Remove taps older than 600ms
+      tapTimes = tapTimes.filter((t) => currentTime - t < 600);
+      tapTimes.push(currentTime);
+
+      if (tapTimes.length >= 3) {
+        tapTimes = [];
         setReadMode((mode) => !mode);
         e.preventDefault();
       }
-      lastTap = currentTime;
     };
 
-    const handleDblClick = () => {
-      setReadMode((mode) => !mode);
+    let clickTimes: number[] = [];
+
+    const handleClick = () => {
+      const currentTime = Date.now();
+
+      // Remove clicks older than 600ms
+      clickTimes = clickTimes.filter((t) => currentTime - t < 600);
+      clickTimes.push(currentTime);
+
+      if (clickTimes.length >= 3) {
+        clickTimes = [];
+        setReadMode((mode) => !mode);
+      }
     };
 
     document.addEventListener("touchend", handleTouchEnd);
-    document.addEventListener("dblclick", handleDblClick);
+    document.addEventListener("click", handleClick);
 
     return () => {
       document.removeEventListener("touchend", handleTouchEnd);
-      document.removeEventListener("dblclick", handleDblClick);
+      document.removeEventListener("click", handleClick);
     };
   }, []);
 
@@ -77,7 +92,7 @@ export default function ToggleFullScreen() {
         <div className="m-5 bg-yellow-100 border border-yellow-300 text-yellow-800 pl-12 py-3 rounded-lg shadow-md flex items-start justify-center gap-3">
           <Info size={18} className="shrink-0 mt-0.5 text-yellow-600" />
           <div className="text-sm">
-            <b>Double click to toggle Read Mode</b>.
+            <b>Triple click to toggle Read Mode</b>.
           </div>
           <button
             onClick={() => setShowInfo(false)}
