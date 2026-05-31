@@ -245,7 +245,7 @@ export const blogs: IBlogs[] = [
     github: "https://github.com/bidursapkota00/Git",
     description:
       "Master Git version control and GitHub collaboration. Learn commits, branching, pull requests, workflows, and open-source contribution.",
-    image: "/images/git.webp",
+    image: "/images/git-700.webp",
     category: ["Git", "GitHub"],
   },
   {
