@@ -172,6 +172,19 @@ export const blogs: IBlogs[] = [
   },
   {
     baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/docker/refs/heads/main",
+    url: "docker.md",
+    title: "Docker and Docker Hub Complete Guide",
+    shortTitle: "Docker",
+    slug: "docker-complete-guide",
+    github: "https://github.com/bidursapkota00/docker",
+    description:
+      "Learn Docker from beginner to advanced: images, containers, FastAPI Dockerization, volumes, networking, Docker Compose, Docker Hub, debugging, and deployment.",
+    image: "/images/docker-700.webp",
+    category: ["Docker"],
+  },
+  {
+    baseUrl:
       "https://raw.githubusercontent.com/bidursapkota00/Design-Patterns/refs/heads/main",
     url: "README.md",
     title: "Design Patterns Complete Guide",
