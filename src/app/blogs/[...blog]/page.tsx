@@ -139,20 +139,22 @@ export default async function Blog({ params }: BlogDetailPageProps) {
         <ToggleFullScreen />
         <Sidebar />
 
-        <h1 className="m-5 text-[2.5rem] leading-[2.75rem] py-4 font-bold mb-4 border-b pb-2 break-words">
-          {heading}
-        </h1>
+        <div className="markdown-body px-5 pt-5">
+          <h1 className="text-[2em] font-semibold my-[.67em] pb-[.3em] border-b border-[#d1d9e0b3] break-words">
+            {heading}
+          </h1>
 
-        <div className="flex justify-end mx-5">
-          <a
-            href={blog.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 underline text-lg"
-          >
-            <LinkIcon className="w-4 h-4" />
-            Github Link
-          </a>
+          <div className="flex justify-end mb-4">
+            <a
+              href={blog.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[#0969da] no-underline hover:underline text-[16px]"
+            >
+              <LinkIcon className="w-4 h-4" />
+              Github Link
+            </a>
+          </div>
         </div>
 
         <ReadmeReader baseUrl={blog.baseUrl} markdown={rest || ""} />

@@ -32,7 +32,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       if (inline) {
         return (
           <code
-            className="bg-gray-100 px-1 py-0.5 rounded font-mono break-words"
+            className="bg-[rgba(175,184,193,0.2)] px-[0.4em] py-[0.2em] rounded-[6px] font-mono text-[85%] break-words"
             {...props}
           >
             {children}
@@ -64,7 +64,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       return (
         <h1
           id={id}
-          className="text-[2.5rem] leading-[2.75rem] py-4 font-bold mb-4 mt-8 border-b pb-2 break-words"
+          className="text-[2em] font-semibold my-[.67em] pb-[.3em] border-b border-[#d1d9e0b3] break-words"
         >
           {children}
         </h1>
@@ -73,7 +73,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h2: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h2 id={id} className="text-4xl font-bold mb-3 mt-6 break-words">
+        <h2 id={id} className="text-[1.5em] font-semibold mt-[24px] mb-[16px] pb-[.3em] border-b border-[#d1d9e0b3] break-words">
           {children}
         </h2>
       );
@@ -81,7 +81,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h3: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h3 id={id} className="text-3xl font-bold mb-2 mt-4 break-words">
+        <h3 id={id} className="text-[1.25em] font-semibold mt-[24px] mb-[16px] break-words">
           {children}
         </h3>
       );
@@ -89,7 +89,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h4: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h4 id={id} className="text-2xl font-bold mb-2 mt-4 break-words">
+        <h4 id={id} className="text-[1em] font-semibold mt-[24px] mb-[16px] break-words">
           {children}
         </h4>
       );
@@ -97,7 +97,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h5: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h5 id={id} className="text-xl font-bold mb-2 mt-4 break-words">
+        <h5 id={id} className="text-[.875em] font-semibold mt-[24px] mb-[16px] break-words">
           {children}
         </h5>
       );
@@ -105,33 +105,33 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h6: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h6 id={id} className="text-lg font-bold mb-2 mt-4 break-words">
+        <h6 id={id} className="text-[.85em] font-semibold text-[#656d76] mt-[24px] mb-[16px] break-words">
           {children}
         </h6>
       );
     },
     p: ({ children }: any) => (
-      <p className="mb-4 leading-relaxed text-lg">{children}</p>
+      <p className="mt-0 mb-[16px] leading-[1.5] text-[16px]">{children}</p>
     ),
     ul: ({ children }: any) => (
-      <ul className="list-disc mb-4 ml-8 space-y-1 md-ul text-lg">
+      <ul className="mb-[16px] pl-[2em] md-ul text-[16px]">
         {children}
       </ul>
     ),
     ol: ({ children }: any) => (
-      <ol className="list-decimal mb-4 ml-8 space-y-1 md-ol text-lg">
+      <ol className="mb-[16px] pl-[2em] md-ol text-[16px]">
         {children}
       </ol>
     ),
     blockquote: ({ children }: any) => (
-      <blockquote className="border-l-4 border-gray-300 pl-4 italic my-4 bg-gray-50 py-2 text-lg">
+      <blockquote className="border-l-[.25em] border-[#d0d7de] pl-[1em] text-[#656d76] m-0 mb-[16px] text-[16px]">
         {children}
       </blockquote>
     ),
     a: ({ href, children }: any) => (
       <a
         href={href}
-        className="text-blue-600 hover:text-blue-800 underline text-lg"
+        className="text-[#0969da] no-underline hover:underline text-[16px]"
       >
         {children}
       </a>
@@ -171,37 +171,37 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       );
     },
     table: ({ children }: any) => (
-      <div className="overflow-x-auto mb-4 text-lg">
-        <table className="min-w-full border-collapse border border-gray-300 text-lg">
+      <div className="overflow-x-auto mb-[16px] text-[16px]">
+        <table className="w-full border-collapse text-[16px]">
           {children}
         </table>
       </div>
     ),
     thead: ({ children }: any) => (
-      <thead className="bg-gray-50 text-lg">{children}</thead>
+      <thead className="text-[16px]">{children}</thead>
     ),
-    tbody: ({ children }: any) => <tbody className="text-lg">{children}</tbody>,
+    tbody: ({ children }: any) => <tbody className="text-[16px]">{children}</tbody>,
     tr: ({ children }: any) => (
-      <tr className="hover:bg-gray-50 text-lg">{children}</tr>
+      <tr className="text-[16px]">{children}</tr>
     ),
     th: ({ children, style }: any) => (
       <th
-        className="border border-gray-300 bg-gray-50 px-4 py-2 font-semibold text-lg"
+        className="font-semibold text-[16px]"
         style={style}
       >
         {children}
       </th>
     ),
     td: ({ children, style }: any) => (
-      <td className="border border-gray-300 px-4 py-2 text-lg" style={style}>
+      <td className="text-[16px]" style={style}>
         {children}
       </td>
     ),
-    hr: () => <hr className="my-10 border-t-4" />,
+    hr: () => <hr className="h-[.25em] my-[24px] bg-[#d0d7de] border-0" />,
   };
 
   return (
-    <div className="m-5">
+    <div className="markdown-body px-5 pb-5">
       <ReactMarkdown
         components={customRenderers}
         remarkPlugins={[remarkGfm]}
