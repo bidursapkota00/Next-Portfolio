@@ -131,7 +131,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     a: ({ href, children }: any) => (
       <a
         href={href}
-        className="text-[#0969da] no-underline hover:underline "
+        className="text-blue-600 hover:text-blue-800 "
       >
         {children}
       </a>
