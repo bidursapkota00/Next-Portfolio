@@ -201,7 +201,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
   };
 
   return (
-    <div className="markdown-body px-5 pb-5">
+    <div className="markdown-body px-5">
       <ReactMarkdown
         components={customRenderers}
         remarkPlugins={[remarkGfm]}
