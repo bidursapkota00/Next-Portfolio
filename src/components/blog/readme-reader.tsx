@@ -111,27 +111,27 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       );
     },
     p: ({ children }: any) => (
-      <p className="mt-0 mb-[16px] leading-[1.5] text-[16px]">{children}</p>
+      <p className="mt-0 mb-[16px] leading-[1.5] ">{children}</p>
     ),
     ul: ({ children }: any) => (
-      <ul className="mb-[16px] pl-[2em] md-ul text-[16px]">
+      <ul className="mb-[16px] pl-[2em] md-ul ">
         {children}
       </ul>
     ),
     ol: ({ children }: any) => (
-      <ol className="mb-[16px] pl-[2em] md-ol text-[16px]">
+      <ol className="mb-[16px] pl-[2em] md-ol ">
         {children}
       </ol>
     ),
     blockquote: ({ children }: any) => (
-      <blockquote className="border-l-[.25em] border-[#d0d7de] pl-[1em] text-[#656d76] m-0 mb-[16px] text-[16px]">
+      <blockquote className="border-l-[.25em] border-[#d0d7de] pl-[1em] text-[#656d76] m-0 mb-[16px] ">
         {children}
       </blockquote>
     ),
     a: ({ href, children }: any) => (
       <a
         href={href}
-        className="text-[#0969da] no-underline hover:underline text-[16px]"
+        className="text-[#0969da] no-underline hover:underline "
       >
         {children}
       </a>
@@ -171,29 +171,29 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       );
     },
     table: ({ children }: any) => (
-      <div className="overflow-x-auto mb-[16px] text-[16px]">
-        <table className="w-full border-collapse text-[16px]">
+      <div className="overflow-x-auto mb-[16px] ">
+        <table className="w-full border-collapse ">
           {children}
         </table>
       </div>
     ),
     thead: ({ children }: any) => (
-      <thead className="text-[16px]">{children}</thead>
+      <thead className="">{children}</thead>
     ),
-    tbody: ({ children }: any) => <tbody className="text-[16px]">{children}</tbody>,
+    tbody: ({ children }: any) => <tbody className="">{children}</tbody>,
     tr: ({ children }: any) => (
-      <tr className="text-[16px]">{children}</tr>
+      <tr className="">{children}</tr>
     ),
     th: ({ children, style }: any) => (
       <th
-        className="font-semibold text-[16px]"
+        className="font-semibold "
         style={style}
       >
         {children}
       </th>
     ),
     td: ({ children, style }: any) => (
-      <td className="text-[16px]" style={style}>
+      <td className="" style={style}>
         {children}
       </td>
     ),
