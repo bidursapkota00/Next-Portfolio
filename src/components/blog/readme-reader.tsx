@@ -23,13 +23,18 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
   };
 
   const customRenderers = {
-    code({ node, inline, className, children, ...props }: any) {
+    code({ node, className, children, ...props }: any) {
       const match = /language-(\w+)/.exec(className || "");
       const language = match ? match[1] : "";
       const codeString = String(children).replace(/\n$/, "");
-      inline = !className;
+      
+      const hasLanguage = !!match;
+      const hasNewlines = String(children).includes("\n");
+      const spansMultipleLines = node?.position?.start?.line !== node?.position?.end?.line;
+      
+      const isBlock = hasLanguage || hasNewlines || spansMultipleLines;
 
-      if (inline) {
+      if (!isBlock) {
         return (
           <code
             className="bg-[rgba(175,184,193,0.2)] px-[0.4em] py-[0.2em] rounded-[6px] font-mono text-[85%] break-words"
@@ -131,7 +136,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     a: ({ href, children }: any) => (
       <a
         href={href}
-        className="text-blue-600 hover:text-blue-800 "
+        className="text-blue-600 hover:text-blue-800 underline"
       >
         {children}
       </a>
