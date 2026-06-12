@@ -1,0 +1,1852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" href="/_next/static/media/a74fb1607b845cb0-s.p.woff2" as="font" crossorigin=""
+        type="font/woff2" />
+    <link rel="preload" href="/_next/static/media/eaead17c7dbfcd5d-s.p.woff2" as="font" crossorigin=""
+        type="font/woff2" />
+    <link rel="stylesheet" href="/_next/static/css/fec165ac9a550ff4.css" data-precedence="next" />
+    <link rel="stylesheet" href="/_next/static/css/8b1b7c2b96465aad.css" data-precedence="next" />
+    <link rel="stylesheet" href="/_next/static/css/d104c7dfbbfbfd72.css" data-precedence="next" />
+    <link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-a0203fecb9ce3010.js" />
+    <script src="/_next/static/chunks/fd9d1056-9129744808024b62.js" async=""></script>
+    <script src="/_next/static/chunks/2117-e000f9c600c244b6.js" async=""></script>
+    <script src="/_next/static/chunks/main-app-be3d940aef6bd3eb.js" async=""></script>
+    <script src="/_next/static/chunks/app/layout-4c786d55768778b6.js" async=""></script>
+    <script src="/_next/static/chunks/02b2f66c-c89cf69943479389.js" async=""></script>
+    <script src="/_next/static/chunks/8718-4c86c82d5da7024b.js" async=""></script>
+    <script src="/_next/static/chunks/8076-30c33237d71202b0.js" async=""></script>
+    <script src="/_next/static/chunks/app/blogs/%5B...blog%5D/page-84eb54b4d05c3be1.js" async=""></script>
+    <title>Git and GitHub Complete Guide – Blogs by Bidur Sapkota</title>
+    <meta name="description"
+        content="Master Git version control and GitHub collaboration. Learn commits, branching, pull requests, workflows, and open-source contribution." />
+    <meta name="keywords"
+        content="Full Stack Developer,React.js,React Native,Node.js,JavaScript,TypeScript,Next.js,Website Developer,Web Developer,Frontend Developer,Backend Developer,Electron.js,Mobile App Developer,Desktop App Developer" />
+    <meta name="next-size-adjust" />
+    <script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script>
+</head>
+
+<body class="__variable_0a80b4 __variable_572227">
+    <style>
+        footer {
+            margin-top: 50px;
+        }
+
+        .md-ol p,
+        .md-ul p {
+            display: inline
+        }
+
+        .md-ol ol,
+        .md-ol ul,
+        .md-ul ol,
+        .md-ul ul {
+            margin-left: 20px
+        }
+
+        .md-ol ul,
+        .md-ul ul {
+            list-style-type: circle
+        }
+
+        .md-ol ol,
+        .md-ul ol {
+            list-style-type: lower-alpha
+        }
+
+        pre {
+            white-space: pre-wrap
+        }
+
+        @font-face {
+            font-family: __Playfair_Display_0a80b4;
+            font-style: normal;
+            font-weight: 400 900;
+            font-display: swap;
+            src: url(/_next/static/media/47f136985ef5b5cb-s.woff2) format("woff2");
+            unicode-range: u+0301, u+0400-045f, u+0490-0491, u+04b0-04b1, u+2116
+        }
+
+        @font-face {
+            font-family: __Playfair_Display_0a80b4;
+            font-style: normal;
+            font-weight: 400 900;
+            font-display: swap;
+            src: url(/_next/static/media/4ead58c4dcc3f285-s.woff2) format("woff2");
+            unicode-range: u+0102-0103, u+0110-0111, u+0128-0129, u+0168-0169, u+01a0-01a1, u+01af-01b0, u+0300-0301, u+0303-0304, u+0308-0309, u+0323, u+0329, u+1ea0-1ef9, u+20ab
+        }
+
+        @font-face {
+            font-family: __Playfair_Display_0a80b4;
+            font-style: normal;
+            font-weight: 400 900;
+            font-display: swap;
+            src: url(/_next/static/media/28a2004cf8372660-s.woff2) format("woff2");
+            unicode-range: u+0100-02ba, u+02bd-02c5, u+02c7-02cc, u+02ce-02d7, u+02dd-02ff, u+0304, u+0308, u+0329, u+1d00-1dbf, u+1e00-1e9f, u+1ef2-1eff, u+2020, u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff
+        }
+
+        @font-face {
+            font-family: __Playfair_Display_0a80b4;
+            font-style: normal;
+            font-weight: 400 900;
+            font-display: swap;
+            src: url(/_next/static/media/eaead17c7dbfcd5d-s.p.woff2) format("woff2");
+            unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+0304, u+0308, u+0329, u+2000-206f, u+20ac, u+2122, u+2191, u+2193, u+2212, u+2215, u+feff, u+fffd
+        }
+
+        @font-face {
+            font-family: __Playfair_Display_Fallback_0a80b4;
+            src: local("Times New Roman");
+            ascent-override: 97.25%;
+            descent-override: 22.56%;
+            line-gap-override: 0.00%;
+            size-adjust: 111.26%
+        }
+
+        .__className_0a80b4 {
+            font-family: __Playfair_Display_0a80b4, __Playfair_Display_Fallback_0a80b4;
+            font-style: normal
+        }
+
+        .__variable_0a80b4 {
+            --font-playfair: "__Playfair_Display_0a80b4", "__Playfair_Display_Fallback_0a80b4"
+        }
+
+        @font-face {
+            font-family: __Quicksand_572227;
+            font-style: normal;
+            font-weight: 300 700;
+            font-display: swap;
+            src: url(/_next/static/media/d426c6df177f02c4-s.woff2) format("woff2");
+            unicode-range: u+0102-0103, u+0110-0111, u+0128-0129, u+0168-0169, u+01a0-01a1, u+01af-01b0, u+0300-0301, u+0303-0304, u+0308-0309, u+0323, u+0329, u+1ea0-1ef9, u+20ab
+        }
+
+        @font-face {
+            font-family: __Quicksand_572227;
+            font-style: normal;
+            font-weight: 300 700;
+            font-display: swap;
+            src: url(/_next/static/media/9b4fbfc777bb173a-s.woff2) format("woff2");
+            unicode-range: u+0100-02ba, u+02bd-02c5, u+02c7-02cc, u+02ce-02d7, u+02dd-02ff, u+0304, u+0308, u+0329, u+1d00-1dbf, u+1e00-1e9f, u+1ef2-1eff, u+2020, u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff
+        }
+
+        @font-face {
+            font-family: __Quicksand_572227;
+            font-style: normal;
+            font-weight: 300 700;
+            font-display: swap;
+            src: url(/_next/static/media/a74fb1607b845cb0-s.p.woff2) format("woff2");
+            unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+0304, u+0308, u+0329, u+2000-206f, u+20ac, u+2122, u+2191, u+2193, u+2212, u+2215, u+feff, u+fffd
+        }
+
+        @font-face {
+            font-family: __Quicksand_Fallback_572227;
+            src: local("Arial");
+            ascent-override: 95.87%;
+            descent-override: 23.97%;
+            line-gap-override: 0.00%;
+            size-adjust: 104.31%
+        }
+
+        .__className_572227 {
+            font-family: __Quicksand_572227, __Quicksand_Fallback_572227;
+            font-style: normal
+        }
+
+        .__variable_572227 {
+            --font-quicksand: "__Quicksand_572227", "__Quicksand_Fallback_572227"
+        }
+
+        /*
+! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com
+*/
+        *,
+        :after,
+        :before {
+            box-sizing: border-box;
+            border: 0 solid #e5e7eb
+        }
+
+        :after,
+        :before {
+            --tw-content: ""
+        }
+
+        :host,
+        html {
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
+            -moz-tab-size: 4;
+            -o-tab-size: 4;
+            tab-size: 4;
+            font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            -webkit-tap-highlight-color: transparent
+        }
+
+        body {
+            margin: 0;
+            line-height: inherit
+        }
+
+        hr {
+            height: 0;
+            color: inherit;
+            border-top-width: 1px
+        }
+
+        abbr:where([title]) {
+            -webkit-text-decoration: underline dotted;
+            text-decoration: underline dotted
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: inherit;
+            font-weight: inherit
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit
+        }
+
+        b,
+        strong {
+            font-weight: bolder
+        }
+
+        code,
+        kbd,
+        pre,
+        samp {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            font-size: 1em
+        }
+
+        small {
+            font-size: 80%
+        }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline
+        }
+
+        sub {
+            bottom: -.25em
+        }
+
+        sup {
+            top: -.5em
+        }
+
+        table {
+            text-indent: 0;
+            border-color: inherit;
+            border-collapse: collapse
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-feature-settings: inherit;
+            font-variation-settings: inherit;
+            font-size: 100%;
+            font-weight: inherit;
+            line-height: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0
+        }
+
+        button,
+        select {
+            text-transform: none
+        }
+
+        [type=button],
+        [type=reset],
+        [type=submit],
+        button {
+            -webkit-appearance: button;
+            background-color: transparent;
+            background-image: none
+        }
+
+        :-moz-focusring {
+            outline: auto
+        }
+
+        :-moz-ui-invalid {
+            box-shadow: none
+        }
+
+        progress {
+            vertical-align: baseline
+        }
+
+        ::-webkit-inner-spin-button,
+        ::-webkit-outer-spin-button {
+            height: auto
+        }
+
+        [type=search] {
+            -webkit-appearance: textfield;
+            outline-offset: -2px
+        }
+
+        ::-webkit-search-decoration {
+            -webkit-appearance: none
+        }
+
+        ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit
+        }
+
+        summary {
+            display: list-item
+        }
+
+        blockquote,
+        dd,
+        dl,
+        figure,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        hr,
+        p,
+        pre {
+            margin: 0
+        }
+
+        fieldset {
+            margin: 0
+        }
+
+        fieldset,
+        legend {
+            padding: 0
+        }
+
+        menu,
+        ol,
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0
+        }
+
+        dialog {
+            padding: 0
+        }
+
+        textarea {
+            resize: vertical
+        }
+
+        input::-moz-placeholder,
+        textarea::-moz-placeholder {
+            opacity: 1;
+            color: #9ca3af
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            opacity: 1;
+            color: #9ca3af
+        }
+
+        [role=button],
+        button {
+            cursor: pointer
+        }
+
+        :disabled {
+            cursor: default
+        }
+
+        audio,
+        canvas,
+        embed,
+        iframe,
+        img,
+        object,
+        svg,
+        video {
+            display: block;
+            vertical-align: middle
+        }
+
+        img,
+        video {
+            max-width: 100%;
+            height: auto
+        }
+
+        [hidden] {
+            display: none
+        }
+    </style>
+    <div
+        class="m-5 bg-yellow-100 border border-yellow-300 text-yellow-800 pl-12 py-3 rounded-lg shadow-md flex items-start justify-center gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-info shrink-0 mt-0.5 text-yellow-600">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 16v-4"></path>
+            <path d="M12 8h.01"></path>
+        </svg>
+        <div class="text-sm">
+            <b>Triple click to toggle Read Mode</b>
+            .
+        </div>
+        <button class="shrink-0 ml-2 p-1 rounded-full hover:bg-yellow-200">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-x ">
+                <path d="M18 6 6 18"></path>
+                <path d="m6 6 12 12"></path>
+            </svg>
+        </button>
+    </div>
+    <div id="sidebar__overlay"></div>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar__hamburger" id="hamburger">
+            <div class="sidebar__hamburger__lines">
+                <div class="sidebar__hamburger__line"></div>
+                <div class="sidebar__hamburger__line"></div>
+                <div class="sidebar__hamburger__line"></div>
+            </div>
+        </div>
+        <div class="sidebar__content">
+            <div>
+                <img alt="Bidur Sapkota - Profile Image" title="Bidur Sapkota - Developer" loading="lazy" width="160"
+                    height="160" decoding="async" data-nimg="1" class="sidebar__image" style="color:transparent"
+                    src="/images/profile3.webp" />
+                <h2 class="sidebar__name">bidur sapkota</h2>
+                <h3 class="sidebar__job">
+                    developer <span class="sidebar__country">in nepal</span>
+                </h3>
+            </div>
+            <ul class="sidebar__list">
+                <a href="/#hero" class="sidebar__list__item">home</a>
+                <a href="/#about" class="sidebar__list__item">about</a>
+                <a href="/#education" class="sidebar__list__item">education</a>
+                <a href="/#skills" class="sidebar__list__item">skills</a>
+                <a href="/#experience" class="sidebar__list__item">experience</a>
+                <a class="sidebar__list__item" href="/works">work</a>
+                <a href="/#accomplishment" class="sidebar__list__item">accomplishment</a>
+                <a class="sidebar__list__item" href="/blogs">blog</a>
+                <a href="/#contact" class="sidebar__list__item">contact</a>
+            </ul>
+        </div>
+    </nav>
+    <h1 class="m-5 text-[2.5rem] leading-[2.75rem] py-4 font-bold mb-4 border-b pb-2 break-words">Git &amp;GitHub
+        Complete Guide</h1>
+    <div class="flex justify-end mx-5">
+        <a href="https://github.com/bidursapkota00/Git" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 underline text-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-link w-4 h-4">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+            </svg>
+            Github Link
+        </a>
+    </div>
+    <div class="m-5">
+        <p class="mb-4 leading-relaxed text-lg">
+            <span class="relative inline-block">
+                <img alt="Bidur Sapkota" title="Bidur Sapkota - Developer" loading="lazy" width="64" height="64"
+                    decoding="async" data-nimg="1" class="w-[48px] shadow-sm" style="color:transparent"
+                    src="/images/gravatar.webp" />
+            </span>
+            <a href="https://www.bidursapkota.com.np/" class="text-blue-600 hover:text-blue-800 underline text-lg">Bidur
+                Sapkota</a>
+        </p>
+        <p class="mb-4 leading-relaxed text-lg">
+            <span class="relative block w-full my-4" style="aspect-ratio:16/9">
+                <img alt="Git &amp; GitHub Complete Guide by Bidur Sapkota"
+                    title="Git &amp; GitHub Complete Guide – Blog by Bidur Sapkota" loading="lazy" decoding="async"
+                    data-nimg="fill" class="object-contain shadow-sm"
+                    style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
+                    src="https://raw.githubusercontent.com/bidursapkota00/Git/refs/heads/main//images/git-1200.webp" />
+            </span>
+        </p>
+        <h2 id="table-of-contents" class="text-4xl font-bold mb-3 mt-6 break-words">Table of Contents</h2>
+        <ol class="list-decimal mb-4 ml-8 space-y-1 md-ol text-lg">
+            <li>
+                <a href="#introducing-git" class="text-blue-600 hover:text-blue-800 underline text-lg">Introducing
+                    Git</a>
+            </li>
+            <li>
+                <a href="#installation--setup" class="text-blue-600 hover:text-blue-800 underline text-lg">Installation
+                    &amp;Setup</a>
+            </li>
+            <li>
+                <a href="#the-very-basics-adding--committing"
+                    class="text-blue-600 hover:text-blue-800 underline text-lg">The Very Basics: Adding
+                    &amp;Committing</a>
+            </li>
+            <li>
+                <a href="#commits-in-detail" class="text-blue-600 hover:text-blue-800 underline text-lg">Commits In
+                    Detail</a>
+            </li>
+            <li>
+                <a href="#working-with-branches" class="text-blue-600 hover:text-blue-800 underline text-lg">Working
+                    With Branches</a>
+            </li>
+            <li>
+                <a href="#merging-branches" class="text-blue-600 hover:text-blue-800 underline text-lg">Merging
+                    Branches</a>
+            </li>
+            <li>
+                <a href="#comparing-changes-with-git-diff"
+                    class="text-blue-600 hover:text-blue-800 underline text-lg">Comparing Changes With Git Diff</a>
+            </li>
+            <li>
+                <a href="#stashing" class="text-blue-600 hover:text-blue-800 underline text-lg">Stashing</a>
+            </li>
+            <li>
+                <a href="#gitignore" class="text-blue-600 hover:text-blue-800 underline text-lg">.gitignore</a>
+            </li>
+            <li>
+                <a href="#undoing-changes--time-traveling"
+                    class="text-blue-600 hover:text-blue-800 underline text-lg">Undoing Changes &amp;Time Traveling</a>
+            </li>
+            <li>
+                <a href="#github-the-basics" class="text-blue-600 hover:text-blue-800 underline text-lg">GitHub: The
+                    Basics</a>
+            </li>
+            <li>
+                <a href="#fetching--pulling" class="text-blue-600 hover:text-blue-800 underline text-lg">Fetching
+                    &amp;Pulling</a>
+            </li>
+            <li>
+                <a href="#github-basics-part-2" class="text-blue-600 hover:text-blue-800 underline text-lg">GitHub
+                    Basics Part 2</a>
+            </li>
+            <li>
+                <a href="#git-collaboration-workflows" class="text-blue-600 hover:text-blue-800 underline text-lg">Git
+                    Collaboration Workflows</a>
+            </li>
+            <li>
+                <a href="#rebasing" class="text-blue-600 hover:text-blue-800 underline text-lg">Rebasing</a>
+            </li>
+            <li>
+                <a href="#interactive-rebase" class="text-blue-600 hover:text-blue-800 underline text-lg">Interactive
+                    Rebase</a>
+            </li>
+            <li>
+                <a href="#cherry-pick" class="text-blue-600 hover:text-blue-800 underline text-lg">Cherry-Pick</a>
+            </li>
+            <li>
+                <a href="#git-tags" class="text-blue-600 hover:text-blue-800 underline text-lg">Git Tags</a>
+            </li>
+            <li>
+                <a href="#reflogs---retrieving-lost-work"
+                    class="text-blue-600 hover:text-blue-800 underline text-lg">Reflogs - Retrieving Lost Work</a>
+            </li>
+        </ol>
+        <hr class="my-10 border-t-4" />
+        <h2 id="introducing-git" class="text-4xl font-bold mb-3 mt-6 break-words">Introducing Git</h2>
+        <p class="mb-4 leading-relaxed text-lg">Git is a distributed version control system created by Linus Torvalds in
+            2005. Every user has a complete copy of the project history. Your project lives in a repository, which holds
+            both your files and all of Git &#x27;s tracking information. As you work, you stage changes in a staging
+            area and then save them as commits — snapshots of your project at a point in time. You can create branches
+            to develop features in isolation and use remotes to sync your work with others.</p>
+        <p class="mb-4 leading-relaxed text-lg">Git lets you track the full history of your project, collaborate with
+            multiple developers, experiment on separate branches without risk, revert to earlier versions when something
+            breaks, and keep your code backed up across multiple locations.</p>
+        <hr class="my-10 border-t-4" />
+        <h2 id="installation--setup" class="text-4xl font-bold mb-3 mt-6 break-words">Installation &amp;Setup</h2>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#3c526d"># macOS</span>
+                            <span></span>
+                            <span>brew </span>
+                            <span class="token" style="color:#7c00aa">install</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#3c526d"># Linux (Ubuntu/Debian)</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">sudo</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">apt</span>
+                            <span>update </span>
+                            <span class="token" style="color:#a04900">&amp;&amp;</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">sudo</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">apt</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">install</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#3c526d"># Verify</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>--version</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <p class="mb-4 leading-relaxed text-lg">
+            <strong>Windows</strong>
+            : Download from <a href="https://git-scm.com"
+                class="text-blue-600 hover:text-blue-800 underline text-lg">git-scm.com</a>
+            , run installer with default settings, open Git Bash or Command Prompt.
+        </p>
+        <p class="mb-4 leading-relaxed text-lg">
+            <strong>Also install vscode extension: GitLens by GitKraken</strong>
+        </p>
+        <h3 id="initial-configuration" class="text-3xl font-bold mb-2 mt-4 break-words">Initial Configuration</h3>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>config --global user.name </span>
+                            <span class="token" style="color:#116b00">&quot;Your Name &quot;</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>config --global user.email </span>
+                            <span class="token" style="color:#116b00">
+                                &quot;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2c5543595e0249414d45406c49544d415c4049024f4341">[email &#160;protected]</a>
+                                &quot;
+                            </span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>config --global init.defaultBranch main
+</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>config --global core.editor </span>
+                            <span class="token" style="color:#116b00">&quot;code --wait &quot;</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>config --list</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <hr class="my-10 border-t-4" />
+        <h2 id="the-very-basics-adding--committing" class="text-4xl font-bold mb-3 mt-6 break-words">The Very Basics:
+            Adding &amp;Committing</h2>
+        <h3 id="the-three-areas" class="text-3xl font-bold mb-2 mt-4 break-words">The Three Areas</h3>
+        <ol class="list-decimal mb-4 ml-8 space-y-1 md-ol text-lg">
+            <li>
+                <strong>Working Directory</strong>
+            </li>
+            <li>
+                <strong>Staging Area</strong>
+            </li>
+            <li>
+                <strong>Repository (.git/)</strong>
+            </li>
+        </ol>
+        <h3 id="basic-workflow" class="text-3xl font-bold mb-2 mt-4 break-words">Basic Workflow</h3>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>init                              </span>
+                            <span class="token" style="color:#3c526d"># Initialize repo</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>status                            </span>
+                            <span class="token" style="color:#3c526d"># Check status</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">add</span>
+                            <span>filename.txt                  </span>
+                            <span class="token" style="color:#3c526d"># Stage specific file</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">add</span>
+                            <span></span>
+                            <span class="token" style="color:#005a8e">.</span>
+                            <span></span>
+                            <span class="token" style="color:#3c526d"># Stage all files</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>commit -m </span>
+                            <span class="token" style="color:#116b00">&quot;Initial commit &quot;</span>
+                            <span></span>
+                            <span class="token" style="color:#3c526d"># Commit</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>log --oneline                     </span>
+                            <span class="token" style="color:#3c526d"># View history</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>log --oneline --graph --all       </span>
+                            <span class="token" style="color:#3c526d"># View branches/history in graph</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <hr class="my-10 border-t-4" />
+        <h2 id="commits-in-detail" class="text-4xl font-bold mb-3 mt-6 break-words">Commits In Detail</h2>
+        <p class="mb-4 leading-relaxed text-lg">Each commit has: SHA-1 hash, author, date, message, and parent
+            reference.</p>
+        <h3 id="writing-good-commit-messages" class="text-3xl font-bold mb-2 mt-4 break-words">Writing Good Commit
+            Messages</h3>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>commit -m </span>
+                            <span class="token" style="color:#116b00">&quot;feat: add login functionality &quot;</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>commit -m </span>
+                            <span class="token" style="color:#116b00">&quot;fix: resolve null pointer exception &quot;</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>commit -m </span>
+                            <span class="token" style="color:#116b00">&quot;docs: update API documentation &quot;</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <h3 id="amending-commits" class="text-3xl font-bold mb-2 mt-4 break-words">Amending Commits</h3>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>commit --amend -m </span>
+                            <span class="token" style="color:#116b00">&quot;New commit message &quot;</span>
+                            <span></span>
+                            <span class="token" style="color:#3c526d"># Fix message</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">add</span>
+                            <span>forgotten-file.txt
+</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>commit --amend --no-edit                      </span>
+                            <span class="token" style="color:#3c526d"># Add forgotten files</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <h3 id="viewing-commit-details" class="text-3xl font-bold mb-2 mt-4 break-words">Viewing Commit Details</h3>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>show </span>
+                            <span class="token" style="color:#a04900">&lt;</span>
+                            <span>commit-hash</span>
+                            <span class="token" style="color:#a04900">&gt;</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <hr class="my-10 border-t-4" />
+        <h2 id="working-with-branches" class="text-4xl font-bold mb-3 mt-6 break-words">Working With Branches</h2>
+        <p class="mb-4 leading-relaxed text-lg">Branches let you work on features without affecting the main codebase.
+        </p>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>branch                            </span>
+                            <span class="token" style="color:#3c526d"># List branches</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>branch feature-login              </span>
+                            <span class="token" style="color:#3c526d"># Create branch</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>switch feature-login              </span>
+                            <span class="token" style="color:#3c526d"># Switch to branch</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>switch -c feature-signup          </span>
+                            <span class="token" style="color:#3c526d"># Create and switch</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>branch -d feature-login           </span>
+                            <span class="token" style="color:#3c526d"># Delete (safe)</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>branch -D feature-login           </span>
+                            <span class="token" style="color:#3c526d"># Delete (force)</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>branch -m old-name new-name       </span>
+                            <span class="token" style="color:#3c526d"># Rename</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <hr class="my-10 border-t-4" />
+        <h2 id="merging-branches" class="text-4xl font-bold mb-3 mt-6 break-words">Merging Branches</h2>
+        <h3 id="fast-forward-vs-three-way-merge" class="text-3xl font-bold mb-2 mt-4 break-words">Fast-Forward vs
+            Three-Way Merge</h3>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>checkout main
+</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>merge feature-branch              </span>
+                            <span class="token" style="color:#3c526d"># Fast-forward if possible</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>merge --no-ff feature-branch      </span>
+                            <span class="token" style="color:#3c526d"># Always create merge commit</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>merge --squash feature-branch     </span>
+                            <span class="token" style="color:#3c526d"># Squash into one commit</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <h3 id="merge-conflicts" class="text-3xl font-bold mb-2 mt-4 break-words">Merge Conflicts</h3>
+        <p class="mb-4 leading-relaxed text-lg">When Git can &#x27;t auto-merge, it marks conflicts:</p>
+        <pre>
+                <code class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">&lt;&lt;&lt;&lt;&lt;&lt;&lt;HEAD
+Content from current branch
+=======
+Content from feature branch
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;feature-branch
+</code>
+            </pre>
+        <p class="mb-4 leading-relaxed text-lg">Resolve by editing the file, removing markers, then:</p>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">add</span>
+                            <span>file.txt
+</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>commit</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <hr class="my-10 border-t-4" />
+        <h2 id="comparing-changes-with-git-diff" class="text-4xl font-bold mb-3 mt-6 break-words">Comparing Changes With
+            Git Diff</h2>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">diff</span>
+                            <span></span>
+                            <span class="token" style="color:#3c526d"># Unstaged changes</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">diff</span>
+                            <span>--staged                     </span>
+                            <span class="token" style="color:#3c526d"># Staged changes</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">diff</span>
+                            <span>main feature-branch          </span>
+                            <span class="token" style="color:#3c526d"># Between branches</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">diff</span>
+                            <span>commit1 commit2              </span>
+                            <span class="token" style="color:#3c526d"># Between commits</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">diff</span>
+                            <span>--name-only                  </span>
+                            <span class="token" style="color:#3c526d"># Only changed filenames</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">diff</span>
+                            <span>--stat                       </span>
+                            <span class="token" style="color:#3c526d"># Statistics</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <p class="mb-4 leading-relaxed text-lg">
+            <strong>Reading output</strong>
+            : <code class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">-</code>
+            = removed, <code class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">+</code>
+            = added, space = unchanged context.
+        </p>
+        <hr class="my-10 border-t-4" />
+        <h2 id="stashing" class="text-4xl font-bold mb-3 mt-6 break-words">Stashing</h2>
+        <p class="mb-4 leading-relaxed text-lg">Temporarily save uncommitted changes to work on something else.</p>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>stash                             </span>
+                            <span class="token" style="color:#3c526d"># Stash changes</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>stash push -m </span>
+                            <span class="token" style="color:#116b00">&quot;WIP: user login &quot;</span>
+                            <span></span>
+                            <span class="token" style="color:#3c526d"># Stash with message</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>stash -u                          </span>
+                            <span class="token" style="color:#3c526d"># Include untracked files</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>stash list                        </span>
+                            <span class="token" style="color:#3c526d"># List stashes</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>stash pop                         </span>
+                            <span class="token" style="color:#3c526d"># Apply + remove most recent</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>stash apply stash@</span>
+                            <span class="token" style="color:#111b27">{</span>
+                            <span class="token" style="color:#755f00">2</span>
+                            <span class="token" style="color:#111b27">}</span>
+                            <span></span>
+                            <span class="token" style="color:#3c526d"># Apply specific stash</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>stash drop                        </span>
+                            <span class="token" style="color:#3c526d"># Drop a stash</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <hr class="my-10 border-t-4" />
+        <h2 id="gitignore" class="text-4xl font-bold mb-3 mt-6 break-words">.gitignore</h2>
+        <p class="mb-4 leading-relaxed text-lg">
+            <code class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">.gitignore</code>
+            tells Git which files to ignore. Common patterns:
+        </p>
+        <pre>
+                <code class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">.env
+node_modules/
+dist/
+build/
+.DS_Store
+.vscode/
+*.log
+</code>
+            </pre>
+        <blockquote class="border-l-4 border-gray-300 pl-4 italic my-4 bg-gray-50 py-2 text-lg">
+            <p class="mb-4 leading-relaxed text-lg">
+                <strong>Note</strong>
+                : <code class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">.gitignore</code>
+                only ignores untracked files. Already-tracked files need <code
+                    class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">git rm --cached filename</code>
+                first.
+            </p>
+        </blockquote>
+        <hr class="my-10 border-t-4" />
+        <h2 id="undoing-changes--time-traveling" class="text-4xl font-bold mb-3 mt-6 break-words">Undoing Changes
+            &amp;Time Traveling</h2>
+        <h3 id="discard-working-directory-changes" class="text-3xl font-bold mb-2 mt-4 break-words">Discard Working
+            Directory Changes</h3>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>restore filename.txt              </span>
+                            <span class="token" style="color:#3c526d"># Discard changes</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>restore </span>
+                            <span class="token" style="color:#005a8e">.</span>
+                            <span></span>
+                            <span class="token" style="color:#3c526d"># Discard all</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <h3 id="unstage-files" class="text-3xl font-bold mb-2 mt-4 break-words">Unstage Files</h3>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>restore --staged filename.txt</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <h3 id="undo-commits" class="text-3xl font-bold mb-2 mt-4 break-words">Undo Commits</h3>
+        <p class="mb-4 leading-relaxed text-lg">
+            <strong>Reset</strong>
+            (local/unpushed only — rewrites history):
+        </p>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>reset --soft HEAD~1               </span>
+                            <span class="token" style="color:#3c526d"># Keep changes staged</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>reset HEAD~1                      </span>
+                            <span class="token" style="color:#3c526d"># Keep changes unstaged (default)</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>reset --hard HEAD~1               </span>
+                            <span class="token" style="color:#3c526d"># Discard everything</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <p class="mb-4 leading-relaxed text-lg">
+            <strong>Revert</strong>
+            (safe for shared repos — creates undo commit):
+        </p>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>revert </span>
+                            <span class="token" style="color:#a04900">&lt;</span>
+                            <span>commit-hash</span>
+                            <span class="token" style="color:#a04900">&gt;</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <h3 id="detached-head" class="text-3xl font-bold mb-2 mt-4 break-words">Detached HEAD</h3>
+        <p class="mb-4 leading-relaxed text-lg">Happens when you checkout a specific commit. To save work from detached
+            state:</p>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>checkout -b </span>
+                            <span class="token" style="color:#a04900">&lt;</span>
+                            <span>new-branch-name</span>
+                            <span class="token" style="color:#a04900">&gt;</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <h3 id="cleaning-untracked-files" class="text-3xl font-bold mb-2 mt-4 break-words">Cleaning Untracked Files</h3>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>clean -dn                         </span>
+                            <span class="token" style="color:#3c526d"># Preview</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>clean -df                         </span>
+                            <span class="token" style="color:#3c526d"># Remove</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <hr class="my-10 border-t-4" />
+        <h2 id="github-the-basics" class="text-4xl font-bold mb-3 mt-6 break-words">GitHub: The Basics</h2>
+        <p class="mb-4 leading-relaxed text-lg">GitHub is a cloud-based Git hosting service that adds collaboration
+            features, issue tracking, and project management.</p>
+        <h3 id="remove-stored-credentials" class="text-3xl font-bold mb-2 mt-4 break-words">Remove Stored Credentials
+        </h3>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>config --global --unset credential.helper
+</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>push origin main                  </span>
+                            <span class="token" style="color:#3c526d"># Use brwoser based auth</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <h3 id="repository-operations" class="text-3xl font-bold mb-2 mt-4 break-words">Repository Operations</h3>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>clone https://github.com/user/repo.git         </span>
+                            <span class="token" style="color:#3c526d"># Clone</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>remote </span>
+                            <span class="token" style="color:#7c00aa">add</span>
+                            <span>origin </span>
+                            <span class="token" style="color:#a04900">&lt;</span>
+                            <span>url</span>
+                            <span class="token" style="color:#a04900">&gt;</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>remote -v                                      </span>
+                            <span class="token" style="color:#3c526d"># Check remotes</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>push -u origin main                            </span>
+                            <span class="token" style="color:#3c526d"># Set upstream + push</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>push                                           </span>
+                            <span class="token" style="color:#3c526d"># After upstream is set</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <h3 id="typical-workflow" class="text-3xl font-bold mb-2 mt-4 break-words">Typical Workflow</h3>
+        <ol class="list-decimal mb-4 ml-8 space-y-1 md-ol text-lg">
+            <li>Clone or create repo</li>
+            <li>
+                Create feature branch: <code
+                    class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">git checkout -b feature-xyz</code>
+            </li>
+            <li>Work, stage, commit</li>
+            <li>
+                Push: <code
+                    class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">git push origin feature-xyz</code>
+            </li>
+            <li>Create Pull Request → Review → Merge</li>
+        </ol>
+        <hr class="my-10 border-t-4" />
+        <h2 id="fetching--pulling" class="text-4xl font-bold mb-3 mt-6 break-words">Fetching &amp;Pulling</h2>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>fetch origin                      </span>
+                            <span class="token" style="color:#3c526d"># Download without merging</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">diff</span>
+                            <span>HEAD origin/main             </span>
+                            <span class="token" style="color:#3c526d"># Review changes</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>merge origin/main                 </span>
+                            <span class="token" style="color:#3c526d"># Merge when ready</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>pull                              </span>
+                            <span class="token" style="color:#3c526d"># Fetch + merge (shortcut)</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>pull --rebase                     </span>
+                            <span class="token" style="color:#3c526d"># Fetch + rebase instead</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <h3 id="remote-tracking" class="text-3xl font-bold mb-2 mt-4 break-words">Remote Tracking</h3>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>branch -r                         </span>
+                            <span class="token" style="color:#3c526d"># Remote branches</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>branch -a                         </span>
+                            <span class="token" style="color:#3c526d"># All branches</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <h3 id="force-push-after-rebase" class="text-3xl font-bold mb-2 mt-4 break-words">Force Push After Rebase</h3>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>push --force-with-lease           </span>
+                            <span class="token" style="color:#3c526d"># Safe force push</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <h3 id="pushing-to-different-remote-branch-name" class="text-3xl font-bold mb-2 mt-4 break-words">Pushing to
+            Different Remote Branch Name</h3>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>push -u origin local-branch:remote-branch</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <hr class="my-10 border-t-4" />
+        <h2 id="github-basics-part-2" class="text-4xl font-bold mb-3 mt-6 break-words">GitHub Basics Part 2</h2>
+        <h3 id="forking-workflow" class="text-3xl font-bold mb-2 mt-4 break-words">Forking Workflow</h3>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>clone https://github.com/yourusername/forked-repo.git
+</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>remote </span>
+                            <span class="token" style="color:#7c00aa">add</span>
+                            <span>upstream https://github.com/original-owner/repo.git
+</span>
+                            <span></span>
+                            <span class="token" style="color:#3c526d"># Keep fork updated:</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>fetch upstream
+</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>checkout main
+</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>merge upstream/main
+</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>push origin main</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <h3 id="github-pages" class="text-3xl font-bold mb-2 mt-4 break-words">GitHub Pages</h3>
+        <p class="mb-4 leading-relaxed text-lg">
+            Push to a <code class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">gh-pages</code>
+            branch → site at <code
+                class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">https://username.github.io/repo-name</code>
+            .
+        </p>
+        <hr class="my-10 border-t-4" />
+        <h2 id="git-collaboration-workflows" class="text-4xl font-bold mb-3 mt-6 break-words">Git Collaboration
+            Workflows</h2>
+        <h3 id="feature-branch-workflow-most-common" class="text-3xl font-bold mb-2 mt-4 break-words">Feature Branch
+            Workflow (most common)</h3>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>checkout -b feature-user-auth
+</span>
+                            <span></span>
+                            <span class="token" style="color:#3c526d"># Work, commit...</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>push origin feature-user-auth
+</span>
+                            <span></span>
+                            <span class="token" style="color:#3c526d"># Create Pull Request → Review → Merge</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>branch -d feature-user-auth</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <h3 id="gitflow-workflow" class="text-3xl font-bold mb-2 mt-4 break-words">Gitflow Workflow</h3>
+        <p class="mb-4 leading-relaxed text-lg">
+            Two permanent branches: <code class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">main</code>
+            (production) and <code class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">develop</code>
+            . Feature/release/hotfix branches branch off and merge back:
+        </p>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#3c526d"># Feature</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>checkout develop </span>
+                            <span class="token" style="color:#a04900">&amp;&amp;</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>checkout -b feature/login
+</span>
+                            <span></span>
+                            <span class="token" style="color:#3c526d"># ... work, then merge back into develop</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#3c526d"># Release</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>checkout -b release/1.2.0 develop
+</span>
+                            <span></span>
+                            <span class="token" style="color:#3c526d"># ... merge into both main and develop</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#3c526d"># Hotfix</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>checkout -b hotfix/critical-bug main
+</span>
+                            <span></span>
+                            <span class="token" style="color:#3c526d"># ... merge into both main and develop</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <hr class="my-10 border-t-4" />
+        <h2 id="rebasing" class="text-4xl font-bold mb-3 mt-6 break-words">Rebasing</h2>
+        <p class="mb-4 leading-relaxed text-lg">Rebasing re-applies commits onto another branch, creating linear
+            history.</p>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>checkout feature-branch
+</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>rebase main                       </span>
+                            <span class="token" style="color:#3c526d"># Rebase onto main</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>checkout main
+</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>merge feature-branch              </span>
+                            <span class="token" style="color:#3c526d"># Fast-forward merge</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <p class="mb-4 leading-relaxed text-lg">
+            <strong>Golden Rule</strong>
+            : Never rebase commits already pushed to a shared repo.
+        </p>
+        <h3 id="handling-conflicts" class="text-3xl font-bold mb-2 mt-4 break-words">Handling Conflicts</h3>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#3c526d"># Fix conflicts, then:</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">add</span>
+                            <span>conflicted-file.txt
+</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>rebase --continue
+</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>rebase --abort                    </span>
+                            <span class="token" style="color:#3c526d"># Cancel rebase</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <hr class="my-10 border-t-4" />
+        <h2 id="interactive-rebase" class="text-4xl font-bold mb-3 mt-6 break-words">Interactive Rebase</h2>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>rebase -i HEAD~4</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <h3 id="actions" class="text-3xl font-bold mb-2 mt-4 break-words">Actions</h3>
+        <div class="overflow-x-auto mb-4 text-lg">
+            <table class="min-w-full border-collapse border border-gray-300 text-lg">
+                <thead class="bg-gray-50 text-lg">
+                    <tr class="hover:bg-gray-50 text-lg">
+                        <th class="border border-gray-300 bg-gray-50 px-4 py-2 font-semibold text-lg">Action</th>
+                        <th class="border border-gray-300 bg-gray-50 px-4 py-2 font-semibold text-lg">Effect</th>
+                    </tr>
+                </thead>
+                <tbody class="text-lg">
+                    <tr class="hover:bg-gray-50 text-lg">
+                        <td class="border border-gray-300 px-4 py-2 text-lg">
+                            <code class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">pick</code>
+                        </td>
+                        <td class="border border-gray-300 px-4 py-2 text-lg">Use commit as-is</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50 text-lg">
+                        <td class="border border-gray-300 px-4 py-2 text-lg">
+                            <code class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">reword</code>
+                        </td>
+                        <td class="border border-gray-300 px-4 py-2 text-lg">Change commit message</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50 text-lg">
+                        <td class="border border-gray-300 px-4 py-2 text-lg">
+                            <code class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">squash</code>
+                        </td>
+                        <td class="border border-gray-300 px-4 py-2 text-lg">Combine with previous (edit combined
+                            message)</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50 text-lg">
+                        <td class="border border-gray-300 px-4 py-2 text-lg">
+                            <code class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">fixup</code>
+                        </td>
+                        <td class="border border-gray-300 px-4 py-2 text-lg">Combine with previous (discard this
+                            message)</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50 text-lg">
+                        <td class="border border-gray-300 px-4 py-2 text-lg">
+                            <code class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">drop</code>
+                        </td>
+                        <td class="border border-gray-300 px-4 py-2 text-lg">Remove commit</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50 text-lg">
+                        <td class="border border-gray-300 px-4 py-2 text-lg">
+                            <code class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">edit</code>
+                        </td>
+                        <td class="border border-gray-300 px-4 py-2 text-lg">Pause to amend the commit</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3 id="squashing-example" class="text-3xl font-bold mb-2 mt-4 break-words">Squashing Example</h3>
+        <pre>
+                <code class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">pick 1234567 Add user authentication
+squash 2345678 Fix auth bug
+squash 3456789 Add auth tests
+</code>
+            </pre>
+        <p class="mb-4 leading-relaxed text-lg">Result: one clean commit with all three changes.</p>
+        <hr class="my-10 border-t-4" />
+        <h2 id="cherry-pick" class="text-4xl font-bold mb-3 mt-6 break-words">Cherry-Pick</h2>
+        <p class="mb-4 leading-relaxed text-lg">Apply changes from a specific commit onto your current branch.</p>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>cherry-pick </span>
+                            <span class="token" style="color:#a04900">&lt;</span>
+                            <span>commit-hash</span>
+                            <span class="token" style="color:#a04900">&gt;</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>cherry-pick </span>
+                            <span class="token" style="color:#a04900">&lt;</span>
+                            <span>hash</span>
+                            <span class="token file-descriptor" style="color:#c22f2e;font-weight:bold">1</span>
+                            <span class="token" style="color:#a04900">&gt;</span>
+                            <span></span>
+                            <span class="token" style="color:#a04900">&lt;</span>
+                            <span>hash</span>
+                            <span class="token file-descriptor" style="color:#c22f2e;font-weight:bold">2</span>
+                            <span class="token" style="color:#a04900">&gt;</span>
+                            <span></span>
+                            <span class="token" style="color:#3c526d"># Multiple commits</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <p class="mb-4 leading-relaxed text-lg">
+            <strong>Use cases</strong>
+            : backport bug fixes, apply a single commit without merging a whole branch, recover a commit from a deleted
+            branch.
+        </p>
+        <h3 id="handling-conflicts" class="text-3xl font-bold mb-2 mt-4 break-words">Handling Conflicts</h3>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">add</span>
+                            <span>resolved-file.txt
+</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>cherry-pick --continue
+</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>cherry-pick --abort               </span>
+                            <span class="token" style="color:#3c526d"># Cancel</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <hr class="my-10 border-t-4" />
+        <h2 id="git-tags" class="text-4xl font-bold mb-3 mt-6 break-words">Git Tags</h2>
+        <p class="mb-4 leading-relaxed text-lg">Tags mark specific points in history, typically for releases.</p>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>tag -a v1.0.0 -m </span>
+                            <span class="token" style="color:#116b00">&quot;Release 1.0.0 &quot;</span>
+                            <span></span>
+                            <span class="token" style="color:#3c526d"># Annotated tag (recommended)</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>tag v1.0.0                        </span>
+                            <span class="token" style="color:#3c526d"># Lightweight tag</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>tag                               </span>
+                            <span class="token" style="color:#3c526d"># List tags</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>show v1.0.0                       </span>
+                            <span class="token" style="color:#3c526d"># Show tag info</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>tag -d v1.0.0                     </span>
+                            <span class="token" style="color:#3c526d"># Delete tag</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>push origin v1.0.0               </span>
+                            <span class="token" style="color:#3c526d"># Push specific tag</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>push origin --tags                </span>
+                            <span class="token" style="color:#3c526d"># Push all tags</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <p class="mb-4 leading-relaxed text-lg">
+            <strong>Semantic Versioning</strong>
+            : <code class="bg-gray-100 px-1 py-0.5 rounded font-mono break-words">Major.Minor.Patch</code>
+            — major = breaking changes, minor = new features, patch = bug fixes.
+        </p>
+        <hr class="my-10 border-t-4" />
+        <h2 id="reflogs---retrieving-lost-work" class="text-4xl font-bold mb-3 mt-6 break-words">Reflogs - Retrieving
+            Lost Work</h2>
+        <p class="mb-4 leading-relaxed text-lg">Reflog tracks every change to HEAD. Your safety net for recovering
+            &quot;lost &quot;work (expires after 90 days).</p>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>reflog                            </span>
+                            <span class="token" style="color:#3c526d"># View reflog</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <h3 id="recovering-lost-commits" class="text-3xl font-bold mb-2 mt-4 break-words">Recovering Lost Commits</h3>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>reset --hard HEAD~3               </span>
+                            <span class="token" style="color:#3c526d"># Oops, lost 3 commits!</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>reflog                            </span>
+                            <span class="token" style="color:#3c526d"># Find the hash</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>reset --hard </span>
+                            <span class="token" style="color:#a04900">&lt;</span>
+                            <span>commit-hash</span>
+                            <span class="token" style="color:#a04900">&gt;</span>
+                            <span></span>
+                            <span class="token" style="color:#3c526d"># Recover</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+        <h3 id="recovering-deleted-branches" class="text-3xl font-bold mb-2 mt-4 break-words">Recovering Deleted
+            Branches</h3>
+        <pre>
+                <div class="relative group mb-10 mt-3">
+                    <button class="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition">Copy</button>
+                    <div style="color:#111b27;background:#e3eaf2;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:0.5em 0;overflow:auto">
+                        <code class="language-bash" style="white-space:pre;color:#111b27;background:none;font-family:Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace;text-align:left;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none">
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>branch -D important-feature       </span>
+                            <span class="token" style="color:#3c526d"># Oops!</span>
+                            <span></span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>reflog --all </span>
+                            <span class="token" style="color:#a04900">|</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">grep</span>
+                            <span>important-feature
+</span>
+                            <span></span>
+                            <span class="token" style="color:#7c00aa">git</span>
+                            <span>branch important-feature </span>
+                            <span class="token" style="color:#a04900">&lt;</span>
+                            <span>commit-hash</span>
+                            <span class="token" style="color:#a04900">&gt;</span>
+                        </code>
+                    </div>
+                </div>
+            </pre>
+    </div>
+    <!--$!-->
+    <template data-dgst="BAILOUT_TO_CLIENT_SIDE_RENDERING"></template>
+    <!--/$-->
+    <footer class="bg-white text-gray-700 border-t border-gray-200 py-8">
+        <div class="container mx-auto px-4 flex flex-col items-center">
+            <h2 class="text-lg font-semibold mb-4">Follow Me</h2>
+            <div class="flex space-x-6 text-2xl">
+                <a href="https://www.linkedin.com/in/bidur-sapkota-b204142a8/" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-blue-600 transition-colors">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://github.com/bidursapkota00" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-gray-900 transition-colors">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/@codeyalaya" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-red-600 transition-colors">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/bdur.sapkota" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-blue-500 transition-colors">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/bidursapkota00" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-pink-500 transition-colors">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://x.com/b2r_sp" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-gray-900 transition-colors">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            <p class="text-sm text-gray-500 mt-6">©
+                <!-- -->
+                2026
+                <!-- -->
+                Bidur Sapkota. All rights reserved.
+            </p>
+        </div>
+    </footer>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="/_next/static/chunks/webpack-a0203fecb9ce3010.js" async=""></script>
+    <script>
+        (self.__next_f = self.__next_f || []).push([0]);
+        self.__next_f.push([2, null])
+    </script>
+    <script>
+        self.__next_f.push([1, "1:HL[\"/_next/static/media/a74fb1607b845cb0-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n2:HL[\"/_next/static/media/eaead17c7dbfcd5d-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n3:HL[\"/_next/static/css/fec165ac9a550ff4.css\",\"style\"]\n4:HL[\"/_next/static/css/8b1b7c2b96465aad.css\",\"style\"]\n5:HL[\"/_next/static/css/d104c7dfbbfbfd72.css\",\"style\"]\n"])
+    </script>
+    <script>
+        self.__next_f.push([1, "6:I[12846,[],\"\"]\n9:I[4707,[],\"\"]\nb:I[36423,[],\"\"]\nc:I[88291,[\"3185\",\"static/chunks/app/layout-4c786d55768778b6.js\"],\"Analytics\"]\nd:I[1952,[\"3185\",\"static/chunks/app/layout-4c786d55768778b6.js\"],\"SpeedInsights\"]\nf:I[6331,[\"3185\",\"static/chunks/app/layout-4c786d55768778b6.js\"],\"default\"]\n11:I[61060,[],\"\"]\na:[\"blog\",\"git-github-complete-guide\",\"c\"]\ne:T518,M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z12:[]\n"])
+    </script>
+    <script>
+        self.__next_f.push([1, "0:[\"$\",\"$L6\",null,{\"buildId\":\"zDSVoyaeMPwsshRNHnbZg\",\"assetPrefix\":\"\",\"urlParts\":[\"\",\"blogs\",\"git-github-complete-guide\"],\"initialTree\":[\"\",{\"children\":[\"blogs\",{\"children\":[[\"blog\",\"git-github-complete-guide\",\"c\"],{\"children\":[\"__PAGE__?{\\\"blog\\\":[\\\"git-github-complete-guide\\\"]}\",{}]}]}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"blogs\",{\"children\":[[\"blog\",\"git-github-complete-guide\",\"c\"],{\"children\":[\"__PAGE__\",{},[[\"$L7\",\"$L8\",[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8b1b7c2b96465aad.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"1\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/d104c7dfbbfbfd72.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]]],null],null]},[null,[\"$\",\"$L9\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"blogs\",\"children\",\"$a\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$Lb\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]],null]},[null,[\"$\",\"$L9\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"blogs\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$Lb\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]],null]},[[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/fec165ac9a550ff4.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[\"$\",\"body\",null,{\"className\":\"__variable_0a80b4 __variable_572227\",\"children\":[[\"$\",\"$L9\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$Lb\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[]}],[\"$\",\"$Lc\",null,{}],[\"$\",\"$Ld\",null,{\"sampleRate\":0.2}],[\"$\",\"footer\",null,{\"className\":\"bg-white text-gray-700 border-t border-gray-200 py-8\",\"children\":[\"$\",\"div\",null,{\"className\":\"container mx-auto px-4 flex flex-col items-center\",\"children\":[[\"$\",\"h2\",null,{\"className\":\"text-lg font-semibold mb-4\",\"children\":\"Follow Me\"}],[\"$\",\"div\",null,{\"className\":\"flex space-x-6 text-2xl\",\"children\":[[\"$\",\"a\",null,{\"href\":\"https://www.linkedin.com/in/bidur-sapkota-b204142a8/\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"className\":\"hover:text-blue-600 transition-colors\",\"children\":[\"$\",\"svg\",null,{\"stroke\":\"currentColor\",\"fill\":\"currentColor\",\"strokeWidth\":\"0\",\"viewBox\":\"0 0 448 512\",\"children\":[\"$undefined\",[[\"$\",\"path\",\"0\",{\"d\":\"M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z\",\"children\":[]}]]],\"className\":\"$undefined\",\"style\":{\"color\":\"$undefined\"},\"height\":\"1em\",\"width\":\"1em\",\"xmlns\":\"http://www.w3.org/2000/svg\"}]}],[\"$\",\"a\",null,{\"href\":\"https://github.com/bidursapkota00\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"className\":\"hover:text-gray-900 transition-colors\",\"children\":[\"$\",\"svg\",null,{\"stroke\":\"currentColor\",\"fill\":\"currentColor\",\"strokeWidth\":\"0\",\"viewBox\":\"0 0 496 512\",\"children\":[\"$undefined\",[[\"$\",\"path\",\"0\",{\"d\":\"$e\",\"children\":[]}]]],\"className\":\"$undefined\",\"style\":{\"color\":\"$undefined\"},\"height\":\"1em\",\"width\":\"1em\",\"xmlns\":\"http://www.w3.org/2000/svg\"}]}],[\"$\",\"a\",null,{\"href\":\"https://www.youtube.com/@codeyalaya\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"className\":\"hover:text-red-600 transition-colors\",\"children\":[\"$\",\"svg\",null,{\"stroke\":\"currentColor\",\"fill\":\"currentColor\",\"strokeWidth\":\"0\",\"viewBox\":\"0 0 576 512\",\"children\":[\"$undefined\",[[\"$\",\"path\",\"0\",{\"d\":\"M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z\",\"children\":[]}]]],\"className\":\"$undefined\",\"style\":{\"color\":\"$undefined\"},\"height\":\"1em\",\"width\":\"1em\",\"xmlns\":\"http://www.w3.org/2000/svg\"}]}],[\"$\",\"a\",null,{\"href\":\"https://www.facebook.com/bdur.sapkota\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"className\":\"hover:text-blue-500 transition-colors\",\"children\":[\"$\",\"svg\",null,{\"stroke\":\"currentColor\",\"fill\":\"currentColor\",\"strokeWidth\":\"0\",\"viewBox\":\"0 0 512 512\",\"children\":[\"$undefined\",[[\"$\",\"path\",\"0\",{\"d\":\"M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z\",\"children\":[]}]]],\"className\":\"$undefined\",\"style\":{\"color\":\"$undefined\"},\"height\":\"1em\",\"width\":\"1em\",\"xmlns\":\"http://www.w3.org/2000/svg\"}]}],[\"$\",\"a\",null,{\"href\":\"https://www.instagram.com/bidursapkota00\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"className\":\"hover:text-pink-500 transition-colors\",\"children\":[\"$\",\"svg\",null,{\"stroke\":\"currentColor\",\"fill\":\"currentColor\",\"strokeWidth\":\"0\",\"viewBox\":\"0 0 448 512\",\"children\":[\"$undefined\",[[\"$\",\"path\",\"0\",{\"d\":\"M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z\",\"children\":[]}]]],\"className\":\"$undefined\",\"style\":{\"color\":\"$undefined\"},\"height\":\"1em\",\"width\":\"1em\",\"xmlns\":\"http://www.w3.org/2000/svg\"}]}],[\"$\",\"a\",null,{\"href\":\"https://x.com/b2r_sp\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"className\":\"hover:text-gray-900 transition-colors\",\"children\":[\"$\",\"svg\",null,{\"stroke\":\"currentColor\",\"fill\":\"currentColor\",\"strokeWidth\":\"0\",\"viewBox\":\"0 0 512 512\",\"children\":[\"$undefined\",[[\"$\",\"path\",\"0\",{\"d\":\"M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z\",\"children\":[]}]]],\"className\":\"$undefined\",\"style\":{\"color\":\"$undefined\"},\"height\":\"1em\",\"width\":\"1em\",\"xmlns\":\"http://www.w3.org/2000/svg\"}]}]]}],[\"$\",\"$Lf\",null,{}]]}]}]]}]}]],null],null],\"couldBeIntercepted\":false,\"initialHead\":[null,\"$L10\"],\"globalErrorComponent\":\"$11\",\"missingSlots\":\"$W12\"}]\n"])
+    </script>
+    <script>
+        self.__next_f.push([1, "10:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\",{\"children\":\"Git and GitHub Complete Guide – Blogs by Bidur Sapkota\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"Master Git version control and GitHub collaboration. Learn commits, branching, pull requests, workflows, and open-source contribution.\"}],[\"$\",\"meta\",\"4\",{\"name\":\"keywords\",\"content\":\"Full Stack Developer,React.js,React Native,Node.js,JavaScript,TypeScript,Next.js,Website Developer,Web Developer,Frontend Developer,Backend Developer,Electron.js,Mobile App Developer,Desktop App Developer\"}],[\"$\",\"meta\",\"5\",{\"name\":\"next-size-adjust\"}]]\n7:null\n"])
+    </script>
+    <script>
+        self.__next_f.push([1, "13:I[60090,[\"1627\",\"static/chunks/02b2f66c-c89cf69943479389.js\",\"8718\",\"static/chunks/8718-4c86c82d5da7024b.js\",\"8076\",\"static/chunks/8076-30c33237d71202b0.js\",\"8209\",\"static/chunks/app/blogs/%5B...blog%5D/page-84eb54b4d05c3be1.js\"],\"default\"]\n14:I[45358,[\"1627\",\"static/chunks/02b2f66c-c89cf69943479389.js\",\"8718\",\"static/chunks/8718-4c86c82d5da7024b.js\",\"8076\",\"static/chunks/8076-30c33237d71202b0.js\",\"8209\",\"static/chunks/app/blogs/%5B...blog%5D/page-84eb54b4d05c3be1.js\"],\"default\"]\n15:I[61772,[\"1627\",\"static/chunks/02b2f66c-c89cf69943479389.js\",\"8718\",\"static/chunks/8718-4c86c82d5da7024b.js\",\"8076\",\"static/chunks/8076-30c33237d71202b0.js\",\"8209\",\"static/chunks/app/blogs/%5B...blog%5D/page-84eb54b4d05c3be1.js\"],\"default\"]\n16:I[65878,[\"1627\",\"static/chunks/02b2f66c-c89cf69943479389.js\",\"8718\",\"static/chunks/8718-4c86c82d5da7024b.js\",\"8076\",\"static/chunks/8076-30c33237d71202b0.js\",\"8209\",\"static/chunks/app/blogs/%5B...blog%5D/page-84eb54b4d05c3be1.js\"],\"Image\"]\n17:I[14435,[\"1627\",\"static/chunks/02b2f66c-c89cf69943479389.js\",\"8718\",\"static/chunks/8718-4c86c82d5da7024b.js\",\"8076\",\"static/chunks/8076-30c33237d71202b0.js\",\"8209\",\"static/chunks/app/blogs/%5B...blog%5D/page-84eb54b4d05c3be1.js\"],\"default\"]\n18:I[9445,[\"1627\",\"static/chunks/02b2f66c-c89cf69943479389.js\",\"8718\",\"static/chunks/8718-4c86c82d5da7024b.js\",\"8076\",\"static/chunks/8076-30c33237d71202b0.js\",\"8209\",\"static/chunks/app/blogs/%5B...blog%5D/page-84eb54b4d05c3be1.js\"],\"default\"]\n19:I[28822,[\"1627\",\"static/chunks/02b2f66c-c89cf69943479389.js\",\"8718\",\"static/chunks/8718-4c86c82d5da7024b.js\",\"8076\",\"static/chunks/8076-30c33237d71202b0.js\",\"8209\",\"static/chunks/app/blogs/%5B...blog%5D/page-84eb54b4d05c3be1.js\"],\"default\"]\n"])
+    </script>
+    <script>
+        self.__next_f.push([1, "8:[[\"$\",\"style\",null,{\"children\":\"\\n            footer {\\n              margin-top: 50px;\\n            }\\n          \"}],[\"$\",\"$L13\",null,{}],[[\"$\",\"$L14\",null,{}],[\"$\",\"div\",null,{\"id\":\"sidebar__overlay\"}],[\"$\",\"nav\",null,{\"className\":\"sidebar\",\"id\":\"sidebar\",\"children\":[[\"$\",\"$L15\",null,{}],[\"$\",\"div\",null,{\"className\":\"sidebar__content\",\"children\":[[\"$\",\"div\",null,{\"children\":[[\"$\",\"$L16\",null,{\"className\":\"sidebar__image\",\"src\":\"/images/profile3.webp\",\"alt\":\"Bidur Sapkota - Profile Image\",\"title\":\"Bidur Sapkota - Developer\",\"width\":160,\"height\":160,\"sizes\":\"384px\"}],[\"$\",\"h2\",null,{\"className\":\"sidebar__name\",\"children\":\"bidur sapkota\"}],[\"$\",\"h3\",null,{\"className\":\"sidebar__job\",\"children\":[\"developer \",[\"$\",\"span\",null,{\"className\":\"sidebar__country\",\"children\":\"in nepal\"}]]}]]}],[\"$\",\"$L17\",null,{}]]}]]}]],[\"$\",\"h1\",null,{\"className\":\"m-5 text-[2.5rem] leading-[2.75rem] py-4 font-bold mb-4 border-b pb-2 break-words\",\"children\":\"Git \u0026 GitHub Complete Guide\"}],[\"$\",\"div\",null,{\"className\":\"flex justify-end mx-5\",\"children\":[\"$\",\"a\",null,{\"href\":\"https://github.com/bidursapkota00/Git\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"className\":\"inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":[[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"width\":24,\"height\":24,\"viewBox\":\"0 0 24 24\",\"fill\":\"none\",\"stroke\":\"currentColor\",\"strokeWidth\":2,\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"className\":\"lucide lucide-link w-4 h-4\",\"children\":[[\"$\",\"path\",\"1cjeqo\",{\"d\":\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\"}],[\"$\",\"path\",\"19qd67\",{\"d\":\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\"}],\"$undefined\"]}],\"Github Link\"]}]}],[\"$\",\"div\",null,{\"className\":\"m-5\",\"children\":[[[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":[[\"$\",\"span\",null,{\"className\":\"relative inline-block\",\"children\":[\"$\",\"$L16\",null,{\"src\":\"/images/gravatar.webp\",\"alt\":\"Bidur Sapkota\",\"title\":\"Bidur Sapkota - Developer\",\"width\":64,\"height\":64,\"sizes\":\"64px\",\"className\":\"w-[48px] shadow-sm\"}]}],\" \",[\"$\",\"a\",null,{\"href\":\"https://www.bidursapkota.com.np/\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\"Bidur Sapkota\"}]]}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":[\"$\",\"span\",null,{\"className\":\"relative block w-full my-4\",\"style\":{\"aspectRatio\":\"16/9\"},\"children\":[\"$\",\"$L16\",null,{\"src\":\"https://raw.githubusercontent.com/bidursapkota00/Git/refs/heads/main//images/git-1200.webp\",\"alt\":\"Git \u0026 GitHub Complete Guide by Bidur Sapkota\",\"title\":\"Git \u0026 GitHub Complete Guide – Blog by Bidur Sapkota\",\"fill\":true,\"sizes\":\"1200px\",\"className\":\"object-contain shadow-sm\"}]}]}],\"\\n\",[\"$\",\"h2\",null,{\"id\":\"table-of-contents\",\"className\":\"text-4xl font-bold mb-3 mt-6 break-words\",\"children\":\"Table of Contents\"}],\"\\n\",[\"$\",\"ol\",null,{\"className\":\"list-decimal mb-4 ml-8 space-y-1 md-ol text-lg\",\"children\":[\"\\n\",[\"$\",\"li\",\"li-0\",{\"children\":[\"$\",\"a\",null,{\"href\":\"#introducing-git\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\"Introducing Git\"}]}],\"\\n\",[\"$\",\"li\",\"li-1\",{\"children\":[\"$\",\"a\",null,{\"href\":\"#installation--setup\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\"Installation \u0026 Setup\"}]}],\"\\n\",[\"$\",\"li\",\"li-2\",{\"children\":[\"$\",\"a\",null,{\"href\":\"#the-very-basics-adding--committing\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\"The Very Basics: Adding \u0026 Committing\"}]}],\"\\n\",[\"$\",\"li\",\"li-3\",{\"children\":[\"$\",\"a\",null,{\"href\":\"#commits-in-detail\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\"Commits In Detail\"}]}],\"\\n\",[\"$\",\"li\",\"li-4\",{\"children\":[\"$\",\"a\",null,{\"href\":\"#working-with-branches\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\"Working With Branches\"}]}],\"\\n\",[\"$\",\"li\",\"li-5\",{\"children\":[\"$\",\"a\",null,{\"href\":\"#merging-branches\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\"Merging Branches\"}]}],\"\\n\",[\"$\",\"li\",\"li-6\",{\"children\":[\"$\",\"a\",null,{\"href\":\"#comparing-changes-with-git-diff\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\"Comparing Changes With Git Diff\"}]}],\"\\n\",[\"$\",\"li\",\"li-7\",{\"children\":[\"$\",\"a\",null,{\"href\":\"#stashing\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\"Stashing\"}]}],\"\\n\",[\"$\",\"li\",\"li-8\",{\"children\":[\"$\",\"a\",null,{\"href\":\"#gitignore\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\".gitignore\"}]}],\"\\n\",[\"$\",\"li\",\"li-9\",{\"children\":[\"$\",\"a\",null,{\"href\":\"#undoing-changes--time-traveling\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\"Undoing Changes \u0026 Time Traveling\"}]}],\"\\n\",[\"$\",\"li\",\"li-10\",{\"children\":[\"$\",\"a\",null,{\"href\":\"#github-the-basics\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\"GitHub: The Basics\"}]}],\"\\n\",[\"$\",\"li\",\"li-11\",{\"children\":[\"$\",\"a\",null,{\"href\":\"#fetching--pulling\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\"Fetching \u0026 Pulling\"}]}],\"\\n\",[\"$\",\"li\",\"li-12\",{\"children\":[\"$\",\"a\",null,{\"href\":\"#github-basics-part-2\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\"GitHub Basics Part 2\"}]}],\"\\n\",[\"$\",\"li\",\"li-13\",{\"children\":[\"$\",\"a\",null,{\"href\":\"#git-collaboration-workflows\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\"Git Collaboration Workflows\"}]}],\"\\n\",[\"$\",\"li\",\"li-14\",{\"children\":[\"$\",\"a\",null,{\"href\":\"#rebasing\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\"Rebasing\"}]}],\"\\n\",[\"$\",\"li\",\"li-15\",{\"children\":[\"$\",\"a\",null,{\"href\":\"#interactive-rebase\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\"Interactive Rebase\"}]}],\"\\n\",[\"$\",\"li\",\"li-16\",{\"children\":[\"$\",\"a\",null,{\"href\":\"#cherry-pick\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\"Cherry-Pick\"}]}],\"\\n\",[\"$\",\"li\",\"li-17\",{\"children\":[\"$\",\"a\",null,{\"href\":\"#git-tags\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\"Git Tags\"}]}],\"\\n\",[\"$\",\"li\",\"li-18\",{\"children\":[\"$\",\"a\",null,{\"href\":\"#reflogs---retrieving-lost-work\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\"Reflogs - Retrieving Lost Work\"}]}],\"\\n\"]}],\"\\n\",[\"$\",\"hr\",null,{\"className\":\"my-10 border-t-4\"}],\"\\n\",[\"$\",\"h2\",null,{\"id\":\"introducing-git\",\"className\":\"text-4xl font-bold mb-3 mt-6 break-words\",\"children\":\"Introducing Git\"}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":\"Git is a distributed version control system created by Linus Torvalds in 2005. Every user has a complete copy of the project history. Your project lives in a repository, which holds both your files and all of Git's tracking information. As you work, you stage changes in a staging area and then save them as commits — snapshots of your project at a point in time. You can create branches to develop features in isolation and use remotes to sync your work with others.\"}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":\"Git lets you track the full history of your project, collaborate with multiple developers, experiment on separate branches without risk, revert to earlier versions when something breaks, and keep your code backed up across multiple locations.\"}],\"\\n\",[\"$\",\"hr\",null,{\"className\":\"my-10 border-t-4\"}],\"\\n\",[\"$\",\"h2\",null,{\"id\":\"installation--setup\",\"className\":\"text-4xl font-bold mb-3 mt-6 break-words\",\"children\":\"Installation \u0026 Setup\"}],\"\\n\",[\"$\",\"pre\",\"pre-0\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"# macOS\\nbrew install git\\n\\n# Linux (Ubuntu/Debian)\\nsudo apt update \u0026\u0026 sudo apt install git\\n\\n# Verify\\ngit --version\"}]}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"Windows\"}],\": Download from \",[\"$\",\"a\",null,{\"href\":\"https://git-scm.com\",\"className\":\"text-blue-600 hover:text-blue-800 underline text-lg\",\"children\":\"git-scm.com\"}],\", run installer with default settings, open Git Bash or Command Prompt.\"]}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Also install vscode extension: GitLens by GitKraken\"}]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"initial-configuration\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Initial Configuration\"}],\"\\n\",[\"$\",\"pre\",\"pre-1\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git config --global user.name \\\"Your Name\\\"\\ngit config --global user.email \\\"your.email@example.com\\\"\\ngit config --global init.defaultBranch main\\ngit config --global core.editor \\\"code --wait\\\"\\n\\ngit config --list\"}]}],\"\\n\",[\"$\",\"hr\",null,{\"className\":\"my-10 border-t-4\"}],\"\\n\",[\"$\",\"h2\",null,{\"id\":\"the-very-basics-adding--committing\",\"className\":\"text-4xl font-bold mb-3 mt-6 break-words\",\"children\":\"The Very Basics: Adding \u0026 Committing\"}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"the-three-areas\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"The Three Areas\"}],\"\\n\",[\"$\",\"ol\",null,{\"className\":\"list-decimal mb-4 ml-8 space-y-1 md-ol text-lg\",\"children\":[\"\\n\",[\"$\",\"li\",\"li-0\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Working Directory\"}]}],\"\\n\",[\"$\",\"li\",\"li-1\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Staging Area\"}]}],\"\\n\",[\"$\",\"li\",\"li-2\",{\"children\":[\"$\",\"strong\",\"strong-0\",{\"children\":\"Repository (.git/)\"}]}],\"\\n\"]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"basic-workflow\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Basic Workflow\"}],\"\\n\",[\"$\",\"pre\",\"pre-2\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git init                              # Initialize repo\\ngit status                            # Check status\\n\\ngit add filename.txt                  # Stage specific file\\ngit add .                             # Stage all files\\n\\ngit commit -m \\\"Initial commit\\\"        # Commit\\n\\ngit log --oneline                     # View history\\n\\ngit log --oneline --graph --all       # View branches/history in graph\"}]}],\"\\n\",[\"$\",\"hr\",null,{\"className\":\"my-10 border-t-4\"}],\"\\n\",[\"$\",\"h2\",null,{\"id\":\"commits-in-detail\",\"className\":\"text-4xl font-bold mb-3 mt-6 break-words\",\"children\":\"Commits In Detail\"}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":\"Each commit has: SHA-1 hash, author, date, message, and parent reference.\"}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"writing-good-commit-messages\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Writing Good Commit Messages\"}],\"\\n\",[\"$\",\"pre\",\"pre-3\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git commit -m \\\"feat: add login functionality\\\"\\ngit commit -m \\\"fix: resolve null pointer exception\\\"\\ngit commit -m \\\"docs: update API documentation\\\"\"}]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"amending-commits\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Amending Commits\"}],\"\\n\",[\"$\",\"pre\",\"pre-4\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git commit --amend -m \\\"New commit message\\\"       # Fix message\\ngit add forgotten-file.txt\\ngit commit --amend --no-edit                      # Add forgotten files\"}]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"viewing-commit-details\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Viewing Commit Details\"}],\"\\n\",[\"$\",\"pre\",\"pre-5\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git show \u003ccommit-hash\u003e\"}]}],\"\\n\",[\"$\",\"hr\",null,{\"className\":\"my-10 border-t-4\"}],\"\\n\",[\"$\",\"h2\",null,{\"id\":\"working-with-branches\",\"className\":\"text-4xl font-bold mb-3 mt-6 break-words\",\"children\":\"Working With Branches\"}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":\"Branches let you work on features without affecting the main codebase.\"}],\"\\n\",[\"$\",\"pre\",\"pre-6\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git branch                            # List branches\\ngit branch feature-login              # Create branch\\ngit switch feature-login              # Switch to branch\\ngit switch -c feature-signup          # Create and switch\\ngit branch -d feature-login           # Delete (safe)\\ngit branch -D feature-login           # Delete (force)\\ngit branch -m old-name new-name       # Rename\"}]}],\"\\n\",[\"$\",\"hr\",null,{\"className\":\"my-10 border-t-4\"}],\"\\n\",[\"$\",\"h2\",null,{\"id\":\"merging-branches\",\"className\":\"text-4xl font-bold mb-3 mt-6 break-words\",\"children\":\"Merging Branches\"}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"fast-forward-vs-three-way-merge\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Fast-Forward vs Three-Way Merge\"}],\"\\n\",[\"$\",\"pre\",\"pre-7\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git checkout main\\ngit merge feature-branch              # Fast-forward if possible\\ngit merge --no-ff feature-branch      # Always create merge commit\\ngit merge --squash feature-branch     # Squash into one commit\"}]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"merge-conflicts\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Merge Conflicts\"}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":\"When Git can't auto-merge, it marks conflicts:\"}],\"\\n\",[\"$\",\"pre\",\"pre-8\",{\"children\":[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\"\u003c\u003c\u003c\u003c\u003c\u003c\u003c HEAD\\nContent from current branch\\n=======\\nContent from feature branch\\n\u003e\u003e\u003e\u003e\u003e\u003e\u003e feature-branch\\n\"}]}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":\"Resolve by editing the file, removing markers, then:\"}],\"\\n\",[\"$\",\"pre\",\"pre-9\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git add file.txt\\ngit commit\"}]}],\"\\n\",[\"$\",\"hr\",null,{\"className\":\"my-10 border-t-4\"}],\"\\n\",[\"$\",\"h2\",null,{\"id\":\"comparing-changes-with-git-diff\",\"className\":\"text-4xl font-bold mb-3 mt-6 break-words\",\"children\":\"Comparing Changes With Git Diff\"}],\"\\n\",[\"$\",\"pre\",\"pre-10\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git diff                              # Unstaged changes\\ngit diff --staged                     # Staged changes\\ngit diff main feature-branch          # Between branches\\ngit diff commit1 commit2              # Between commits\\ngit diff --name-only                  # Only changed filenames\\ngit diff --stat                       # Statistics\"}]}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"Reading output\"}],\": \",[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\"-\"}],\" = removed, \",[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\"+\"}],\" = added, space = unchanged context.\"]}],\"\\n\",[\"$\",\"hr\",null,{\"className\":\"my-10 border-t-4\"}],\"\\n\",[\"$\",\"h2\",null,{\"id\":\"stashing\",\"className\":\"text-4xl font-bold mb-3 mt-6 break-words\",\"children\":\"Stashing\"}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":\"Temporarily save uncommitted changes to work on something else.\"}],\"\\n\",[\"$\",\"pre\",\"pre-11\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git stash                             # Stash changes\\ngit stash push -m \\\"WIP: user login\\\"   # Stash with message\\ngit stash -u                          # Include untracked files\\ngit stash list                        # List stashes\\ngit stash pop                         # Apply + remove most recent\\ngit stash apply stash@{2}             # Apply specific stash\\ngit stash drop                        # Drop a stash\"}]}],\"\\n\",[\"$\",\"hr\",null,{\"className\":\"my-10 border-t-4\"}],\"\\n\",[\"$\",\"h2\",null,{\"id\":\"gitignore\",\"className\":\"text-4xl font-bold mb-3 mt-6 break-words\",\"children\":\".gitignore\"}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":[[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\".gitignore\"}],\" tells Git which files to ignore. Common patterns:\"]}],\"\\n\",[\"$\",\"pre\",\"pre-12\",{\"children\":[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\".env\\nnode_modules/\\ndist/\\nbuild/\\n.DS_Store\\n.vscode/\\n*.log\\n\"}]}],\"\\n\",[\"$\",\"blockquote\",null,{\"className\":\"border-l-4 border-gray-300 pl-4 italic my-4 bg-gray-50 py-2 text-lg\",\"children\":[\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"Note\"}],\": \",[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\".gitignore\"}],\" only ignores untracked files. Already-tracked files need \",[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\"git rm --cached filename\"}],\" first.\"]}],\"\\n\"]}],\"\\n\",[\"$\",\"hr\",null,{\"className\":\"my-10 border-t-4\"}],\"\\n\",[\"$\",\"h2\",null,{\"id\":\"undoing-changes--time-traveling\",\"className\":\"text-4xl font-bold mb-3 mt-6 break-words\",\"children\":\"Undoing Changes \u0026 Time Traveling\"}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"discard-working-directory-changes\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Discard Working Directory Changes\"}],\"\\n\",[\"$\",\"pre\",\"pre-13\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git restore filename.txt              # Discard changes\\ngit restore .                         # Discard all\"}]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"unstage-files\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Unstage Files\"}],\"\\n\",[\"$\",\"pre\",\"pre-14\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git restore --staged filename.txt\"}]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"undo-commits\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Undo Commits\"}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"Reset\"}],\" (local/unpushed only — rewrites history):\"]}],\"\\n\",[\"$\",\"pre\",\"pre-15\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git reset --soft HEAD~1               # Keep changes staged\\ngit reset HEAD~1                      # Keep changes unstaged (default)\\ngit reset --hard HEAD~1               # Discard everything\"}]}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"Revert\"}],\" (safe for shared repos — creates undo commit):\"]}],\"\\n\",[\"$\",\"pre\",\"pre-16\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git revert \u003ccommit-hash\u003e\"}]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"detached-head\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Detached HEAD\"}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":\"Happens when you checkout a specific commit. To save work from detached state:\"}],\"\\n\",[\"$\",\"pre\",\"pre-17\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git checkout -b \u003cnew-branch-name\u003e\"}]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"cleaning-untracked-files\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Cleaning Untracked Files\"}],\"\\n\",[\"$\",\"pre\",\"pre-18\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git clean -dn                         # Preview\\ngit clean -df                         # Remove\"}]}],\"\\n\",[\"$\",\"hr\",null,{\"className\":\"my-10 border-t-4\"}],\"\\n\",[\"$\",\"h2\",null,{\"id\":\"github-the-basics\",\"className\":\"text-4xl font-bold mb-3 mt-6 break-words\",\"children\":\"GitHub: The Basics\"}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":\"GitHub is a cloud-based Git hosting service that adds collaboration features, issue tracking, and project management.\"}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"remove-stored-credentials\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Remove Stored Credentials\"}],\"\\n\",[\"$\",\"pre\",\"pre-19\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git config --global --unset credential.helper\\ngit push origin main                  # Use brwoser based auth\"}]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"repository-operations\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Repository Operations\"}],\"\\n\",[\"$\",\"pre\",\"pre-20\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git clone https://github.com/user/repo.git         # Clone\\ngit remote add origin \u003curl\u003e\\ngit remote -v                                      # Check remotes\\ngit push -u origin main                            # Set upstream + push\\ngit push                                           # After upstream is set\"}]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"typical-workflow\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Typical Workflow\"}],\"\\n\",[\"$\",\"ol\",null,{\"className\":\"list-decimal mb-4 ml-8 space-y-1 md-ol text-lg\",\"children\":[\"\\n\",[\"$\",\"li\",\"li-0\",{\"children\":\"Clone or create repo\"}],\"\\n\",[\"$\",\"li\",\"li-1\",{\"children\":[\"Create feature branch: \",[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\"git checkout -b feature-xyz\"}]]}],\"\\n\",[\"$\",\"li\",\"li-2\",{\"children\":\"Work, stage, commit\"}],\"\\n\",[\"$\",\"li\",\"li-3\",{\"children\":[\"Push: \",[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\"git push origin feature-xyz\"}]]}],\"\\n\",[\"$\",\"li\",\"li-4\",{\"children\":\"Create Pull Request → Review → Merge\"}],\"\\n\"]}],\"\\n\",[\"$\",\"hr\",null,{\"className\":\"my-10 border-t-4\"}],\"\\n\",[\"$\",\"h2\",null,{\"id\":\"fetching--pulling\",\"className\":\"text-4xl font-bold mb-3 mt-6 break-words\",\"children\":\"Fetching \u0026 Pulling\"}],\"\\n\",[\"$\",\"pre\",\"pre-21\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git fetch origin                      # Download without merging\\ngit diff HEAD origin/main             # Review changes\\ngit merge origin/main                 # Merge when ready\\n\\ngit pull                              # Fetch + merge (shortcut)\\ngit pull --rebase                     # Fetch + rebase instead\"}]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"remote-tracking\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Remote Tracking\"}],\"\\n\",[\"$\",\"pre\",\"pre-22\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git branch -r                         # Remote branches\\ngit branch -a                         # All branches\"}]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"force-push-after-rebase\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Force Push After Rebase\"}],\"\\n\",[\"$\",\"pre\",\"pre-23\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git push --force-with-lease           # Safe force push\"}]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"pushing-to-different-remote-branch-name\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Pushing to Different Remote Branch Name\"}],\"\\n\",[\"$\",\"pre\",\"pre-24\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git push -u origin local-branch:remote-branch\"}]}],\"\\n\",[\"$\",\"hr\",null,{\"className\":\"my-10 border-t-4\"}],\"\\n\",[\"$\",\"h2\",null,{\"id\":\"github-basics-part-2\",\"className\":\"text-4xl font-bold mb-3 mt-6 break-words\",\"children\":\"GitHub Basics Part 2\"}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"forking-workflow\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Forking Workflow\"}],\"\\n\",[\"$\",\"pre\",\"pre-25\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git clone https://github.com/yourusername/forked-repo.git\\ngit remote add upstream https://github.com/original-owner/repo.git\\n\\n# Keep fork updated:\\ngit fetch upstream\\ngit checkout main\\ngit merge upstream/main\\ngit push origin main\"}]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"github-pages\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"GitHub Pages\"}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":[\"Push to a \",[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\"gh-pages\"}],\" branch → site at \",[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\"https://username.github.io/repo-name\"}],\".\"]}],\"\\n\",[\"$\",\"hr\",null,{\"className\":\"my-10 border-t-4\"}],\"\\n\",[\"$\",\"h2\",null,{\"id\":\"git-collaboration-workflows\",\"className\":\"text-4xl font-bold mb-3 mt-6 break-words\",\"children\":\"Git Collaboration Workflows\"}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"feature-branch-workflow-most-common\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Feature Branch Workflow (most common)\"}],\"\\n\",[\"$\",\"pre\",\"pre-26\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git checkout -b feature-user-auth\\n# Work, commit...\\ngit push origin feature-user-auth\\n# Create Pull Request → Review → Merge\\ngit branch -d feature-user-auth\"}]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"gitflow-workflow\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Gitflow Workflow\"}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":[\"Two permanent branches: \",[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\"main\"}],\" (production) and \",[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\"develop\"}],\". Feature/release/hotfix branches branch off and merge back:\"]}],\"\\n\",[\"$\",\"pre\",\"pre-27\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"# Feature\\ngit checkout develop \u0026\u0026 git checkout -b feature/login\\n# ... work, then merge back into develop\\n\\n# Release\\ngit checkout -b release/1.2.0 develop\\n# ... merge into both main and develop\\n\\n# Hotfix\\ngit checkout -b hotfix/critical-bug main\\n# ... merge into both main and develop\"}]}],\"\\n\",[\"$\",\"hr\",null,{\"className\":\"my-10 border-t-4\"}],\"\\n\",[\"$\",\"h2\",null,{\"id\":\"rebasing\",\"className\":\"text-4xl font-bold mb-3 mt-6 break-words\",\"children\":\"Rebasing\"}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":\"Rebasing re-applies commits onto another branch, creating linear history.\"}],\"\\n\",[\"$\",\"pre\",\"pre-28\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git checkout feature-branch\\ngit rebase main                       # Rebase onto main\\ngit checkout main\\ngit merge feature-branch              # Fast-forward merge\"}]}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"Golden Rule\"}],\": Never rebase commits already pushed to a shared repo.\"]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"handling-conflicts\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Handling Conflicts\"}],\"\\n\",[\"$\",\"pre\",\"pre-29\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"# Fix conflicts, then:\\ngit add conflicted-file.txt\\ngit rebase --continue\\ngit rebase --abort                    # Cancel rebase\"}]}],\"\\n\",[\"$\",\"hr\",null,{\"className\":\"my-10 border-t-4\"}],\"\\n\",[\"$\",\"h2\",null,{\"id\":\"interactive-rebase\",\"className\":\"text-4xl font-bold mb-3 mt-6 break-words\",\"children\":\"Interactive Rebase\"}],\"\\n\",[\"$\",\"pre\",\"pre-30\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git rebase -i HEAD~4\"}]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"actions\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Actions\"}],\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",[\"$\",\"div\",null,{\"className\":\"overflow-x-auto mb-4 text-lg\",\"children\":[\"$\",\"table\",null,{\"className\":\"min-w-full border-collapse border border-gray-300 text-lg\",\"children\":[[\"$\",\"thead\",null,{\"className\":\"bg-gray-50 text-lg\",\"children\":[\"$\",\"tr\",null,{\"className\":\"hover:bg-gray-50 text-lg\",\"children\":[[\"$\",\"th\",null,{\"className\":\"border border-gray-300 bg-gray-50 px-4 py-2 font-semibold text-lg\",\"style\":\"$undefined\",\"children\":\"Action\"}],[\"$\",\"th\",null,{\"className\":\"border border-gray-300 bg-gray-50 px-4 py-2 font-semibold text-lg\",\"style\":\"$undefined\",\"children\":\"Effect\"}]]}]}],[\"$\",\"tbody\",null,{\"className\":\"text-lg\",\"children\":[[\"$\",\"tr\",null,{\"className\":\"hover:bg-gray-50 text-lg\",\"children\":[[\"$\",\"td\",null,{\"className\":\"border border-gray-300 px-4 py-2 text-lg\",\"style\":\"$undefined\",\"children\":[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\"pick\"}]}],[\"$\",\"td\",null,{\"className\":\"border border-gray-300 px-4 py-2 text-lg\",\"style\":\"$undefined\",\"children\":\"Use commit as-is\"}]]}],[\"$\",\"tr\",null,{\"className\":\"hover:bg-gray-50 text-lg\",\"children\":[[\"$\",\"td\",null,{\"className\":\"border border-gray-300 px-4 py-2 text-lg\",\"style\":\"$undefined\",\"children\":[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\"reword\"}]}],[\"$\",\"td\",null,{\"className\":\"border border-gray-300 px-4 py-2 text-lg\",\"style\":\"$undefined\",\"children\":\"Change commit message\"}]]}],[\"$\",\"tr\",null,{\"className\":\"hover:bg-gray-50 text-lg\",\"children\":[[\"$\",\"td\",null,{\"className\":\"border border-gray-300 px-4 py-2 text-lg\",\"style\":\"$undefined\",\"children\":[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\"squash\"}]}],[\"$\",\"td\",null,{\"className\":\"border border-gray-300 px-4 py-2 text-lg\",\"style\":\"$undefined\",\"children\":\"Combine with previous (edit combined message)\"}]]}],[\"$\",\"tr\",null,{\"className\":\"hover:bg-gray-50 text-lg\",\"children\":[[\"$\",\"td\",null,{\"className\":\"border border-gray-300 px-4 py-2 text-lg\",\"style\":\"$undefined\",\"children\":[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\"fixup\"}]}],[\"$\",\"td\",null,{\"className\":\"border border-gray-300 px-4 py-2 text-lg\",\"style\":\"$undefined\",\"children\":\"Combine with previous (discard this message)\"}]]}],[\"$\",\"tr\",null,{\"className\":\"hover:bg-gray-50 text-lg\",\"children\":[[\"$\",\"td\",null,{\"className\":\"border border-gray-300 px-4 py-2 text-lg\",\"style\":\"$undefined\",\"children\":[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\"drop\"}]}],[\"$\",\"td\",null,{\"className\":\"border border-gray-300 px-4 py-2 text-lg\",\"style\":\"$undefined\",\"children\":\"Remove commit\"}]]}],[\"$\",\"tr\",null,{\"className\":\"hover:bg-gray-50 text-lg\",\"children\":[[\"$\",\"td\",null,{\"className\":\"border border-gray-300 px-4 py-2 text-lg\",\"style\":\"$undefined\",\"children\":[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\"edit\"}]}],[\"$\",\"td\",null,{\"className\":\"border border-gray-300 px-4 py-2 text-lg\",\"style\":\"$undefined\",\"children\":\"Pause to amend the commit\"}]]}]]}]]}]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"squashing-example\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Squashing Example\"}],\"\\n\",[\"$\",\"pre\",\"pre-31\",{\"children\":[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\"pick 1234567 Add user authentication\\nsquash 2345678 Fix auth bug\\nsquash 3456789 Add auth tests\\n\"}]}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":\"Result: one clean commit with all three changes.\"}],\"\\n\",[\"$\",\"hr\",null,{\"className\":\"my-10 border-t-4\"}],\"\\n\",[\"$\",\"h2\",null,{\"id\":\"cherry-pick\",\"className\":\"text-4xl font-bold mb-3 mt-6 break-words\",\"children\":\"Cherry-Pick\"}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":\"Apply changes from a specific commit onto your current branch.\"}],\"\\n\",[\"$\",\"pre\",\"pre-32\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git cherry-pick \u003ccommit-hash\u003e\\ngit cherry-pick \u003chash1\u003e \u003chash2\u003e       # Multiple commits\"}]}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"Use cases\"}],\": backport bug fixes, apply a single commit without merging a whole branch, recover a commit from a deleted branch.\"]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"handling-conflicts\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Handling Conflicts\"}],\"\\n\",[\"$\",\"pre\",\"pre-33\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git add resolved-file.txt\\ngit cherry-pick --continue\\ngit cherry-pick --abort               # Cancel\"}]}],\"\\n\",[\"$\",\"hr\",null,{\"className\":\"my-10 border-t-4\"}],\"\\n\",[\"$\",\"h2\",null,{\"id\":\"git-tags\",\"className\":\"text-4xl font-bold mb-3 mt-6 break-words\",\"children\":\"Git Tags\"}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":\"Tags mark specific points in history, typically for releases.\"}],\"\\n\",[\"$\",\"pre\",\"pre-34\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git tag -a v1.0.0 -m \\\"Release 1.0.0\\\" # Annotated tag (recommended)\\ngit tag v1.0.0                        # Lightweight tag\\ngit tag                               # List tags\\ngit show v1.0.0                       # Show tag info\\ngit tag -d v1.0.0                     # Delete tag\\n\\ngit push origin v1.0.0               # Push specific tag\\ngit push origin --tags                # Push all tags\"}]}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":[[\"$\",\"strong\",\"strong-0\",{\"children\":\"Semantic Versioning\"}],\": \",[\"$\",\"code\",null,{\"className\":\"bg-gray-100 px-1 py-0.5 rounded font-mono break-words\",\"children\":\"Major.Minor.Patch\"}],\" — major = breaking changes, minor = new features, patch = bug fixes.\"]}],\"\\n\",[\"$\",\"hr\",null,{\"className\":\"my-10 border-t-4\"}],\"\\n\",[\"$\",\"h2\",null,{\"id\":\"reflogs---retrieving-lost-work\",\"className\":\"text-4xl font-bold mb-3 mt-6 break-words\",\"children\":\"Reflogs - Retrieving Lost Work\"}],\"\\n\",[\"$\",\"p\",null,{\"className\":\"mb-4 leading-relaxed text-lg\",\"children\":\"Reflog tracks every change to HEAD. Your safety net for recovering \\\"lost\\\" work (expires after 90 days).\"}],\"\\n\",[\"$\",\"pre\",\"pre-35\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git reflog                            # View reflog\"}]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"recovering-lost-commits\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Recovering Lost Commits\"}],\"\\n\",[\"$\",\"pre\",\"pre-36\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git reset --hard HEAD~3               # Oops, lost 3 commits!\\ngit reflog                            # Find the hash\\ngit reset --hard \u003ccommit-hash\u003e        # Recover\"}]}],\"\\n\",[\"$\",\"h3\",null,{\"id\":\"recovering-deleted-branches\",\"className\":\"text-3xl font-bold mb-2 mt-4 break-words\",\"children\":\"Recovering Deleted Branches\"}],\"\\n\",[\"$\",\"pre\",\"pre-37\",{\"children\":[\"$\",\"$L18\",null,{\"language\":\"bash\",\"PreTag\":\"div\",\"value\":\"git branch -D important-feature       # Oops!\\ngit reflog --all | grep important-feature\\ngit branch important-feature \u003ccommit-hash\u003e\"}]}]],[\"$\",\"$L19\",null,{}]]}]]\n"])
+    </script>
+    <script defer
+        src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447"
+        integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ=="
+        data-cf-beacon='{"version":"2024.11.0","token":"d35cdf85016d43a29d540a9c391d2355","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
