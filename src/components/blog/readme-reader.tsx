@@ -111,7 +111,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       );
     },
     p: ({ children }: any) => (
-      <p className="mt-0 mb-[16px] leading-[1.5] ">{children}</p>
+      <p className="mt-0 mb-[16px]">{children}</p>
     ),
     ul: ({ children }: any) => (
       <ul className="mb-[16px] pl-[2em] md-ul ">
