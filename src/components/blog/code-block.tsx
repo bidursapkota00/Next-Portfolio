@@ -33,6 +33,16 @@ const CodeBlock = ({
         style={coldarkCold}
         language={language}
         PreTag="div"
+        customStyle={{
+          padding: "1rem",
+          fontSize: "0.85rem",
+          lineHeight: "1.3"
+        }}
+        codeTagProps={{
+          style: {
+            lineHeight: "1.3"
+          }
+        }}
         {...props}
       >
         {value}
