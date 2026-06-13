@@ -161,7 +161,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       const imgSrc = String(src).startsWith("http") ? src : `${baseUrl}/${src}`;
       return (
         <span
-          className="relative block w-full my-4"
+          className="relative block w-full mb-[16px]"
           style={{ aspectRatio: "16/9" }}
         >
           <Image

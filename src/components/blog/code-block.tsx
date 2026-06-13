@@ -22,7 +22,7 @@ const CodeBlock = ({
   };
 
   return (
-    <div className="relative group mb-10 mt-3">
+    <div className="relative group mb-4">
       <button
         onClick={handleCopy}
         className="absolute right-2 top-2 rounded bg-gray-700 text-white px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition"
@@ -36,11 +36,11 @@ const CodeBlock = ({
         customStyle={{
           padding: "1rem",
           fontSize: "0.85rem",
-          lineHeight: "1.3"
+          lineHeight: "1.4"
         }}
         codeTagProps={{
           style: {
-            lineHeight: "1.3"
+            lineHeight: "1.4"
           }
         }}
         {...props}
