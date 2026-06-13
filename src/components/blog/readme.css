@@ -5,9 +5,7 @@
   word-wrap: break-word;
 }
 
-.markdown-body code {
-  font-size: 0.85rem;
-}
+
 
 .markdown-body .md-ol p,
 .markdown-body .md-ul p {
