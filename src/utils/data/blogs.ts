@@ -198,6 +198,19 @@ export const blogs: IBlogs[] = [
   },
   {
     baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/clean-code/refs/heads/main",
+    url: "clean-code.md",
+    title: "Clean Code Complete Guide",
+    shortTitle: "Clean Code",
+    slug: "clean-code-complete-guide",
+    github: "https://github.com/bidursapkota00/clean-code",
+    description:
+      "A practical guide to writing clean, readable, and maintainable code. Learn naming conventions, comments, formatting, functions, DRY principles, abstraction, error handling, classes, objects, SOLID principles, and refactoring techniques through real-world TypeScript examples.",
+    image: "/images/clean-code-700.webp",
+    category: ["Clean Code"],
+  },
+  {
+    baseUrl:
       "https://raw.githubusercontent.com/bidursapkota00/NestJS/refs/heads/main",
     url: "README.md",
     title: "NestJs Complete Guide",
