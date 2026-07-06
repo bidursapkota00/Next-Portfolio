@@ -431,6 +431,19 @@ export const blogs: IBlogs[] = [
     image: "/images/react-next.webp",
     category: ["React", "Next", "TypeScript"],
   },
+  {
+    baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/se-bct/refs/heads/main",
+    url: "lab-testing.md",
+    title: "Dockerized FastAPI Testing Workflows",
+    shortTitle: "Dockerized FastAPI Testing",
+    slug: "dockerized-fastapi-testing-workflows",
+    github: "https://github.com/bidursapkota00/se-bct",
+    description:
+      "Learn Docker-based testing for FastAPI, including setup, unit tests, integration tests, coverage, and running everything with Docker Compose.",
+    image: "/images/dockerized-fastapi-testing-700.webp",
+    category: ["FastAPI", "Docker", "Testing", "PostgreSQL"],
+  },
 ];
 
 export const threeBlogs: IBlogs[] = [
@@ -472,18 +485,5 @@ export const threeBlogs: IBlogs[] = [
       "Master TypeScript fundamentals, advanced types, generics, and how to integrate it seamlessly in modern JavaScript projects.",
     image: "/images/5-ts-post.webp",
     category: ["TypeScript", "JavaScript"],
-  },
-  {
-    baseUrl:
-      "https://raw.githubusercontent.com/bidursapkota00/se-bct/refs/heads/main",
-    url: "lab-testing.md",
-    title: "Dockerized FastAPI Testing Workflows",
-    shortTitle: "Dockerized FastAPI Testing",
-    slug: "dockerized-fastapi-testing-workflows",
-    github: "https://github.com/bidursapkota00/se-bct",
-    description:
-      "Learn Docker-based testing for FastAPI, including setup, unit tests, integration tests, coverage, and running everything with Docker Compose.",
-    image: "/images/dockerized-fastapi-testing-700.webp",
-    category: ["FastAPI", "Docker", "Testing", "PostgreSQL"],
   },
 ];
