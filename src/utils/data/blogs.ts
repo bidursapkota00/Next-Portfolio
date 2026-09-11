@@ -444,6 +444,19 @@ export const blogs: IBlogs[] = [
     image: "/images/dockerized-fastapi-testing-700.webp",
     category: ["FastAPI", "Docker", "Testing", "PostgreSQL"],
   },
+  {
+    baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/os_new/refs/heads/main",
+    url: "blog.md",
+    title: "Operating System Notes, IOE, TU, BCT Engineering",
+    shortTitle: "Operating System",
+    slug: "operating-system",
+    github: "https://github.com/bidursapkota00/os_new",
+    description:
+      "Learn Operating Systems with comprehensive notes on process management, memory, I/O, file systems, security, virtualization, and contemporary OS concepts. BCT, IOE Notes, Engineering.",
+    image: "/images/operating-system-700.webp",
+    category: ["Operating System"],
+  },
 ];
 
 export const threeBlogs: IBlogs[] = [
