@@ -52,3 +52,23 @@
   padding: 6px 13px;
   border: 1px solid #d0d7de;
 }
+
+.katex {
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: 1.125rem !important;
+}
+
+.katex * {
+  box-sizing: content-box !important;
+  border-color: currentColor !important;
+}
+
+.katex .text {
+  font-family: inherit !important;
+}
+
+.katex .mathnormal {
+  font-family: inherit !important;
+  font-style: normal !important;
+}

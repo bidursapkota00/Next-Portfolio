@@ -1,6 +1,9 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import "katex/dist/katex.min.css";
 import "./readme.css";
 import LoadMermaid from "./load-mermaid";
 import CodeBlock from "./code-block";
@@ -210,8 +213,8 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     <div className="markdown-body px-5">
       <ReactMarkdown
         components={customRenderers}
-        remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw]}
+        remarkPlugins={[remarkGfm, remarkMath]}
+        rehypePlugins={[rehypeRaw, rehypeKatex]}
       >
         {markdown}
       </ReactMarkdown>
