@@ -27,11 +27,11 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       const match = /language-(\w+)/.exec(className || "");
       const language = match ? match[1] : "";
       const codeString = String(children).replace(/\n$/, "");
-      
+
       const hasLanguage = !!match;
       const hasNewlines = String(children).includes("\n");
       const spansMultipleLines = node?.position?.start?.line !== node?.position?.end?.line;
-      
+
       const isBlock = hasLanguage || hasNewlines || spansMultipleLines;
 
       if (!isBlock) {
@@ -186,19 +186,20 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       <thead className="">{children}</thead>
     ),
     tbody: ({ children }: any) => <tbody className="">{children}</tbody>,
-    tr: ({ children }: any) => (
-      <tr className="">{children}</tr>
+    tr: ({ node, children, ...props }: any) => (
+      <tr className="bg-white border-t border-[#d8dee4]" {...props}>{children}</tr>
     ),
-    th: ({ children, style }: any) => (
+    th: ({ node, children, style, ...props }: any) => (
       <th
-        className="font-semibold "
+        className="font-semibold px-[13px] py-[6px] border border-[#d0d7de]"
         style={style}
+        {...props}
       >
         {children}
       </th>
     ),
-    td: ({ children, style }: any) => (
-      <td className="" style={style}>
+    td: ({ node, children, style, ...props }: any) => (
+      <td className="px-[13px] py-[6px] border border-[#d0d7de]" style={style} {...props}>
         {children}
       </td>
     ),
