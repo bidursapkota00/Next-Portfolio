@@ -457,6 +457,19 @@ export const blogs: IBlogs[] = [
     image: "/images/operating-system-700.webp",
     category: ["Operating System"],
   },
+  {
+    baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/se-bct/refs/heads/main",
+    url: "blog.md",
+    title: "Software Engineering Notes, IOE, TU, BCT Engineering",
+    shortTitle: "Software Engineering",
+    slug: "software-engineering",
+    github: "https://github.com/bidursapkota00/se-bct",
+    description:
+      "Comprehensive Software Engineering notes for IOE, TU, BCT Engineering covering software processes, requirements engineering, architectural design, system modeling, coding, testing, quality assurance, maintenance, configuration management, and recent trends.",
+    image: "/images/se-700.webp",
+    category: ["Software Engineering"],
+  },
 ];
 
 export const threeBlogs: IBlogs[] = [
