@@ -470,6 +470,18 @@ export const blogs: IBlogs[] = [
     image: "/images/se-700.webp",
     category: ["Software Engineering"],
   },
+  {
+    baseUrl:
+      "https://raw.githubusercontent.com/bidursapkota00/me-2-sem/refs/heads/main/dl",
+    url: "blog.md",
+    title: "Deep Learning",
+    shortTitle: "Deep Learning",
+    slug: "deep-learning",
+    github: "https://github.com/bidursapkota00/me-2-sem/tree/main/dl",
+    description: "Deep Learning",
+    image: "/images/se-700.webp",
+    category: ["Deep Learning"],
+  },
 ];
 
 export const threeBlogs: IBlogs[] = [
