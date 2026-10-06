@@ -211,19 +211,6 @@ export const blogs: IBlogs[] = [
   },
   {
     baseUrl:
-      "https://raw.githubusercontent.com/bidursapkota00/NestJS/refs/heads/main",
-    url: "README.md",
-    title: "NestJs Complete Guide",
-    shortTitle: "NestJs",
-    slug: "nestjs-complete-guide",
-    github: "https://github.com/bidursapkota00/NestJS",
-    description:
-      "Master NestJS with TypeScript to build scalable, modular, and production-ready backends. Learn REST APIs, testing, and deployment.",
-    image: "/images/nestjs.webp",
-    category: ["Node", "JavaScript", "Nest"],
-  },
-  {
-    baseUrl:
       "https://raw.githubusercontent.com/bidursapkota00/Mastering-TypeScript/refs/heads/main",
     url: "README.md",
     title: "TypeScript Complete Guide",
@@ -273,19 +260,6 @@ export const blogs: IBlogs[] = [
       "Master Git version control and GitHub collaboration. Learn commits, branching, pull requests, workflows, and open-source contribution.",
     image: "/images/git-700.webp",
     category: ["Git", "GitHub"],
-  },
-  {
-    baseUrl:
-      "https://raw.githubusercontent.com/bidursapkota00/Complete-JavaScript-Course/refs/heads/basic",
-    url: "README.md",
-    title: "JavaScript Complete Guide",
-    shortTitle: "JavaScript",
-    slug: "javascript-complete-guide",
-    github: "https://github.com/bidursapkota00/Complete-JavaScript-Course",
-    description:
-      "Learn modern JavaScript from basics to advanced—DOM, ES6+, async, promises, OOP, and practical projects for real-world skills.",
-    image: "/images/js.webp",
-    category: ["JavaScript", "HTML", "CSS"],
   },
   {
     baseUrl:
@@ -420,19 +394,6 @@ export const blogs: IBlogs[] = [
   },
   {
     baseUrl:
-      "https://raw.githubusercontent.com/bidursapkota00/react-next/refs/heads/main",
-    url: "README.md",
-    title: "React.js with Next.js Complete Guide",
-    shortTitle: "React with Next",
-    slug: "react-next-complete-guide",
-    github: "https://github.com/bidursapkota00/react-next",
-    description:
-      "Build powerful React apps with Next.js. Learn SSR, SSG, routes, authentication, and performance optimization step by step.",
-    image: "/images/react-next.webp",
-    category: ["React", "Next", "TypeScript"],
-  },
-  {
-    baseUrl:
       "https://raw.githubusercontent.com/bidursapkota00/se-bct/refs/heads/main",
     url: "lab-testing.md",
     title: "Dockerized FastAPI Testing Workflows",
@@ -469,18 +430,6 @@ export const blogs: IBlogs[] = [
       "Comprehensive Software Engineering notes for IOE, TU, BCT Engineering covering software processes, requirements engineering, architectural design, system modeling, coding, testing, quality assurance, maintenance, configuration management, and recent trends.",
     image: "/images/se-700.webp",
     category: ["Software Engineering"],
-  },
-  {
-    baseUrl:
-      "https://raw.githubusercontent.com/bidursapkota00/me-2-sem/refs/heads/main/dl",
-    url: "blog.md",
-    title: "Deep Learning",
-    shortTitle: "Deep Learning",
-    slug: "deep-learning",
-    github: "https://github.com/bidursapkota00/me-2-sem/tree/main/dl",
-    description: "Deep Learning",
-    image: "/images/se-700.webp",
-    category: ["Deep Learning"],
   },
 ];
 
