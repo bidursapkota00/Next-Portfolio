@@ -2,6 +2,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import remarkMath from "remark-math";
+import remarkBreaks from "remark-breaks";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import "./readme.css";
@@ -33,7 +34,8 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
 
       const hasLanguage = !!match;
       const hasNewlines = String(children).includes("\n");
-      const spansMultipleLines = node?.position?.start?.line !== node?.position?.end?.line;
+      const spansMultipleLines =
+        node?.position?.start?.line !== node?.position?.end?.line;
 
       const isBlock = hasLanguage || hasNewlines || spansMultipleLines;
 
@@ -81,7 +83,10 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h2: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h2 id={id} className="text-[1.5em] font-semibold mt-[24px] mb-[16px] pb-[.3em] border-b border-[#d1d9e0b3] break-words">
+        <h2
+          id={id}
+          className="text-[1.5em] font-semibold mt-[24px] mb-[16px] pb-[.3em] border-b border-[#d1d9e0b3] break-words"
+        >
           {children}
         </h2>
       );
@@ -89,7 +94,10 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h3: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h3 id={id} className="text-[1.25em] font-semibold mt-[24px] mb-[16px] break-words">
+        <h3
+          id={id}
+          className="text-[1.25em] font-semibold mt-[24px] mb-[16px] break-words"
+        >
           {children}
         </h3>
       );
@@ -97,7 +105,10 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h4: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h4 id={id} className="text-[1em] font-semibold mt-[24px] mb-[16px] break-words">
+        <h4
+          id={id}
+          className="text-[1em] font-semibold mt-[24px] mb-[16px] break-words"
+        >
           {children}
         </h4>
       );
@@ -105,7 +116,10 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h5: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h5 id={id} className="text-[.875em] font-semibold mt-[24px] mb-[16px] break-words">
+        <h5
+          id={id}
+          className="text-[.875em] font-semibold mt-[24px] mb-[16px] break-words"
+        >
           {children}
         </h5>
       );
@@ -113,23 +127,20 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     h6: ({ children }: any) => {
       const id = generateId(children);
       return (
-        <h6 id={id} className="text-[.85em] font-semibold text-[#656d76] mt-[24px] mb-[16px] break-words">
+        <h6
+          id={id}
+          className="text-[.85em] font-semibold text-[#656d76] mt-[24px] mb-[16px] break-words"
+        >
           {children}
         </h6>
       );
     },
-    p: ({ children }: any) => (
-      <p className="mt-0 mb-[16px]">{children}</p>
-    ),
+    p: ({ children }: any) => <p className="mt-0 mb-[16px]">{children}</p>,
     ul: ({ children }: any) => (
-      <ul className="mb-[16px] pl-[2em] md-ul ">
-        {children}
-      </ul>
+      <ul className="mb-[16px] pl-[2em] md-ul ">{children}</ul>
     ),
     ol: ({ children }: any) => (
-      <ol className="mb-[16px] pl-[2em] md-ol ">
-        {children}
-      </ol>
+      <ol className="mb-[16px] pl-[2em] md-ol ">{children}</ol>
     ),
     blockquote: ({ children }: any) => (
       <blockquote className="border-l-[.25em] border-[#d0d7de] pl-[1em] text-[#656d76] m-0 mb-[16px] ">
@@ -137,10 +148,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       </blockquote>
     ),
     a: ({ href, children }: any) => (
-      <a
-        href={href}
-        className="text-blue-600 hover:text-blue-800 underline"
-      >
+      <a href={href} className="text-blue-600 hover:text-blue-800 underline">
         {children}
       </a>
     ),
@@ -180,17 +188,15 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     },
     table: ({ children }: any) => (
       <div className="overflow-x-auto mb-[16px] ">
-        <table className="w-full border-collapse ">
-          {children}
-        </table>
+        <table className="w-full border-collapse ">{children}</table>
       </div>
     ),
-    thead: ({ children }: any) => (
-      <thead className="">{children}</thead>
-    ),
+    thead: ({ children }: any) => <thead className="">{children}</thead>,
     tbody: ({ children }: any) => <tbody className="">{children}</tbody>,
     tr: ({ node, children, ...props }: any) => (
-      <tr className="bg-white border-t border-[#d8dee4]" {...props}>{children}</tr>
+      <tr className="bg-white border-t border-[#d8dee4]" {...props}>
+        {children}
+      </tr>
     ),
     th: ({ node, children, style, ...props }: any) => (
       <th
@@ -202,7 +208,11 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
       </th>
     ),
     td: ({ node, children, style, ...props }: any) => (
-      <td className="px-[13px] py-[6px] border border-[#d0d7de]" style={style} {...props}>
+      <td
+        className="px-[13px] py-[6px] border border-[#d0d7de]"
+        style={style}
+        {...props}
+      >
         {children}
       </td>
     ),
@@ -213,7 +223,7 @@ const ReadmeReader = ({ baseUrl, markdown }: ReadmeReaderProps) => {
     <div className="markdown-body px-5">
       <ReactMarkdown
         components={customRenderers}
-        remarkPlugins={[remarkGfm, remarkMath]}
+        remarkPlugins={[remarkGfm, remarkMath, remarkBreaks]}
         rehypePlugins={[rehypeRaw, rehypeKatex]}
       >
         {markdown}
