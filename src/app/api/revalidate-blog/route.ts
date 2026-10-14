@@ -1,9 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { revalidatePath, revalidateTag } from "next/cache";
-import { blogs } from "@/utils/data/blogs";
+import connectDB from "@/utils/db";
+import Blog from "@/models/Blog";
 
 export async function POST(req: NextRequest) {
   try {
+    await connectDB();
+    const blogs = await Blog.find({}, { slug: 1, divisionSlug: 1 }).lean();
+
     let validSlugs: string[] = [];
 
     blogs.forEach((b) => {
@@ -13,7 +17,7 @@ export async function POST(req: NextRequest) {
       validSlugs.push(`${b.slug}`);
     });
 
-    validSlugs = Array.from(new Map(validSlugs.map((p) => [p, p])).values());
+    validSlugs = Array.from(new Set(validSlugs));
 
     const { slug } = await req.json();
 
@@ -39,7 +43,9 @@ export async function POST(req: NextRequest) {
     }
 
     revalidatePath(`/blogs/${slug}`);
-    revalidateTag(slug); // <-- ADD THIS LINE
+    revalidatePath("/blogs");
+    revalidateTag(slug);
+    revalidateTag("blog");
 
     return NextResponse.json({
       revalidated: true,

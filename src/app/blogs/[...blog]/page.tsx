@@ -2,22 +2,32 @@ import React from "react";
 import { notFound } from "next/navigation";
 import ReadmeReader from "@/components/blog/readme-reader";
 import Sidebar from "@/components/sidebar/sidebar";
-import { blogs } from "@/utils/data/blogs";
+import connectDB from "@/utils/db";
+import BlogModel from "@/models/Blog";
 import ToggleFullScreen from "./toggle-full-screen";
 import { Link as LinkIcon } from "lucide-react";
 import Card from "../card";
 
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
-  const params: { blog: string[] }[] = [];
+  try {
+    await connectDB();
+    const blogs = await BlogModel.find({}, { slug: 1, divisionSlug: 1 }).lean();
+    const params: { blog: string[] }[] = [];
 
-  blogs.forEach((b) => {
-    if (b.divisionSlug) {
-      params.push({ blog: [b.slug, b.divisionSlug] });
-    }
-    params.push({ blog: [b.slug] });
-  });
+    blogs.forEach((b) => {
+      if (b.divisionSlug) {
+        params.push({ blog: [b.slug, b.divisionSlug] });
+      }
+      params.push({ blog: [b.slug] });
+    });
 
-  return Array.from(new Map(params.map((p) => [p.blog.join("/"), p])).values());
+    return Array.from(new Map(params.map((p) => [p.blog.join("/"), p])).values());
+  } catch (error) {
+    console.error("Error in generateStaticParams:", error);
+    return [];
+  }
 }
 
 export async function generateMetadata({
@@ -25,36 +35,45 @@ export async function generateMetadata({
 }: {
   params: { blog: string[] };
 }) {
-  const segments = params.blog;
-  const [slug, divisionSlug] = segments;
+  try {
+    const segments = params.blog;
+    const [slug, divisionSlug] = segments;
 
-  let blog;
+    await connectDB();
+    let blog;
 
-  if (divisionSlug) {
-    blog = blogs.find(
-      (b) => b.slug === slug && b.divisionSlug === divisionSlug
-    );
-  } else {
-    blog = blogs.find((b) => b.slug === slug);
-  }
+    if (divisionSlug) {
+      blog = await BlogModel.findOne({
+        slug,
+        divisionSlug,
+      }).lean();
+    } else {
+      blog = await BlogModel.findOne({ slug }).lean();
+    }
 
-  if (!blog) {
+    if (!blog) {
+      return {
+        title: "Blog Not Found",
+      };
+    }
+
+    if (!divisionSlug && blog.divisionSlug) {
+      return {
+        title: `${blog.categoryTitle} – Blog by Bidur Sapkota`,
+        description: blog.categoryDescription,
+      };
+    }
+
+    return {
+      title: `${blog.title} – Blogs by Bidur Sapkota`,
+      description: blog.description,
+    };
+  } catch (error) {
+    console.error("Error in generateMetadata:", error);
     return {
       title: "Blog Not Found",
     };
   }
-
-  if (!divisionSlug && blog.divisionSlug) {
-    return {
-      title: `${blog.categoryTitle} – Blog by Bidur Sapkota`,
-      description: blog.categoryDescription,
-    };
-  }
-
-  return {
-    title: `${blog.title} – Blogs by Bidur Sapkota`,
-    description: blog.description,
-  };
 }
 
 interface BlogDetailPageProps {
@@ -66,9 +85,8 @@ interface BlogDetailPageProps {
 export default async function Blog({ params }: BlogDetailPageProps) {
   const [slug, divisionSlug] = params.blog;
 
-  let blogOrBlogs;
-
-  blogOrBlogs = blogs.filter((b) => b.slug === slug);
+  await connectDB();
+  const blogOrBlogs = await BlogModel.find({ slug }).lean();
 
   if (!blogOrBlogs.length) {
     notFound();
@@ -103,13 +121,14 @@ export default async function Blog({ params }: BlogDetailPageProps) {
     );
   }
 
-  if (divisionSlug && blog.divisionSlug) {
-    blog = blogOrBlogs.find(
+  if (divisionSlug) {
+    const matchedBlog = blogOrBlogs.find(
       (b) => b.divisionSlug === divisionSlug
-    ) as typeof blog;
-    if (!blog) {
+    );
+    if (!matchedBlog) {
       notFound();
     }
+    blog = matchedBlog;
   }
 
   try {
