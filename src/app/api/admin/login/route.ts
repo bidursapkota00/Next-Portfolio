@@ -8,7 +8,7 @@ export async function POST(request: Request) {
     const adminPassword = process.env.ADMIN_PASSWORD;
 
     if (!adminPassword) {
-      return NextResponse.json({ error: "ADMIN_PASSWORD not set in .env.local" }, { status: 500 });
+      return NextResponse.json({ error: "Admin not set." }, { status: 500 });
     }
 
     if (password !== adminPassword) {
@@ -18,7 +18,7 @@ export async function POST(request: Request) {
     const token = await signJwtToken({ role: "admin" });
 
     const response = NextResponse.json({ success: true }, { status: 200 });
-    
+
     response.cookies.set({
       name: "admin_token",
       value: token,
@@ -30,6 +30,9 @@ export async function POST(request: Request) {
 
     return response;
   } catch (error) {
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 },
+    );
   }
 }
