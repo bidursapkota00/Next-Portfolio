@@ -6,10 +6,10 @@ export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   const isApiRoute = pathname.startsWith("/api/admin");
-  const isLoginRoute = pathname === "/admin/login" || pathname === "/api/admin/login";
-  const isSeedRoute = pathname === "/api/admin/blogs/seed";
+  const isLoginRoute =
+    pathname === "/admin/login" || pathname === "/api/admin/login";
 
-  if (isLoginRoute || isSeedRoute) {
+  if (isLoginRoute) {
     return NextResponse.next();
   }
 
