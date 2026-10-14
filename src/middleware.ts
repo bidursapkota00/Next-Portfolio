@@ -7,8 +7,9 @@ export async function middleware(request: NextRequest) {
 
   const isApiRoute = pathname.startsWith("/api/admin");
   const isLoginRoute = pathname === "/admin/login" || pathname === "/api/admin/login";
+  const isSeedRoute = pathname === "/api/admin/blogs/seed";
 
-  if (isLoginRoute) {
+  if (isLoginRoute || isSeedRoute) {
     return NextResponse.next();
   }
 
