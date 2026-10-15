@@ -1,12 +1,140 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { IBlogs } from "@/utils/data/blogs";
+import { Upload, X, Loader2 } from "lucide-react";
 
 interface BlogFormProps {
   initialData?: any;
   isEdit?: boolean;
+}
+
+interface ImageUploadFieldProps {
+  label: string;
+  value: string;
+  onChange: (url: string) => void;
+  required?: boolean;
+  placeholder?: string;
+}
+
+function ImageUploadField({
+  label,
+  value,
+  onChange,
+  required,
+  placeholder,
+}: ImageUploadFieldProps) {
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    e.target.value = "";
+    setIsUploading(true);
+    setUploadError(null);
+
+    const data = new FormData();
+    data.append("file", file);
+
+    try {
+      const res = await fetch("/api/admin/upload", {
+        method: "POST",
+        body: data,
+      });
+
+      const json = await res.json();
+      if (!res.ok) {
+        setUploadError(json.error || "Failed to upload image to Cloudinary");
+      } else {
+        onChange(json.url);
+      }
+    } catch (err: any) {
+      console.error("Cloudinary upload failed:", err);
+      setUploadError("Network error occurred during image upload");
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
+  return (
+    <div className="space-y-2">
+      <label className="block text-sm font-medium text-gray-700">
+        {label}
+      </label>
+
+      <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+        {/* Upload Button */}
+        <button
+          type="button"
+          disabled={isUploading}
+          onClick={() => fileInputRef.current?.click()}
+          className="inline-flex items-center gap-2 px-3.5 py-2 border border-blue-600 bg-blue-50 text-blue-700 rounded-md text-sm font-medium hover:bg-blue-100 transition shadow-sm disabled:opacity-50 shrink-0"
+        >
+          {isUploading ? (
+            <Loader2 className="w-4 h-4 animate-spin text-blue-600" />
+          ) : (
+            <Upload className="w-4 h-4 text-blue-600" />
+          )}
+          {isUploading ? "Uploading to Cloudinary..." : "Upload to Cloudinary"}
+        </button>
+
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept="image/*"
+          className="hidden"
+          onChange={handleFileChange}
+        />
+
+        {/* Text Input for URL */}
+        <div className="w-full flex-1">
+          <input
+            type="text"
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            required={required}
+            placeholder={placeholder || "https://res.cloudinary.com/... or paste image URL"}
+            className="w-full border border-gray-300 rounded p-2 text-sm focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+      </div>
+
+      {uploadError && (
+        <p className="text-xs text-red-600 bg-red-50 p-2 rounded border border-red-200">
+          {uploadError}
+        </p>
+      )}
+
+      {/* Image Preview */}
+      {value && (
+        <div className="flex items-center gap-3 pt-1">
+          <div className="relative group border border-gray-200 bg-gray-50 rounded-lg p-1 max-w-xs shadow-sm overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={value}
+              alt="Image Preview"
+              className="h-28 w-auto max-w-xs object-cover rounded"
+              onError={(e) => {
+                (e.target as HTMLElement).style.display = "none";
+              }}
+            />
+          </div>
+          <button
+            type="button"
+            onClick={() => onChange("")}
+            className="text-xs text-red-600 hover:text-red-800 underline inline-flex items-center gap-1"
+          >
+            <X className="w-3.5 h-3.5" />
+            Remove image
+          </button>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default function BlogForm({ initialData, isEdit }: BlogFormProps) {
@@ -180,9 +308,9 @@ export default function BlogForm({ initialData, isEdit }: BlogFormProps) {
     },
     {
       name: "categoryImage",
-      label: "Category Image URL",
-      type: "text",
-      placeholder: "e.g., /images/category-image.webp",
+      label: "Category Image",
+      type: "image",
+      placeholder: "Upload category image or paste URL",
     },
     {
       name: "categorySubTitle",
@@ -192,10 +320,10 @@ export default function BlogForm({ initialData, isEdit }: BlogFormProps) {
     },
     {
       name: "image",
-      label: "Image URL *",
-      type: "text",
+      label: "Blog Image *",
+      type: "image",
       required: true,
-      placeholder: "e.g., /images/blog-post.webp",
+      placeholder: "Upload blog cover image or paste URL",
     },
   ];
 
@@ -208,35 +336,53 @@ export default function BlogForm({ initialData, isEdit }: BlogFormProps) {
         {formFields.map((field) => (
           <div
             key={field.name}
-            className={field.type === "textarea" ? "md:col-span-2" : ""}
+            className={
+              field.type === "textarea" || field.type === "image"
+                ? "md:col-span-2"
+                : ""
+            }
           >
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              {field.label}
-            </label>
-            {field.type === "textarea" ? (
-              <textarea
-                name={field.name}
+            {field.type === "image" ? (
+              <ImageUploadField
+                label={field.label}
                 value={(formData as any)[field.name] || ""}
-                onChange={handleChange}
+                onChange={(url) =>
+                  setFormData((prev) => ({ ...prev, [field.name]: url }))
+                }
                 required={field.required}
                 placeholder={field.placeholder}
-                className="w-full border border-gray-300 rounded p-2 focus:ring-blue-500 focus:border-blue-500"
-                rows={4}
               />
             ) : (
-              <input
-                type="text"
-                name={field.name}
-                value={
-                  field.isArray
-                    ? ((formData as any)[field.name] || []).join(", ")
-                    : (formData as any)[field.name] || ""
-                }
-                onChange={handleChange}
-                required={field.required}
-                placeholder={field.placeholder}
-                className="w-full border border-gray-300 rounded p-2 focus:ring-blue-500 focus:border-blue-500"
-              />
+              <>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  {field.label}
+                </label>
+                {field.type === "textarea" ? (
+                  <textarea
+                    name={field.name}
+                    value={(formData as any)[field.name] || ""}
+                    onChange={handleChange}
+                    required={field.required}
+                    placeholder={field.placeholder}
+                    className="w-full border border-gray-300 rounded p-2 focus:ring-blue-500 focus:border-blue-500"
+                    rows={4}
+                  />
+                ) : (
+                  <input
+                    type="text"
+                    name={field.name}
+                    value={
+                      field.isArray
+                        ? ((formData as any)[field.name] || []).join(", ")
+                        : (formData as any)[field.name] || ""
+                    }
+                    onChange={handleChange}
+                    required={field.required}
+                    placeholder={field.placeholder}
+                    className="w-full border border-gray-300 rounded p-2 focus:ring-blue-500 focus:border-blue-500"
+                  />
+                )}
+              </>
             )}
           </div>
         ))}
