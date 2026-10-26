@@ -57,7 +57,7 @@ export default function AdminBlogsPage() {
 
   const fetchBlogs = async () => {
     try {
-      const res = await fetch("/api/admin/blogs");
+      const res = await fetch("/api/admin/blogs", { cache: "no-store" });
       const data = await res.json();
       if (!res.ok) {
         setErrorMsg(data.error || "Failed to fetch blogs.");

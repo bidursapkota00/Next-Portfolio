@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 import { revalidatePath, revalidateTag } from "next/cache";
+import mongoose from "mongoose";
 import connectDB from "@/utils/db";
 import Blog from "@/models/Blog";
+
+export const dynamic = "force-dynamic";
 
 export async function PUT(request: Request) {
   try {
@@ -18,12 +21,16 @@ export async function PUT(request: Request) {
 
     const bulkOps = orderedIds.map((id: string, index: number) => ({
       updateOne: {
-        filter: { _id: id },
+        filter: {
+          _id: mongoose.Types.ObjectId.isValid(id)
+            ? new mongoose.Types.ObjectId(id)
+            : id,
+        },
         update: { $set: { order: index } },
       },
     }));
 
-    await Blog.bulkWrite(bulkOps);
+    const result = await Blog.bulkWrite(bulkOps);
 
     try {
       revalidatePath("/blogs");
@@ -36,7 +43,8 @@ export async function PUT(request: Request) {
     return NextResponse.json({
       success: true,
       message: "Order updated successfully",
-      count: orderedIds.length,
+      matchedCount: result.matchedCount,
+      modifiedCount: result.modifiedCount,
     });
   } catch (error) {
     console.error("Failed to reorder blogs:", error);

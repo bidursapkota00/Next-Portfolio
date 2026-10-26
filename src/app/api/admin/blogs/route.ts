@@ -3,6 +3,8 @@ import { revalidatePath, revalidateTag } from "next/cache";
 import connectDB from "@/utils/db";
 import Blog from "@/models/Blog";
 
+export const dynamic = "force-dynamic";
+
 function revalidateBlogCache(slug: string, divisionSlug?: string) {
   try {
     revalidatePath("/blogs");
