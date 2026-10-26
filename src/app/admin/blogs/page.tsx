@@ -100,6 +100,7 @@ export default function AdminBlogsPage() {
   const handleDragStart = (e: React.DragEvent<HTMLTableRowElement>, index: number) => {
     setDraggedIndex(index);
     e.dataTransfer.effectAllowed = "move";
+    e.dataTransfer.setData("text/plain", index.toString());
   };
 
   const handleDragOver = (e: React.DragEvent<HTMLTableRowElement>, index: number) => {
@@ -112,14 +113,17 @@ export default function AdminBlogsPage() {
 
   const handleDrop = (e: React.DragEvent<HTMLTableRowElement>, targetIndex: number) => {
     e.preventDefault();
-    if (draggedIndex === null || draggedIndex === targetIndex) {
+    const dataIndex = e.dataTransfer.getData("text/plain");
+    const sourceIndex = draggedIndex !== null ? draggedIndex : (dataIndex ? Number(dataIndex) : null);
+
+    if (sourceIndex === null || isNaN(sourceIndex) || sourceIndex === targetIndex) {
       setDraggedIndex(null);
       setDragOverIndex(null);
       return;
     }
 
     const reordered = [...blogs];
-    const [moved] = reordered.splice(draggedIndex, 1);
+    const [moved] = reordered.splice(sourceIndex, 1);
     reordered.splice(targetIndex, 0, moved);
 
     setBlogs(reordered);

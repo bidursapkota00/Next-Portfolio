@@ -30,10 +30,12 @@ export async function PUT(request: Request) {
       },
     }));
 
-    const result = await Blog.bulkWrite(bulkOps);
+    // Use direct collection to bypass any stale Mongoose schema cache in long-running dev servers
+    const result = await Blog.collection.bulkWrite(bulkOps as any);
 
     try {
       revalidatePath("/blogs");
+      revalidatePath("/");
       revalidatePath("/admin/blogs");
       revalidateTag("blog");
     } catch (revalError) {

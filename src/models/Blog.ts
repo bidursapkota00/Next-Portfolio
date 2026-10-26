@@ -30,7 +30,11 @@ const BlogSchema = new Schema<IBlogDocument>(
   }
 );
 
-// Prevent mongoose from recreating the model if it already exists
+// Prevent mongoose from caching stale model in dev
+if (process.env.NODE_ENV === 'development' && mongoose.models.Blog) {
+  delete (mongoose.models as any).Blog;
+}
+
 const Blog: Model<IBlogDocument> = mongoose.models.Blog || mongoose.model<IBlogDocument>('Blog', BlogSchema);
 
 export default Blog;
