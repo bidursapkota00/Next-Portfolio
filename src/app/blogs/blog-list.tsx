@@ -3,7 +3,7 @@
 import { useMemo, useEffect, Suspense, useCallback } from "react";
 import FilterAppBar from "./filter";
 import { Filter } from "lucide-react";
-import { blogs as allBlogs, IBlogs } from "@/utils/data/blogs";
+import type { IBlogs } from "@/utils/data/blogs";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import {
   Pagination,
@@ -18,7 +18,7 @@ import Card from "./card";
 const ITEMS_PER_PAGE = 6;
 
 interface BlogListProps {
-  initialBlogs?: IBlogs[];
+  initialBlogs: IBlogs[];
 }
 
 function BlogListContent({ initialBlogs }: BlogListProps) {
@@ -29,10 +29,9 @@ function BlogListContent({ initialBlogs }: BlogListProps) {
   const categoryFilter = searchParams.get("category") || "";
   const currentPage = Number(searchParams.get("page")) || 1;
 
-  const rawBlogs = initialBlogs && initialBlogs.length > 0 ? initialBlogs : allBlogs;
-
   // Deduplicate blogs by slug preserving original order (so newest blogs come first)
   const blogs = useMemo(() => {
+    const rawBlogs = initialBlogs || [];
     const seen = new Set<string>();
     const unique: IBlogs[] = [];
     for (const b of rawBlogs) {
@@ -42,7 +41,7 @@ function BlogListContent({ initialBlogs }: BlogListProps) {
       }
     }
     return unique;
-  }, [rawBlogs]);
+  }, [initialBlogs]);
 
   // 1. Create a helper to generate valid URLs for your Href attributes
   const createPageURL = useCallback(

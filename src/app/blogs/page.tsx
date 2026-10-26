@@ -4,9 +4,8 @@ import { Metadata } from "next";
 import BlogList from "./blog-list";
 import connectDB from "@/utils/db";
 import BlogModel from "@/models/Blog";
-import { blogs as fallbackBlogs, IBlogs } from "@/utils/data/blogs";
-
-export const dynamic = "force-dynamic";
+import { IBlogs } from "@/utils/data/blogs";
+import { AlertCircle, RotateCcw } from "lucide-react";
 
 export function generateMetadata(): Metadata {
   return {
@@ -18,19 +17,44 @@ export function generateMetadata(): Metadata {
 }
 
 export default async function Blogs() {
-  let blogs: IBlogs[] = [];
+  let blogs: IBlogs[] | null = null;
+  let isDbError = false;
 
   try {
     await connectDB();
     const dbBlogs = await BlogModel.find({}).sort({ createdAt: -1 }).lean();
-    if (dbBlogs && dbBlogs.length > 0) {
-      blogs = JSON.parse(JSON.stringify(dbBlogs));
-    } else {
-      blogs = fallbackBlogs;
-    }
+    blogs = JSON.parse(JSON.stringify(dbBlogs));
   } catch (error) {
-    console.error("Failed to fetch blogs from database, using fallback data:", error);
-    blogs = fallbackBlogs;
+    console.error("Database connection error in /blogs:", error);
+    isDbError = true;
+  }
+
+  if (isDbError || blogs === null) {
+    return (
+      <>
+        <Sidebar />
+        <div className="min-h-[70vh] flex items-center justify-center px-4">
+          <div className="max-w-md w-full text-center p-8 bg-white rounded-xl shadow-sm border border-red-200">
+            <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-red-100 flex items-center justify-center text-red-600">
+              <AlertCircle className="w-6 h-6" />
+            </div>
+            <h2 className="text-xl font-bold text-gray-900 mb-2">
+              Server Error
+            </h2>
+            <p className="text-sm text-gray-600 mb-6">
+              Unable to reach the database server. Please try again later.
+            </p>
+            <a
+              href="/blogs"
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-md bg-blue-600 text-white hover:bg-blue-700 transition"
+            >
+              <RotateCcw className="w-4 h-4" />
+              Retry
+            </a>
+          </div>
+        </div>
+      </>
+    );
   }
 
   return (
@@ -40,4 +64,5 @@ export default async function Blogs() {
     </>
   );
 }
+
 
