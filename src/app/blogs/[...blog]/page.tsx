@@ -111,7 +111,7 @@ export default async function Blog({ params }: BlogDetailPageProps) {
                   pageTitle={b.title}
                   image={b.image}
                   slug={`${b.slug}/${b.divisionSlug}`}
-                  categories={b.divisionCategory}
+                  categories={b.divisionCategory || []}
                 />
               ))}
             </div>
@@ -132,9 +132,13 @@ export default async function Blog({ params }: BlogDetailPageProps) {
   }
 
   try {
+    const cacheTags = divisionSlug
+      ? ["blog", blog.slug, `${blog.slug}/${divisionSlug}`]
+      : ["blog", blog.slug];
+
     const response = await fetch(`${blog.baseUrl}/${blog.url}`, {
       next: {
-        tags: ["blog", `${blog.slug}/${divisionSlug || ""}`],
+        tags: cacheTags,
       },
     });
 

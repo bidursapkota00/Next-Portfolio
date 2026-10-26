@@ -3,7 +3,7 @@
 import { useMemo, useEffect, Suspense, useCallback } from "react";
 import FilterAppBar from "./filter";
 import { Filter } from "lucide-react";
-import { blogs as allBlogs } from "@/utils/data/blogs";
+import { blogs as allBlogs, IBlogs } from "@/utils/data/blogs";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import {
   Pagination,
@@ -16,15 +16,33 @@ import {
 import Card from "./card";
 
 const ITEMS_PER_PAGE = 6;
-const blogs = Array.from(new Map(allBlogs.map((b) => [b.slug, b])).values());
 
-function BlogListContent() {
+interface BlogListProps {
+  initialBlogs?: IBlogs[];
+}
+
+function BlogListContent({ initialBlogs }: BlogListProps) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   const categoryFilter = searchParams.get("category") || "";
   const currentPage = Number(searchParams.get("page")) || 1;
+
+  const rawBlogs = initialBlogs && initialBlogs.length > 0 ? initialBlogs : allBlogs;
+
+  // Deduplicate blogs by slug preserving original order (so newest blogs come first)
+  const blogs = useMemo(() => {
+    const seen = new Set<string>();
+    const unique: IBlogs[] = [];
+    for (const b of rawBlogs) {
+      if (!seen.has(b.slug)) {
+        seen.add(b.slug);
+        unique.push(b);
+      }
+    }
+    return unique;
+  }, [rawBlogs]);
 
   // 1. Create a helper to generate valid URLs for your Href attributes
   const createPageURL = useCallback(
@@ -49,16 +67,21 @@ function BlogListContent() {
 
   const { allCategories } = useMemo(
     () => ({
-      allCategories: Array.from(new Set(blogs.flatMap((b) => b.category))),
+      allCategories: Array.from(
+        new Set(blogs.flatMap((b) => b.category || []))
+      ),
     }),
-    []
+    [blogs]
   );
 
   const filteredBlogs = useMemo(() => {
     return blogs.filter((blog) => {
-      return !categoryFilter || blog.category.includes(categoryFilter);
+      return (
+        !categoryFilter ||
+        (blog.category && blog.category.includes(categoryFilter))
+      );
     });
-  }, [categoryFilter]);
+  }, [blogs, categoryFilter]);
 
   const totalPages = Math.ceil(filteredBlogs.length / ITEMS_PER_PAGE);
   const paginatedBlogs = filteredBlogs.slice(
@@ -115,11 +138,11 @@ function BlogListContent() {
             paginatedBlogs.map((b) => (
               <Card
                 key={b.slug}
-                title={b.categoryDisplayTitle || b.shortTitle}
+                title={b.categoryDisplayTitle || b.shortTitle || b.title}
                 pageTitle={b.title}
-                image={b.divisionSlug ? b.categoryImage : b.image}
+                image={(b.divisionSlug && b.categoryImage) ? b.categoryImage : b.image}
                 slug={b.slug}
-                categories={b.category}
+                categories={b.category || []}
               />
             ))
           )}
@@ -174,10 +197,11 @@ function BlogListContent() {
   );
 }
 
-export default function BlogList() {
+export default function BlogList({ initialBlogs }: BlogListProps) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <BlogListContent />
+      <BlogListContent initialBlogs={initialBlogs} />
     </Suspense>
   );
 }
+

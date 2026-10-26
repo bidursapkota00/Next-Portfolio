@@ -1,22 +1,22 @@
-import { NextResponse } from 'next/server';
-import { revalidatePath, revalidateTag } from 'next/cache';
-import connectDB from '@/utils/db';
-import Blog from '@/models/Blog';
+import { NextResponse } from "next/server";
+import { revalidatePath, revalidateTag } from "next/cache";
+import connectDB from "@/utils/db";
+import Blog from "@/models/Blog";
 
 function revalidateBlogCache(slug: string, divisionSlug?: string) {
   try {
-    revalidatePath('/blogs');
+    revalidatePath("/blogs");
     revalidatePath(`/blogs/${slug}`);
     if (divisionSlug) {
       revalidatePath(`/blogs/${slug}/${divisionSlug}`);
     }
-    revalidateTag('blog');
+    revalidateTag("blog");
     revalidateTag(slug);
     if (divisionSlug) {
       revalidateTag(`${slug}/${divisionSlug}`);
     }
   } catch (error) {
-    console.error('Revalidation error:', error);
+    console.error("Revalidation error:", error);
   }
 }
 
@@ -27,10 +27,13 @@ export async function GET() {
     return NextResponse.json(blogs);
   } catch (error) {
     console.error("API Error in GET /api/admin/blogs:", error);
-    return NextResponse.json({ 
-      error: 'Failed to fetch blogs', 
-      details: error instanceof Error ? error.message : String(error) 
-    }, { status: 500 });
+    return NextResponse.json(
+      {
+        error: "Failed to fetch blogs",
+        details: error instanceof Error ? error.message : String(error),
+      },
+      { status: 500 },
+    );
   }
 }
 
@@ -44,6 +47,9 @@ export async function POST(request: Request) {
 
     return NextResponse.json(newBlog, { status: 201 });
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to create blog' }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to create blog" },
+      { status: 500 },
+    );
   }
 }

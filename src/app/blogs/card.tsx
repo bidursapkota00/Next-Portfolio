@@ -41,7 +41,7 @@ export default function Card({
       {/* Tags */}
       <div className="p-4 pt-3">
         <div className="flex flex-wrap gap-2">
-          {categories.map((tech, index) => (
+          {(categories || []).map((tech, index) => (
             <span
               key={`tech-${index}`}
               className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 border border-blue-200 capitalize"
