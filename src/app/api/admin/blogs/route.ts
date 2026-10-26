@@ -23,7 +23,7 @@ function revalidateBlogCache(slug: string, divisionSlug?: string) {
 export async function GET() {
   try {
     await connectDB();
-    const blogs = await Blog.find({}).sort({ createdAt: -1 });
+    const blogs = await Blog.find({}).sort({ order: 1, createdAt: -1 });
     return NextResponse.json(blogs);
   } catch (error) {
     console.error("API Error in GET /api/admin/blogs:", error);
@@ -41,7 +41,10 @@ export async function POST(request: Request) {
   try {
     await connectDB();
     const data = await request.json();
-    const newBlog = await Blog.create(data);
+
+    // Shift existing blogs down so the newly added blog is at the top (order: 0)
+    await Blog.updateMany({}, { $inc: { order: 1 } });
+    const newBlog = await Blog.create({ ...data, order: 0 });
 
     revalidateBlogCache(newBlog.slug, newBlog.divisionSlug);
 

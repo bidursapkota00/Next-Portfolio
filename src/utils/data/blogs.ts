@@ -17,6 +17,7 @@ export interface IBlogs {
   categoryImage?: string;
   categorySubTitle?: string;
   image: string;
+  order?: number;
 }
 
 export const blogs: IBlogs[] = [

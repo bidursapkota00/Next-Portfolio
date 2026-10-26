@@ -23,6 +23,7 @@ const BlogSchema = new Schema<IBlogDocument>(
     categoryImage: { type: String },
     categorySubTitle: { type: String },
     image: { type: String, required: true },
+    order: { type: Number, default: 0, index: true },
   },
   {
     timestamps: true,

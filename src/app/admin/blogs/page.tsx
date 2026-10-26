@@ -12,6 +12,10 @@ import {
   ExternalLink,
   Send,
   Sparkles,
+  GripVertical,
+  ChevronUp,
+  ChevronDown,
+  Loader2,
 } from "lucide-react";
 
 interface BlogDocument extends IBlogs {
@@ -42,6 +46,11 @@ export default function AdminBlogsPage() {
   const [recentlyRevalidated, setRecentlyRevalidated] = useState<Record<string, boolean>>({});
   const [lastResponse, setLastResponse] = useState<any>(null);
 
+  // Drag and drop sorting states
+  const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
+  const [dragOverIndex, setDragOverIndex] = useState<number | null>(null);
+  const [orderStatus, setOrderStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
+
   useEffect(() => {
     fetchBlogs();
   }, []);
@@ -62,6 +71,79 @@ export default function AdminBlogsPage() {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const saveNewOrder = async (reorderedBlogs: BlogDocument[]) => {
+    setOrderStatus("saving");
+    try {
+      const orderedIds = reorderedBlogs.map((b) => b._id);
+      const res = await fetch("/api/admin/blogs/reorder", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ orderedIds }),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to reorder blogs");
+      }
+
+      setOrderStatus("saved");
+      setTimeout(() => {
+        setOrderStatus((prev) => (prev === "saved" ? "idle" : prev));
+      }, 3000);
+    } catch (err) {
+      console.error("Order save error:", err);
+      setOrderStatus("error");
+    }
+  };
+
+  const handleDragStart = (e: React.DragEvent<HTMLTableRowElement>, index: number) => {
+    setDraggedIndex(index);
+    e.dataTransfer.effectAllowed = "move";
+  };
+
+  const handleDragOver = (e: React.DragEvent<HTMLTableRowElement>, index: number) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = "move";
+    if (dragOverIndex !== index) {
+      setDragOverIndex(index);
+    }
+  };
+
+  const handleDrop = (e: React.DragEvent<HTMLTableRowElement>, targetIndex: number) => {
+    e.preventDefault();
+    if (draggedIndex === null || draggedIndex === targetIndex) {
+      setDraggedIndex(null);
+      setDragOverIndex(null);
+      return;
+    }
+
+    const reordered = [...blogs];
+    const [moved] = reordered.splice(draggedIndex, 1);
+    reordered.splice(targetIndex, 0, moved);
+
+    setBlogs(reordered);
+    setDraggedIndex(null);
+    setDragOverIndex(null);
+
+    saveNewOrder(reordered);
+  };
+
+  const handleDragEnd = () => {
+    setDraggedIndex(null);
+    setDragOverIndex(null);
+  };
+
+  const moveRow = (index: number, direction: "up" | "down") => {
+    const targetIndex = direction === "up" ? index - 1 : index + 1;
+    if (targetIndex < 0 || targetIndex >= blogs.length) return;
+
+    const reordered = [...blogs];
+    const [moved] = reordered.splice(index, 1);
+    reordered.splice(targetIndex, 0, moved);
+
+    setBlogs(reordered);
+    saveNewOrder(reordered);
   };
 
   const handleDelete = async (id: string) => {
@@ -329,9 +411,40 @@ export default function AdminBlogsPage() {
         </div>
       ) : (
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-x-auto">
+          {/* Reorder Status Header Bar */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between px-6 py-3 bg-gray-50/80 border-b border-gray-200 gap-2 text-xs text-gray-600">
+            <span className="flex items-center gap-1.5 font-medium">
+              <GripVertical className="w-4 h-4 text-gray-400 shrink-0" />
+              Drag rows using the handle or click arrows to customize the blog sorting order.
+            </span>
+            <div className="flex items-center gap-2">
+              {orderStatus === "saving" && (
+                <span className="inline-flex items-center gap-1.5 text-blue-600 font-medium bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200 animate-pulse">
+                  <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                  Saving order...
+                </span>
+              )}
+              {orderStatus === "saved" && (
+                <span className="inline-flex items-center gap-1.5 text-emerald-700 font-medium bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                  Order saved & cache purged!
+                </span>
+              )}
+              {orderStatus === "error" && (
+                <span className="inline-flex items-center gap-1.5 text-red-700 font-medium bg-red-50 px-2.5 py-1 rounded-full border border-red-200">
+                  <AlertCircle className="w-3.5 h-3.5 text-red-600" />
+                  Failed to save order
+                </span>
+              )}
+            </div>
+          </div>
+
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
+                <th className="w-20 px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Order
+                </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Title
                 </th>
@@ -347,13 +460,64 @@ export default function AdminBlogsPage() {
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-              {blogs.map((blog) => {
+              {blogs.map((blog, index) => {
                 const targetSlug = getBlogTargetSlug(blog);
                 const isRowRevalidating = revalidatingSlug === targetSlug;
                 const isRecentlyDone = recentlyRevalidated[targetSlug];
+                const isBeingDragged = draggedIndex === index;
+                const isDragOver = dragOverIndex === index && draggedIndex !== index;
 
                 return (
-                  <tr key={blog._id} className="hover:bg-gray-50 transition">
+                  <tr
+                    key={blog._id}
+                    draggable
+                    onDragStart={(e) => handleDragStart(e, index)}
+                    onDragOver={(e) => handleDragOver(e, index)}
+                    onDrop={(e) => handleDrop(e, index)}
+                    onDragEnd={handleDragEnd}
+                    className={`transition-all duration-150 select-none ${
+                      isBeingDragged
+                        ? "opacity-40 bg-blue-50/70 border-dashed border-2 border-blue-400"
+                        : isDragOver
+                        ? "border-t-2 border-blue-600 bg-blue-50/40"
+                        : "hover:bg-gray-50"
+                    }`}
+                  >
+                    {/* Drag Handle & Order Ranking */}
+                    <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-400">
+                      <div className="flex items-center gap-1.5">
+                        <div
+                          className="cursor-grab active:cursor-grabbing p-1 -m-1 hover:text-gray-700 hover:bg-gray-100 rounded transition"
+                          title="Drag to reorder"
+                        >
+                          <GripVertical className="w-4 h-4 text-gray-400 hover:text-gray-600" />
+                        </div>
+                        <span className="text-xs font-mono font-semibold text-gray-600 w-5 text-right">
+                          {index + 1}
+                        </span>
+                        <div className="flex flex-col ml-1">
+                          <button
+                            type="button"
+                            onClick={() => moveRow(index, "up")}
+                            disabled={index === 0}
+                            title="Move up"
+                            className="p-0.5 text-gray-400 hover:text-gray-700 disabled:opacity-20 disabled:cursor-not-allowed transition"
+                          >
+                            <ChevronUp className="w-3 h-3" />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => moveRow(index, "down")}
+                            disabled={index === blogs.length - 1}
+                            title="Move down"
+                            className="p-0.5 text-gray-400 hover:text-gray-700 disabled:opacity-20 disabled:cursor-not-allowed transition"
+                          >
+                            <ChevronDown className="w-3 h-3" />
+                          </button>
+                        </div>
+                      </div>
+                    </td>
+
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 truncate max-w-xs">
                       {blog.title}
                     </td>
@@ -422,7 +586,7 @@ export default function AdminBlogsPage() {
               })}
               {blogs.length === 0 && (
                 <tr>
-                  <td colSpan={4} className="px-6 py-8 text-center text-sm text-gray-500">
+                  <td colSpan={5} className="px-6 py-8 text-center text-sm text-gray-500">
                     No blogs found.
                   </td>
                 </tr>

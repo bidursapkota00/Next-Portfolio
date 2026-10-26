@@ -22,7 +22,7 @@ export default async function Blogs() {
 
   try {
     await connectDB();
-    const dbBlogs = await BlogModel.find({}).sort({ createdAt: -1 }).lean();
+    const dbBlogs = await BlogModel.find({}).sort({ order: 1, createdAt: -1 }).lean();
     blogs = JSON.parse(JSON.stringify(dbBlogs));
   } catch (error) {
     console.error("Database connection error in /blogs:", error);
